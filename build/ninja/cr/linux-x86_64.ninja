@@ -1,0 +1,329 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_linux.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_linux.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/files/file_util_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/files/file_util_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/posix/safe_strerror.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/posix/safe_strerror.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_conversion_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_conversion_posix.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_now_posix.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_now_posix.cc
+
+
+build $o/base/allocator/partition_allocator/src/partition_alloc/stack/asm/x64/time/push_registers_asm.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/stack/asm/x64/push_registers_asm.cc
+
+
+build $o/base/debug/debugger_posix.o : cxx $s/base/debug/debugger_posix.cc
+build $o/base/file_descriptor_posix.o : cxx $s/base/file_descriptor_posix.cc
+build $o/base/files/file_posix.o : cxx $s/base/files/file_posix.cc
+build $o/base/files/memory_mapped_file_posix.o : cxx $s/base/files/memory_mapped_file_posix.cc
+build $o/base/message_loop/watchable_io_message_pump_posix.o : cxx $s/base/message_loop/watchable_io_message_pump_posix.cc
+build $o/base/message_loop/message_pump_epoll.o : cxx $s/base/message_loop/message_pump_epoll.cc
+build $o/base/posix/file_descriptor_shuffle.o : cxx $s/base/posix/file_descriptor_shuffle.cc
+build $o/base/posix/global_descriptors.o : cxx $s/base/posix/global_descriptors.cc
+build $o/base/posix/safe_strerror.o : cxx $s/base/posix/safe_strerror.cc
+build $o/base/process/process_handle_posix.o : cxx $s/base/process/process_handle_posix.cc
+build $o/base/process/process_posix.o : cxx $s/base/process/process_posix.cc
+build $o/base/synchronization/condition_variable_posix.o : cxx $s/base/synchronization/condition_variable_posix.cc
+build $o/base/synchronization/lock_impl_posix.o : cxx $s/base/synchronization/lock_impl_posix.cc
+build $o/base/threading/platform_thread_posix.o : cxx $s/base/threading/platform_thread_posix.cc
+build $o/base/threading/thread_local_storage_posix.o : cxx $s/base/threading/thread_local_storage_posix.cc
+build $o/base/time/time_conversion_posix.o : cxx $s/base/time/time_conversion_posix.cc
+build $o/base/timer/hi_res_timer_manager_posix.o : cxx $s/base/timer/hi_res_timer_manager_posix.cc
+
+build $o/base/strings/sys_string_conversions_posix.o : cxx $s/base/strings/sys_string_conversions_posix.cc
+build $o/base/synchronization/waitable_event_posix.o : cxx $s/base/synchronization/waitable_event_posix.cc
+build $o/base/synchronization/waitable_event_watcher_posix.o : cxx $s/base/synchronization/waitable_event_watcher_posix.cc
+build $o/base/threading/platform_thread_internal_posix.o : cxx $s/base/threading/platform_thread_internal_posix.cc
+build $o/base/time/time_exploded_posix.o : cxx $s/base/time/time_exploded_posix.cc
+build $o/base/time/time_now_posix.o : cxx $s/base/time/time_now_posix.cc
+build $o/base/profiler/stack_sampler_posix.o : cxx $s/base/profiler/stack_sampler_posix.cc
+
+build $o/base/files/file_descriptor_watcher_posix.o : cxx $s/base/files/file_descriptor_watcher_posix.cc
+build $o/base/files/file_enumerator_posix.o : cxx $s/base/files/file_enumerator_posix.cc
+build $o/base/files/file_util_posix.o : cxx $s/base/files/file_util_posix.cc
+build $o/base/memory/page_size_posix.o : cxx $s/base/memory/page_size_posix.cc
+build $o/base/memory/platform_shared_memory_region_posix.o : cxx $s/base/memory/platform_shared_memory_region_posix.cc
+build $o/base/memory/platform_shared_memory_mapper_posix.o : cxx $s/base/memory/platform_shared_memory_mapper_posix.cc
+build $o/base/memory/madv_free_discardable_memory_allocator_posix.o : cxx $s/base/memory/madv_free_discardable_memory_allocator_posix.cc
+build $o/base/memory/madv_free_discardable_memory_posix.o : cxx $s/base/memory/madv_free_discardable_memory_posix.cc
+build $o/base/posix/unix_domain_socket.o : cxx $s/base/posix/unix_domain_socket.cc
+build $o/base/rand_util_posix.o : cxx $s/base/rand_util_posix.cc
+build $o/base/base_paths_posix.o : cxx $s/base/base_paths_posix.cc
+build $o/base/system/sys_info_posix.o : cxx $s/base/system/sys_info_posix.cc
+
+build $o/base/files/scoped_file_linux.o : cxx $s/base/files/scoped_file_linux.cc
+build $o/base/process/internal_linux.o : cxx $s/base/process/internal_linux.cc
+build $o/base/process/memory_linux.o : cxx $s/base/process/memory_linux.cc
+build $o/base/process/process_handle_linux.o : cxx $s/base/process/process_handle_linux.cc
+build $o/base/process/process_iterator_linux.o : cxx $s/base/process/process_iterator_linux.cc
+build $o/base/process/process_linux.o : cxx $s/base/process/process_linux.cc
+build $o/base/process/process_metrics_linux.o : cxx $s/base/process/process_metrics_linux.cc
+build $o/base/threading/platform_thread_linux.o : cxx $s/base/threading/platform_thread_linux.cc
+build $o/base/threading/platform_thread_linux_base.o : cxx $s/base/threading/platform_thread_linux_base.cc
+build $o/base/threading/thread_type_delegate.o : cxx $s/base/threading/thread_type_delegate.cc
+
+build $o/base/native_library_posix.o : cxx $s/base/native_library_posix.cc
+build $o/base/posix/sysctl.o : cxx build/config/chrome/override/base/posix/sysctl.cc
+  cflags = -Wno-deprecated-declarations -Wno-#warnings
+build $o/base/posix/can_lower_nice_to.o : cxx $s/base/posix/can_lower_nice_to.cc
+build $o/base/process/launch_posix.o : cxx $s/base/process/launch_posix.cc
+build $o/base/profiler/module_cache_posix.o : cxx $s/base/profiler/module_cache_posix.cc
+build $o/base/profiler/stack_base_address_posix.o : cxx $s/base/profiler/stack_base_address_posix.cc
+build $o/base/profiler/stack_copier_signal.o : cxx $s/base/profiler/stack_copier_signal.cc
+build $o/base/profiler/thread_delegate_posix.o : cxx $s/base/profiler/thread_delegate_posix.cc
+build $o/base/system/sys_info_linux.o : cxx $s/base/system/sys_info_linux.cc
+
+build $o/base/debug/elf_reader.o : cxx $s/base/debug/elf_reader.cc
+build $o/base/debug/stack_trace_posix.o : cxx $s/base/debug/stack_trace_posix.cc
+build $o/base/files/file_path_watcher_stub.o : cxx $s/base/files/file_path_watcher_stub.cc
+build $o/base/nix/mime_util_xdg.o : cxx $s/base/nix/mime_util_xdg.cc
+build $o/base/nix/xdg_util.o : cxx $s/base/nix/xdg_util.cc
+build $o/base/third_party/xdg_user_dirs/xdg_user_dir_lookup.o : cxx $s/base/third_party/xdg_user_dirs/xdg_user_dir_lookup.cc
+
+build $o/net/dns/dns_config_service_linux.o : cxx $s/net/dns/dns_config_service_linux.cc
+build $o/net/dns/public/resolv_reader.o : cxx $s/net/dns/public/resolv_reader.cc
+build $o/net/dns/public/scoped_res_state.o : cxx $s/net/dns/public/scoped_res_state.cc
+
+build $o/net/base/file_stream_context_posix.o : cxx $s/net/base/file_stream_context_posix.cc
+build $o/net/base/network_interfaces_posix.o : cxx $s/net/base/network_interfaces_posix.cc
+build $o/net/base/sockaddr_util_posix.o : cxx $s/net/base/sockaddr_util_posix.cc
+build $o/net/disk_cache/cache_util_posix.o : cxx $s/net/disk_cache/cache_util_posix.cc
+build $o/net/disk_cache/simple/simple_util_posix.o : cxx $s/net/disk_cache/simple/simple_util_posix.cc
+build $o/net/http/url_security_manager_posix.o : cxx $s/net/http/url_security_manager_posix.cc
+build $o/net/socket/socket_posix.o : cxx build/config/chrome/override/net/socket/socket_posix.cc
+build $o/net/socket/tcp_socket_posix.o : cxx $s/net/socket/tcp_socket_posix.cc
+build $o/net/socket/udp_socket_posix.o : cxx $s/net/socket/udp_socket_posix.cc
+
+build $o/net/base/net_errors_posix.o : cxx $s/net/base/net_errors_posix.cc
+
+build $o/net/base/address_map_linux.o : cxx $s/net/base/address_map_linux.cc
+build $o/net/base/address_tracker_linux.o : cxx $s/net/base/address_tracker_linux.cc
+build $o/net/base/network_interfaces_linux.o : cxx $s/net/base/network_interfaces_linux.cc
+build $o/net/base/platform_mime_util_linux.o : cxx $s/net/base/platform_mime_util_linux.cc
+
+build $o/net/http/http_auth_handler_ntlm_portable.o : cxx $s/net/http/http_auth_handler_ntlm_portable.cc
+build $o/net/http/http_auth_ntlm_mechanism.o : cxx $s/net/http/http_auth_ntlm_mechanism.cc
+build $o/net/ntlm/ntlm.o : cxx $s/net/ntlm/ntlm.cc
+build $o/net/ntlm/ntlm_buffer_reader.o : cxx $s/net/ntlm/ntlm_buffer_reader.cc
+build $o/net/ntlm/ntlm_buffer_writer.o : cxx $s/net/ntlm/ntlm_buffer_writer.cc
+build $o/net/ntlm/ntlm_client.o : cxx $s/net/ntlm/ntlm_client.cc
+build $o/net/ntlm/ntlm_constants.o : cxx $s/net/ntlm/ntlm_constants.cc
+
+build $o/net/base/network_change_notifier_linux.o : cxx $s/net/base/network_change_notifier_linux.cc
+build $o/net/proxy_resolution/proxy_config_service_linux.o : cxx $s/net/proxy_resolution/proxy_config_service_linux.cc
+build $o/net/disk_cache/blockfile/mapped_file_posix.o : cxx $s/net/disk_cache/blockfile/mapped_file_posix.cc
+
+build $o/db : phony $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_linux.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/files/file_util_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/posix/safe_strerror.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_conversion_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_now_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/stack/asm/x64/time/push_registers_asm.o $
+  $o/base/debug/debugger_posix.o $
+  $o/base/file_descriptor_posix.o $
+  $o/base/files/file_posix.o $
+  $o/base/files/memory_mapped_file_posix.o $
+  $o/base/message_loop/watchable_io_message_pump_posix.o $
+  $o/base/message_loop/message_pump_epoll.o $
+  $o/base/posix/file_descriptor_shuffle.o $
+  $o/base/posix/global_descriptors.o $
+  $o/base/posix/safe_strerror.o $
+  $o/base/process/process_handle_posix.o $
+  $o/base/process/process_posix.o $
+  $o/base/synchronization/condition_variable_posix.o $
+  $o/base/synchronization/lock_impl_posix.o $
+  $o/base/threading/platform_thread_posix.o $
+  $o/base/threading/thread_local_storage_posix.o $
+  $o/base/time/time_conversion_posix.o $
+  $o/base/timer/hi_res_timer_manager_posix.o $
+  $o/base/strings/sys_string_conversions_posix.o $
+  $o/base/synchronization/waitable_event_posix.o $
+  $o/base/synchronization/waitable_event_watcher_posix.o $
+  $o/base/threading/platform_thread_internal_posix.o $
+  $o/base/time/time_exploded_posix.o $
+  $o/base/time/time_now_posix.o $
+  $o/base/profiler/stack_sampler_posix.o $
+  $o/base/files/file_descriptor_watcher_posix.o $
+  $o/base/files/file_enumerator_posix.o $
+  $o/base/files/file_util_posix.o $
+  $o/base/memory/page_size_posix.o $
+  $o/base/memory/madv_free_discardable_memory_allocator_posix.o $
+  $o/base/memory/madv_free_discardable_memory_posix.o $
+  $o/base/posix/unix_domain_socket.o $
+  $o/base/rand_util_posix.o $
+  $o/base/base_paths_posix.o $
+  $o/base/system/sys_info_posix.o $
+  $o/base/memory/platform_shared_memory_region_posix.o $
+  $o/base/memory/platform_shared_memory_mapper_posix.o $
+  $o/base/files/scoped_file_linux.o $
+  $o/base/process/internal_linux.o $
+  $o/base/process/memory_linux.o $
+  $o/base/process/process_handle_linux.o $
+  $o/base/process/process_iterator_linux.o $
+  $o/base/process/process_linux.o $
+  $o/base/process/process_metrics_linux.o $
+  $o/base/threading/platform_thread_linux.o $
+  $o/base/threading/platform_thread_linux_base.o $
+  $o/base/threading/thread_type_delegate.o $
+  $o/base/native_library_posix.o $
+  $o/base/posix/sysctl.o $
+  $o/base/posix/can_lower_nice_to.o $
+  $o/base/process/launch_posix.o $
+  $o/base/profiler/stack_base_address_posix.o $
+  $o/base/profiler/stack_copier_signal.o $
+  $o/base/profiler/thread_delegate_posix.o $
+  $o/base/system/sys_info_linux.o $
+  $o/base/profiler/module_cache_posix.o $
+  $o/base/debug/elf_reader.o $
+  $o/base/debug/stack_trace_posix.o $
+  $o/base/files/file_path_watcher_stub.o $
+  $o/base/nix/mime_util_xdg.o $
+  $o/base/nix/xdg_util.o $
+  $o/base/third_party/xdg_user_dirs/xdg_user_dir_lookup.o
+
+base_file = $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_linux.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/files/file_util_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/posix/safe_strerror.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_conversion_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_now_posix.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/stack/asm/x64/time/push_registers_asm.o $
+  $o/base/debug/debugger_posix.o $
+  $o/base/file_descriptor_posix.o $
+  $o/base/files/file_posix.o $
+  $o/base/files/memory_mapped_file_posix.o $
+  $o/base/message_loop/watchable_io_message_pump_posix.o $
+  $o/base/message_loop/message_pump_epoll.o $
+  $o/base/posix/file_descriptor_shuffle.o $
+  $o/base/posix/global_descriptors.o $
+  $o/base/posix/safe_strerror.o $
+  $o/base/process/process_handle_posix.o $
+  $o/base/process/process_posix.o $
+  $o/base/synchronization/condition_variable_posix.o $
+  $o/base/synchronization/lock_impl_posix.o $
+  $o/base/threading/platform_thread_posix.o $
+  $o/base/threading/thread_local_storage_posix.o $
+  $o/base/time/time_conversion_posix.o $
+  $o/base/timer/hi_res_timer_manager_posix.o $
+  $o/base/strings/sys_string_conversions_posix.o $
+  $o/base/synchronization/waitable_event_posix.o $
+  $o/base/synchronization/waitable_event_watcher_posix.o $
+  $o/base/threading/platform_thread_internal_posix.o $
+  $o/base/time/time_exploded_posix.o $
+  $o/base/time/time_now_posix.o $
+  $o/base/profiler/stack_sampler_posix.o $
+  $o/base/files/file_descriptor_watcher_posix.o $
+  $o/base/files/file_enumerator_posix.o $
+  $o/base/files/file_util_posix.o $
+  $o/base/memory/page_size_posix.o $
+  $o/base/memory/madv_free_discardable_memory_allocator_posix.o $
+  $o/base/memory/madv_free_discardable_memory_posix.o $
+  $o/base/posix/unix_domain_socket.o $
+  $o/base/rand_util_posix.o $
+  $o/base/base_paths_posix.o $
+  $o/base/system/sys_info_posix.o $
+  $o/base/memory/platform_shared_memory_region_posix.o $
+  $o/base/memory/platform_shared_memory_mapper_posix.o $
+  $o/base/files/scoped_file_linux.o $
+  $o/base/process/internal_linux.o $
+  $o/base/process/memory_linux.o $
+  $o/base/process/process_handle_linux.o $
+  $o/base/process/process_iterator_linux.o $
+  $o/base/process/process_linux.o $
+  $o/base/process/process_metrics_linux.o $
+  $o/base/threading/platform_thread_linux.o $
+  $o/base/threading/platform_thread_linux_base.o $
+  $o/base/threading/thread_type_delegate.o $
+  $o/base/native_library_posix.o $
+  $o/base/posix/sysctl.o $
+  $o/base/posix/can_lower_nice_to.o $
+  $o/base/process/launch_posix.o $
+  $o/base/profiler/stack_base_address_posix.o $
+  $o/base/profiler/stack_copier_signal.o $
+  $o/base/profiler/thread_delegate_posix.o $
+  $o/base/system/sys_info_linux.o $
+  $o/base/profiler/module_cache_posix.o $
+  $o/base/debug/elf_reader.o $
+  $o/base/debug/stack_trace_posix.o $
+  $o/base/files/file_path_watcher_stub.o $
+  $o/base/nix/mime_util_xdg.o $
+  $o/base/nix/xdg_util.o $
+  $o/base/third_party/xdg_user_dirs/xdg_user_dir_lookup.o
+
+build $o/dn : phony $
+  $o/net/dns/dns_config_service_linux.o $
+  $o/net/dns/public/resolv_reader.o $
+  $o/net/dns/public/scoped_res_state.o $
+  $o/net/base/file_stream_context_posix.o $
+  $o/net/base/network_interfaces_posix.o $
+  $o/net/base/sockaddr_util_posix.o $
+  $o/net/disk_cache/cache_util_posix.o $
+  $o/net/disk_cache/simple/simple_util_posix.o $
+  $o/net/http/url_security_manager_posix.o $
+  $o/net/socket/socket_posix.o $
+  $o/net/socket/tcp_socket_posix.o $
+  $o/net/socket/udp_socket_posix.o $
+  $o/net/base/net_errors_posix.o $
+  $o/net/base/address_map_linux.o $
+  $o/net/base/address_tracker_linux.o $
+  $o/net/base/network_interfaces_linux.o $
+  $o/net/base/platform_mime_util_linux.o $
+  $o/net/http/http_auth_handler_ntlm_portable.o $
+  $o/net/http/http_auth_ntlm_mechanism.o $
+  $o/net/ntlm/ntlm.o $
+  $o/net/ntlm/ntlm_buffer_reader.o $
+  $o/net/ntlm/ntlm_buffer_writer.o $
+  $o/net/ntlm/ntlm_client.o $
+  $o/net/ntlm/ntlm_constants.o $
+  $o/net/base/network_change_notifier_linux.o $
+  $o/net/proxy_resolution/proxy_config_service_linux.o $
+  $o/net/disk_cache/blockfile/mapped_file_posix.o
+
+net_file = $
+  $o/net/dns/dns_config_service_linux.o $
+  $o/net/dns/public/resolv_reader.o $
+  $o/net/dns/public/scoped_res_state.o $
+  $o/net/base/network_interfaces_posix.o $
+  $o/net/base/sockaddr_util_posix.o $
+  $o/net/disk_cache/cache_util_posix.o $
+  $o/net/disk_cache/simple/simple_util_posix.o $
+  $o/net/http/url_security_manager_posix.o $
+  $o/net/socket/socket_posix.o $
+  $o/net/socket/tcp_socket_posix.o $
+  $o/net/socket/udp_socket_posix.o $
+  $o/net/base/net_errors_posix.o $
+  $o/net/base/address_map_linux.o $
+  $o/net/base/address_tracker_linux.o $
+  $o/net/base/network_interfaces_linux.o $
+  $o/net/base/platform_mime_util_linux.o $
+  $o/net/http/http_auth_handler_ntlm_portable.o $
+  $o/net/http/http_auth_ntlm_mechanism.o $
+  $o/net/ntlm/ntlm.o $
+  $o/net/ntlm/ntlm_buffer_reader.o $
+  $o/net/ntlm/ntlm_buffer_writer.o $
+  $o/net/ntlm/ntlm_client.o $
+  $o/net/ntlm/ntlm_constants.o $
+  $o/net/base/network_change_notifier_linux.o $
+  $o/net/proxy_resolution/proxy_config_service_linux.o $
+  $o/net/disk_cache/blockfile/mapped_file_posix.o
+

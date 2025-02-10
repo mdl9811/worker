@@ -1,0 +1,61 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+as = third_party/libc++abi/src/src
+ao = $obj/libc++abi
+
+build $ao/abort_message.o : cxx $as/abort_message.cpp
+build $ao/cxa_aux_runtime.o : cxx $as/cxa_aux_runtime.cpp
+build $ao/cxa_default_handlers.o : cxx $as/cxa_default_handlers.cpp
+build $ao/cxa_exception.o : cxx $as/cxa_exception.cpp
+build $ao/cxa_exception_storage.o : cxx $as/cxa_exception_storage.cpp
+build $ao/cxa_handlers.o : cxx $as/cxa_handlers.cpp
+build $ao/cxa_personality.o : cxx $as/cxa_personality.cpp
+build $ao/cxa_vector.o : cxx $as/cxa_vector.cpp
+build $ao/cxa_virtual.o : cxx $as/cxa_virtual.cpp
+build $ao/fallback_malloc.o : cxx $as/fallback_malloc.cpp
+build $ao/private_typeinfo.o : cxx $as/private_typeinfo.cpp
+build $ao/stdlib_exception.o : cxx $as/stdlib_exception.cpp
+build $ao/stdlib_stdexcept.o : cxx $as/stdlib_stdexcept.cpp
+build $ao/stdlib_typeinfo.o : cxx $as/stdlib_typeinfo.cpp
+build $ao/cxa_guard.o : cxx $as/cxa_guard.cpp
+build $ao/cxa_demangle.o : cxx $as/cxa_demangle.cpp
+build $ao/cxa_thread_atexit.o : cxx $as/cxa_thread_atexit.cpp
+
+build $o/d : phony $
+  $ao/abort_message.o $
+  $ao/cxa_aux_runtime.o $
+  $ao/cxa_default_handlers.o $
+  $ao/cxa_exception.o $
+  $ao/cxa_exception_storage.o $
+  $ao/cxa_handlers.o $
+  $ao/cxa_personality.o $
+  $ao/cxa_vector.o $
+  $ao/cxa_virtual.o $
+  $ao/fallback_malloc.o $
+  $ao/private_typeinfo.o $
+  $ao/stdlib_exception.o $
+  $ao/stdlib_stdexcept.o $
+  $ao/stdlib_typeinfo.o $
+  $ao/cxa_guard.o $
+  $ao/cxa_demangle.o $
+  $ao/cxa_thread_atexit.o
+
+ar_file = $ao/abort_message.o $
+  $ao/cxa_aux_runtime.o $
+  $ao/cxa_default_handlers.o $
+  $ao/cxa_exception.o $
+  $ao/cxa_exception_storage.o $
+  $ao/cxa_handlers.o $
+  $ao/cxa_personality.o $
+  $ao/cxa_vector.o $
+  $ao/cxa_virtual.o $
+  $ao/fallback_malloc.o $
+  $ao/private_typeinfo.o $
+  $ao/stdlib_exception.o $
+  $ao/stdlib_stdexcept.o $
+  $ao/stdlib_typeinfo.o $
+  $ao/cxa_guard.o $
+  $ao/cxa_demangle.o $
+  $ao/cxa_thread_atexit.o

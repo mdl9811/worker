@@ -1,0 +1,10 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+CFLAGS = $CFLAGS -D__SSE__ -D__SSE2__ $
+  -Wno-uninitialized -Wno-deprecated-declarations -Wno-absolute-value
+
+build $o/empty.o : cc build/amalgamation/empty.c
+
+build $o/d : phony $o/empty.o
+
+asm_objs = $o/empty.o

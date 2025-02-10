@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+build worker : phony $bin/worker${EXE}
+build workerd : phony $bin/workerd${EXE}
+build mdl : phony $bin/mdl${EXE}
+
+build test : phony $bin/test${EXE}
+build deamon_test : phony $bin/deamon_test${EXE}
+build api_work_process_test : phony $bin/api_work_process_test${EXE}
+build api_work_container_test : phony $bin/api_work_container_test${EXE}
+build api_work_config_parser_test : phony $bin/api_work_config_parser_test${EXE}
+build api_tcp_server_test : phony $bin/api_tcp_server_test${EXE}
+build api_url_requeset_test : phony $bin/api_url_requeset_test${EXE}

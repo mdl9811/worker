@@ -1,0 +1,88 @@
+#
+# Copyright (c) 2025 mdl. All rights reserved.
+#
+
+build $o/example/test.o : cxx $s/example/test.cc
+build $o/example/deamon_test.o : cxx $s/example/deamon_test.cc
+build $o/example/api_work_process_test.o : cxx $s/example/api_work_process_test.cc
+build $o/example/api_work_container_test.o : cxx $s/example/api_work_container_test.cc
+build $o/example/api_work_config_parser_test.o : cxx $s/example/api_work_config_parser_test.cc
+build $o/example/api_tcp_server_test.o : cxx $s/example/api_tcp_server_test.cc
+build $o/example/api_url_requeset_test.o : cxx $s/example/api_url_requeset_test.cc
+
+build $bin/test${EXE} : link $
+  $o/example/test.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib
+
+build $bin/api_tcp_server_test${EXE} : link $
+  $o/example/api_tcp_server_test.o $
+  $o/api/rtc/tcp_server.o $
+  $o/api/rtc/tcp_server_connection.o $
+  $o/api/rtc/connection.o $
+  $o/api/rtc/channel.o $
+  $o/api/rtc/io_buffer.o $
+  $o/api/rtc/http1_processor.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib
+
+build $bin/api_url_requeset_test${EXE} : link $
+  $o/example/api_url_requeset_test.o $
+  $o/api/rtc/io_buffer.o $
+  $o/api/rtc/http1_processor.o $
+  $o/api/rtc/cert_verifier.o $
+  $o/api/rtc/url_fetcher.o $
+  $o/api/rtc/url_request.o $
+  $o/api/rtc/ssl_config_service.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib
+
+build $bin/api_work_process_test${EXE} : link $
+  $o/example/api_work_process_test.o $
+  $o/api/worker/process.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+build $bin/api_work_container_test${EXE} : link $
+  $o/example/api_work_container_test.o $
+  $o/api/worker/process.o $
+  $o/api/worker/container.o $
+  $o/api/worker/file_string.o $
+  $o/api/gen/generate_container_id.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+build $bin/api_work_config_parser_test${EXE} : link $
+  $o/example/api_work_config_parser_test.o $
+  $o/api/worker/config_parser.o $
+  $o/api/worker/file_string.o $
+  $o/api/gen/generate_container_id.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+build $bin/deamon_test${EXE} : link $
+  $o/example/deamon_test.o $
+  $o/api/gen/generate_file.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap

@@ -1,0 +1,272 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s=third_party/protobuf
+o=$obj/protobuf
+
+CFLAGS = -I$s. -I$s/src -Wno-unused-function
+
+#lib
+build $o/src/google/protobuf/compiler/code_generator.o : cxx $s/src/google/protobuf/compiler/code_generator.cc
+build $o/src/google/protobuf/compiler/command_line_interface.o : cxx $s/src/google/protobuf/compiler/command_line_interface.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_doc_comment.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_doc_comment.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_enum.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_enum.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_enum_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_enum_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_field_base.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_field_base.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_generator.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_generator.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_helpers.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_helpers.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_map_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_map_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_message.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_message.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_message_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_message_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_primitive_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_primitive_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_reflection_class.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_reflection_class.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_repeated_enum_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_repeated_enum_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_repeated_message_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_repeated_message_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_source_generator_base.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_source_generator_base.cc
+build $o/src/google/protobuf/compiler/csharp/csharp_wrapper_field.o : cxx $s/src/google/protobuf/compiler/csharp/csharp_wrapper_field.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_enum.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_enum.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_enum_field.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_enum_field.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_extension.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_extension.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_field.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_field.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_file.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_file.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_generator.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_generator.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_helpers.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_helpers.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_map_field.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_map_field.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_message.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_message.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_message_field.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_message_field.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_oneof.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_oneof.cc
+build $o/src/google/protobuf/compiler/objectivec/objectivec_primitive_field.o : cxx $s/src/google/protobuf/compiler/objectivec/objectivec_primitive_field.cc
+build $o/src/google/protobuf/compiler/php/php_generator.o : cxx $s/src/google/protobuf/compiler/php/php_generator.cc
+build $o/src/google/protobuf/compiler/plugin.o : cxx $s/src/google/protobuf/compiler/plugin.cc
+build $o/src/google/protobuf/compiler/plugin.pb.o : cxx $s/src/google/protobuf/compiler/plugin.pb.cc
+build $o/src/google/protobuf/compiler/ruby/ruby_generator.o : cxx $s/src/google/protobuf/compiler/ruby/ruby_generator.cc
+build $o/src/google/protobuf/compiler/subprocess.o : cxx $s/src/google/protobuf/compiler/subprocess.cc
+build $o/src/google/protobuf/compiler/zip_writer.o : cxx $s/src/google/protobuf/compiler/zip_writer.cc
+
+
+#lite
+build $o/src/google/protobuf/any_lite.o : cxx $s/src/google/protobuf/any_lite.cc
+build $o/src/google/protobuf/arena.o : cxx $s/src/google/protobuf/arena.cc
+build $o/src/google/protobuf/arenastring.o : cxx $s/src/google/protobuf/arenastring.cc
+build $o/src/google/protobuf/arenaz_sampler.o : cxx $s/src/google/protobuf/arenaz_sampler.cc
+build $o/src/google/protobuf/extension_set.o : cxx $s/src/google/protobuf/extension_set.cc
+build $o/src/google/protobuf/generated_enum_util.o : cxx $s/src/google/protobuf/generated_enum_util.cc
+build $o/src/google/protobuf/generated_message_tctable_lite.o : cxx $s/src/google/protobuf/generated_message_tctable_lite.cc
+build $o/src/google/protobuf/generated_message_util.o : cxx $s/src/google/protobuf/generated_message_util.cc
+build $o/src/google/protobuf/implicit_weak_message.o : cxx $s/src/google/protobuf/implicit_weak_message.cc
+build $o/src/google/protobuf/inlined_string_field.o : cxx $s/src/google/protobuf/inlined_string_field.cc
+build $o/src/google/protobuf/io/coded_stream.o : cxx $s/src/google/protobuf/io/coded_stream.cc
+build $o/src/google/protobuf/io/io_win32.o : cxx $s/src/google/protobuf/io/io_win32.cc
+build $o/src/google/protobuf/io/strtod.o : cxx $s/src/google/protobuf/io/strtod.cc
+build $o/src/google/protobuf/io/zero_copy_stream.o : cxx $s/src/google/protobuf/io/zero_copy_stream.cc
+build $o/src/google/protobuf/io/zero_copy_stream_impl.o : cxx $s/src/google/protobuf/io/zero_copy_stream_impl.cc
+build $o/src/google/protobuf/io/zero_copy_stream_impl_lite.o : cxx $s/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
+build $o/src/google/protobuf/map.o : cxx $s/src/google/protobuf/map.cc
+build $o/src/google/protobuf/message_lite.o : cxx $s/src/google/protobuf/message_lite.cc
+build $o/src/google/protobuf/parse_context.o : cxx $s/src/google/protobuf/parse_context.cc
+build $o/src/google/protobuf/repeated_field.o : cxx $s/src/google/protobuf/repeated_field.cc
+build $o/src/google/protobuf/repeated_ptr_field.o : cxx $s/src/google/protobuf/repeated_ptr_field.cc
+build $o/src/google/protobuf/stubs/bytestream.o : cxx $s/src/google/protobuf/stubs/bytestream.cc
+build $o/src/google/protobuf/stubs/common.o : cxx $s/src/google/protobuf/stubs/common.cc
+build $o/src/google/protobuf/stubs/int128.o : cxx $s/src/google/protobuf/stubs/int128.cc
+build $o/src/google/protobuf/stubs/status.o : cxx $s/src/google/protobuf/stubs/status.cc
+build $o/src/google/protobuf/stubs/statusor.o : cxx $s/src/google/protobuf/stubs/statusor.cc
+build $o/src/google/protobuf/stubs/stringpiece.o : cxx $s/src/google/protobuf/stubs/stringpiece.cc
+build $o/src/google/protobuf/stubs/stringprintf.o : cxx $s/src/google/protobuf/stubs/stringprintf.cc
+build $o/src/google/protobuf/stubs/structurally_valid.o : cxx $s/src/google/protobuf/stubs/structurally_valid.cc
+build $o/src/google/protobuf/stubs/strutil.o : cxx $s/src/google/protobuf/stubs/strutil.cc
+build $o/src/google/protobuf/stubs/time.o : cxx $s/src/google/protobuf/stubs/time.cc
+build $o/src/google/protobuf/wire_format_lite.o : cxx $s/src/google/protobuf/wire_format_lite.cc
+
+
+#full
+build $o/src/google/protobuf/any.o : cxx $s/src/google/protobuf/any.cc
+build $o/src/google/protobuf/any.pb.o : cxx $s/src/google/protobuf/any.pb.cc
+build $o/src/google/protobuf/api.pb.o : cxx $s/src/google/protobuf/api.pb.cc
+build $o/src/google/protobuf/compiler/importer.o : cxx $s/src/google/protobuf/compiler/importer.cc
+build $o/src/google/protobuf/compiler/parser.o : cxx $s/src/google/protobuf/compiler/parser.cc
+build $o/src/google/protobuf/descriptor.o : cxx $s/src/google/protobuf/descriptor.cc
+build $o/src/google/protobuf/descriptor.pb.o : cxx $s/src/google/protobuf/descriptor.pb.cc
+build $o/src/google/protobuf/descriptor_database.o : cxx $s/src/google/protobuf/descriptor_database.cc
+build $o/src/google/protobuf/duration.pb.o : cxx $s/src/google/protobuf/duration.pb.cc
+build $o/src/google/protobuf/dynamic_message.o : cxx $s/src/google/protobuf/dynamic_message.cc
+build $o/src/google/protobuf/empty.pb.o : cxx $s/src/google/protobuf/empty.pb.cc
+build $o/src/google/protobuf/extension_set_heavy.o : cxx $s/src/google/protobuf/extension_set_heavy.cc
+build $o/src/google/protobuf/field_mask.pb.o : cxx $s/src/google/protobuf/field_mask.pb.cc
+build $o/src/google/protobuf/generated_message_bases.o : cxx $s/src/google/protobuf/generated_message_bases.cc
+build $o/src/google/protobuf/generated_message_reflection.o : cxx $s/src/google/protobuf/generated_message_reflection.cc
+build $o/src/google/protobuf/generated_message_tctable_full.o : cxx $s/src/google/protobuf/generated_message_tctable_full.cc
+build $o/src/google/protobuf/io/gzip_stream.o : cxx $s/src/google/protobuf/io/gzip_stream.cc
+build $o/src/google/protobuf/io/printer.o : cxx $s/src/google/protobuf/io/printer.cc
+build $o/src/google/protobuf/io/tokenizer.o : cxx $s/src/google/protobuf/io/tokenizer.cc
+build $o/src/google/protobuf/map_field.o : cxx $s/src/google/protobuf/map_field.cc
+build $o/src/google/protobuf/message.o : cxx $s/src/google/protobuf/message.cc
+build $o/src/google/protobuf/reflection_ops.o : cxx $s/src/google/protobuf/reflection_ops.cc
+build $o/src/google/protobuf/service.o : cxx $s/src/google/protobuf/service.cc
+build $o/src/google/protobuf/source_context.pb.o : cxx $s/src/google/protobuf/source_context.pb.cc
+build $o/src/google/protobuf/struct.pb.o : cxx $s/src/google/protobuf/struct.pb.cc
+build $o/src/google/protobuf/stubs/substitute.o : cxx $s/src/google/protobuf/stubs/substitute.cc
+build $o/src/google/protobuf/text_format.o : cxx $s/src/google/protobuf/text_format.cc
+build $o/src/google/protobuf/timestamp.pb.o : cxx $s/src/google/protobuf/timestamp.pb.cc
+build $o/src/google/protobuf/type.pb.o : cxx $s/src/google/protobuf/type.pb.cc
+build $o/src/google/protobuf/unknown_field_set.o : cxx $s/src/google/protobuf/unknown_field_set.cc
+build $o/src/google/protobuf/util/delimited_message_util.o : cxx $s/src/google/protobuf/util/delimited_message_util.cc
+build $o/src/google/protobuf/util/field_comparator.o : cxx $s/src/google/protobuf/util/field_comparator.cc
+build $o/src/google/protobuf/util/field_mask_util.o : cxx $s/src/google/protobuf/util/field_mask_util.cc
+build $o/src/google/protobuf/util/internal/datapiece.o : cxx $s/src/google/protobuf/util/internal/datapiece.cc
+build $o/src/google/protobuf/util/internal/default_value_objectwriter.o : cxx $s/src/google/protobuf/util/internal/default_value_objectwriter.cc
+build $o/src/google/protobuf/util/internal/error_listener.o : cxx $s/src/google/protobuf/util/internal/error_listener.cc
+build $o/src/google/protobuf/util/internal/field_mask_utility.o : cxx $s/src/google/protobuf/util/internal/field_mask_utility.cc
+build $o/src/google/protobuf/util/internal/json_escaping.o : cxx $s/src/google/protobuf/util/internal/json_escaping.cc
+build $o/src/google/protobuf/util/internal/json_objectwriter.o : cxx $s/src/google/protobuf/util/internal/json_objectwriter.cc
+build $o/src/google/protobuf/util/internal/json_stream_parser.o : cxx $s/src/google/protobuf/util/internal/json_stream_parser.cc
+build $o/src/google/protobuf/util/internal/object_writer.o : cxx $s/src/google/protobuf/util/internal/object_writer.cc
+build $o/src/google/protobuf/util/internal/proto_writer.o : cxx $s/src/google/protobuf/util/internal/proto_writer.cc
+build $o/src/google/protobuf/util/internal/protostream_objectsource.o : cxx $s/src/google/protobuf/util/internal/protostream_objectsource.cc
+build $o/src/google/protobuf/util/internal/protostream_objectwriter.o : cxx $s/src/google/protobuf/util/internal/protostream_objectwriter.cc
+build $o/src/google/protobuf/util/internal/type_info.o : cxx $s/src/google/protobuf/util/internal/type_info.cc
+build $o/src/google/protobuf/util/internal/utility.o : cxx $s/src/google/protobuf/util/internal/utility.cc
+build $o/src/google/protobuf/util/json_util.o : cxx $s/src/google/protobuf/util/json_util.cc
+build $o/src/google/protobuf/util/message_differencer.o : cxx $s/src/google/protobuf/util/message_differencer.cc
+build $o/src/google/protobuf/util/time_util.o : cxx $s/src/google/protobuf/util/time_util.cc
+build $o/src/google/protobuf/util/type_resolver_util.o : cxx $s/src/google/protobuf/util/type_resolver_util.cc
+build $o/src/google/protobuf/wire_format.o : cxx $s/src/google/protobuf/wire_format.cc
+build $o/src/google/protobuf/wrappers.pb.o : cxx $s/src/google/protobuf/wrappers.pb.cc
+
+
+#protoc exe
+build $o/src/google/protobuf/compiler/main.o : cxx $s/src/google/protobuf/compiler/main.cc
+
+build ${LIBPFX}protoc${LIB} : ar $
+  $o/src/google/protobuf/compiler/code_generator.o $
+  $o/src/google/protobuf/compiler/command_line_interface.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_doc_comment.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_enum.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_enum_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_field_base.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_generator.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_helpers.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_map_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_message.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_message_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_primitive_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_reflection_class.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_repeated_enum_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_repeated_message_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_repeated_primitive_field.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_source_generator_base.o $
+  $o/src/google/protobuf/compiler/csharp/csharp_wrapper_field.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_enum.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_enum_field.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_extension.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_field.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_file.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_generator.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_helpers.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_map_field.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_message.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_message_field.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_oneof.o $
+  $o/src/google/protobuf/compiler/objectivec/objectivec_primitive_field.o $
+  $o/src/google/protobuf/compiler/php/php_generator.o $
+  $o/src/google/protobuf/compiler/plugin.o $
+  $o/src/google/protobuf/compiler/plugin.pb.o $
+  $o/src/google/protobuf/compiler/ruby/ruby_generator.o $
+  $o/src/google/protobuf/compiler/subprocess.o $
+  $o/src/google/protobuf/compiler/zip_writer.o
+
+build ${LIBPFX}protobuf_lite${LIB} : ar $
+  $o/src/google/protobuf/any_lite.o $
+  $o/src/google/protobuf/arena.o $
+  $o/src/google/protobuf/arenastring.o $
+  $o/src/google/protobuf/arenaz_sampler.o $
+  $o/src/google/protobuf/extension_set.o $
+  $o/src/google/protobuf/generated_enum_util.o $
+  $o/src/google/protobuf/generated_message_tctable_lite.o $
+  $o/src/google/protobuf/generated_message_util.o $
+  $o/src/google/protobuf/implicit_weak_message.o $
+  $o/src/google/protobuf/inlined_string_field.o $
+  $o/src/google/protobuf/io/coded_stream.o $
+  $o/src/google/protobuf/io/io_win32.o $
+  $o/src/google/protobuf/io/strtod.o $
+  $o/src/google/protobuf/io/zero_copy_stream.o $
+  $o/src/google/protobuf/io/zero_copy_stream_impl.o $
+  $o/src/google/protobuf/io/zero_copy_stream_impl_lite.o $
+  $o/src/google/protobuf/map.o $
+  $o/src/google/protobuf/message_lite.o $
+  $o/src/google/protobuf/parse_context.o $
+  $o/src/google/protobuf/repeated_field.o $
+  $o/src/google/protobuf/repeated_ptr_field.o $
+  $o/src/google/protobuf/stubs/bytestream.o $
+  $o/src/google/protobuf/stubs/common.o $
+  $o/src/google/protobuf/stubs/int128.o $
+  $o/src/google/protobuf/stubs/status.o $
+  $o/src/google/protobuf/stubs/statusor.o $
+  $o/src/google/protobuf/stubs/stringpiece.o $
+  $o/src/google/protobuf/stubs/stringprintf.o $
+  $o/src/google/protobuf/stubs/structurally_valid.o $
+  $o/src/google/protobuf/stubs/strutil.o $
+  $o/src/google/protobuf/stubs/time.o $
+  $o/src/google/protobuf/wire_format_lite.o
+
+build ${LIBPFX}protobuf_full${LIB} : ar $
+  $o/src/google/protobuf/any.o $
+  $o/src/google/protobuf/any.pb.o $
+  $o/src/google/protobuf/api.pb.o $
+  $o/src/google/protobuf/compiler/importer.o $
+  $o/src/google/protobuf/compiler/parser.o $
+  $o/src/google/protobuf/descriptor.o $
+  $o/src/google/protobuf/descriptor.pb.o $
+  $o/src/google/protobuf/descriptor_database.o $
+  $o/src/google/protobuf/duration.pb.o $
+  $o/src/google/protobuf/dynamic_message.o $
+  $o/src/google/protobuf/empty.pb.o $
+  $o/src/google/protobuf/extension_set_heavy.o $
+  $o/src/google/protobuf/field_mask.pb.o $
+  $o/src/google/protobuf/generated_message_bases.o $
+  $o/src/google/protobuf/generated_message_reflection.o $
+  $o/src/google/protobuf/generated_message_tctable_full.o $
+  $o/src/google/protobuf/io/gzip_stream.o $
+  $o/src/google/protobuf/io/printer.o $
+  $o/src/google/protobuf/io/tokenizer.o $
+  $o/src/google/protobuf/map_field.o $
+  $o/src/google/protobuf/message.o $
+  $o/src/google/protobuf/reflection_ops.o $
+  $o/src/google/protobuf/service.o $
+  $o/src/google/protobuf/source_context.pb.o $
+  $o/src/google/protobuf/struct.pb.o $
+  $o/src/google/protobuf/stubs/substitute.o $
+  $o/src/google/protobuf/text_format.o $
+  $o/src/google/protobuf/timestamp.pb.o $
+  $o/src/google/protobuf/type.pb.o $
+  $o/src/google/protobuf/unknown_field_set.o $
+  $o/src/google/protobuf/util/delimited_message_util.o $
+  $o/src/google/protobuf/util/field_comparator.o $
+  $o/src/google/protobuf/util/field_mask_util.o $
+  $o/src/google/protobuf/util/internal/datapiece.o $
+  $o/src/google/protobuf/util/internal/default_value_objectwriter.o $
+  $o/src/google/protobuf/util/internal/error_listener.o $
+  $o/src/google/protobuf/util/internal/field_mask_utility.o $
+  $o/src/google/protobuf/util/internal/json_escaping.o $
+  $o/src/google/protobuf/util/internal/json_objectwriter.o $
+  $o/src/google/protobuf/util/internal/json_stream_parser.o $
+  $o/src/google/protobuf/util/internal/object_writer.o $
+  $o/src/google/protobuf/util/internal/proto_writer.o $
+  $o/src/google/protobuf/util/internal/protostream_objectsource.o $
+  $o/src/google/protobuf/util/internal/protostream_objectwriter.o $
+  $o/src/google/protobuf/util/internal/type_info.o $
+  $o/src/google/protobuf/util/internal/utility.o $
+  $o/src/google/protobuf/util/json_util.o $
+  $o/src/google/protobuf/util/message_differencer.o $
+  $o/src/google/protobuf/util/time_util.o $
+  $o/src/google/protobuf/util/type_resolver_util.o $
+  $o/src/google/protobuf/wire_format.o $
+  $o/src/google/protobuf/wrappers.pb.o
+
+build $o/protoc$EXE : link $
+  $o/src/google/protobuf/compiler/main.o $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_full$LIB ${LIBPFX}protobuf_lite$LIB $
+  ${LIBPFX}absl$LIB ${LIBPFX}c++$LIB
+

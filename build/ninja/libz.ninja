@@ -1,0 +1,77 @@
+#
+# Copyright (c) 2022 Welink. All rights reserved.
+#
+
+s = third_party/zlib
+o = $obj/zlib
+
+CFLAGS = $ZLIB_FLAGS $SIMD_FLAGS $CR_FLAGS -I. -I$s -DZLIB_IMPLEMENTATION $
+  -Wno-deprecated-non-prototype -Wno-macro-redefined -Wno-misleading-indentation $
+  -Wno-unused-function -Wno-unused-but-set-variable -Wno-microsoft-anon-tag
+
+build $o/libz.o : cc build/amalgamation/libz.c
+build $o/adler32.o : cc $s/adler32.c
+build $o/adler32_simd.o : cc $s/adler32_simd.c
+build $o/compress.o : cc $s/compress.c
+build $o/inffast_chunk.o : cc $s/contrib/optimizations/inffast_chunk.c
+build $o/inflate.o : cc $s/contrib/optimizations/inflate.c
+build $o/cpu_features.o : cc $s/cpu_features.c
+build $o/crc32.o : cc $s/crc32.c
+build $o/crc32_simd.o : cc $s/crc32_simd.c
+build $o/crc_folding.o : cc $s/crc_folding.c
+build $o/deflate.o : cc $s/deflate.c
+build $o/gzclose.o : cc $s/gzclose.c
+build $o/gzlib.o : cc $s/gzlib.c
+build $o/gzread.o : cc $s/gzread.c
+build $o/gzwrite.o : cc $s/gzwrite.c
+build $o/infback.o : cc $s/infback.c
+build $o/inffast.o : cc $s/inffast.c
+build $o/inftrees.o : cc $s/inftrees.c
+build $o/trees.o : cc $s/trees.c
+build $o/uncompr.o : cc $s/uncompr.c
+build $o/zutil.o : cc $s/zutil.c
+build $o/contrib/minizip/ioapi.o : cc $s/contrib/minizip/ioapi.c
+build $o/contrib/minizip/unzip.o : cc $s/contrib/minizip/unzip.c
+build $o/contrib/minizip/zip.o : cc $s/contrib/minizip/zip.c
+build $o/contrib/optimizations/inffast_chunk.o : cc $s/contrib/optimizations/inffast_chunk.c
+build $o/contrib/optimizations/inflate.o : cc $s/contrib/optimizations/inflate.c
+build $o/google/compression_utils_portable.o : cxx $s/google/compression_utils_portable.cc
+build $o/google/compression_utils.o : cxx $s/google/compression_utils.cc
+build $o/google/zip.o : cxx $s/google/zip.cc
+build $o/google/zip_internal.o : cxx $s/google/zip_internal.cc
+build $o/google/zip_reader.o : cxx $s/google/zip_reader.cc
+build $o/google/zip_writer.o : cxx $s/google/zip_writer.cc
+
+build ${LIBPFX}z${LIB} : ar $
+  $o/libz.o $
+  $o/adler32.o $
+  $o/adler32_simd.o $
+  $o/compress.o $
+  $o/inffast_chunk.o $
+  $o/inflate.o $
+  $o/cpu_features.o $
+  $o/crc32.o $
+  $o/crc32_simd.o $
+  $o/crc_folding.o $
+  $o/deflate.o $
+  $o/gzclose.o $
+  $o/gzlib.o $
+  $o/gzread.o $
+  $o/gzwrite.o $
+  $o/infback.o $
+  $o/inffast.o $
+  $o/inftrees.o $
+  $o/trees.o $
+  $o/uncompr.o $
+  $o/zutil.o $
+  $o/contrib/minizip/ioapi.o $
+  $o/contrib/minizip/unzip.o $
+  $o/contrib/minizip/zip.o $
+  $o/contrib/optimizations/inffast_chunk.o $
+  $o/contrib/optimizations/inflate.o $
+  $o/google/compression_utils_portable.o $
+  $o/google/compression_utils.o $
+  $o/google/zip.o $
+  $o/google/zip_internal.o $
+  $o/google/zip_reader.o $
+  $o/google/zip_writer.o

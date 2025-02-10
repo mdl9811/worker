@@ -1,0 +1,36 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+AR = "${LLVM}/bin/llvm-ar$EXE"
+CLANG = "${LLVM}/bin/clang$EXE"
+CLANGXX = "${LLVM}/bin/clang++$EXE"
+LIPO = "${LLVM}/bin/llvm-lipo$EXE"
+LLD = "${LLVM}/bin/ld.lld$EXE"
+LLD_LINK = "${LLVM}/bin/lld-link$EXE"
+LLD64 = "${LLVM}/bin/ld64.lld$EXE"
+ML = "${LLVM}/bin/llvm-ml$EXE"
+STRIP = "${LLVM}/bin/llvm-strip$EXE"
+WASM_LD = "${LLVM}/bin/wasm-ld$EXE"
+STRIP = "${LLVM}/bin/llvm-strip$EXE"
+
+CONF_CFLAGS = -DDYNAMIC_ANNOTATIONS_ENABLED=1 -D_LIBCPP_BUILDING_LIBRARY $
+  -DDCHECK_ALWAYS_ON=1 $
+  -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE $
+  -Ithird_party/libc++ -Ithird_party/libc++/src/include $
+  -Ithird_party/libc++abi/src/include -Ithird_party/abseil-cpp $
+  -Ithird_party/boringssl/src/include -Ithird_party/zlib $
+  -Ithird_party/icu/source/common -Ithird_party/icu/source/i18n $
+  -DU_STATIC_IMPLEMENTATION -D_LIBCPP_PSTL_BACKEND_SERIAL
+
+CR_FLAGS = -I. -Ithird_party/libcr -Ithird_party/libc++ $
+  -Ithird_party/libcr/base/allocator/partition_allocator/src $
+  -Ithird_party/libcr/base/allocator/partition_allocator/src/partition_alloc $
+  -Ithird_party/libc++/src/include -Ithird_party/icu/source/common $
+  -Ithird_party/abseil-cpp -Ithird_party/icu/source/i18n $
+  -Ithird_party/boringssl/src/include -DU_ICUDATAENTRY_IN_COMMON -DU_USING_ICU_NAMESPACE=0 $
+  -Ithird_party/abseil-cpp -Ibuild/config/chrome/gen $
+  -Ibuild/config/chrome/gen/base/allocator/partition_allocator/src $
+  -DU_STATIC_IMPLEMENTATION -D_LIBCPP_PSTL_BACKEND_SERIAL
+
+SIMD_FLAGS = -DINFLATE_CHUNK_SIMD_SSE2

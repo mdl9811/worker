@@ -1,0 +1,132 @@
+
+include build/ninja/cr/ui/$ARCH_FILE.ninja
+
+build $o/ui/base/class_property.o : cxx $s/ui/base/class_property.cc
+build $o/ui/base/device_form_factor_desktop.o : cxx $s/ui/base/device_form_factor_desktop.cc
+build $o/ui/base/dragdrop/drop_target_event.o : cxx $s/ui/base/dragdrop/drop_target_event.cc
+build $o/ui/base/dragdrop/os_exchange_data.o : cxx $s/ui/base/dragdrop/os_exchange_data.cc
+build $o/ui/base/dragdrop/os_exchange_data_provider_factory.o : cxx $s/ui/base/dragdrop/os_exchange_data_provider_factory.cc
+build $o/ui/base/ime/utf_offset.o : cxx $s/ui/base/ime/utf_offset.cc
+build $o/ui/base/interaction/element_identifier.o : cxx $s/ui/base/interaction/element_identifier.cc
+build $o/ui/base/interaction/element_tracker.o : cxx $s/ui/base/interaction/element_tracker.cc
+build $o/ui/base/interaction/framework_specific_implementation.o : cxx $s/ui/base/interaction/framework_specific_implementation.cc
+build $o/ui/base/interaction/interaction_sequence.o : cxx $s/ui/base/interaction/interaction_sequence.cc
+build $o/ui/base/l10n/formatter.o : cxx $s/ui/base/l10n/formatter.cc
+build $o/ui/base/l10n/l10n_font_util.o : cxx $s/ui/base/l10n/l10n_font_util.cc
+build $o/ui/base/l10n/l10n_util.o : cxx $s/ui/base/l10n/l10n_util.cc
+build $o/ui/base/l10n/time_format.o : cxx $s/ui/base/l10n/time_format.cc
+build $o/ui/base/layout.o : cxx $s/ui/base/layout.cc
+build $o/ui/base/models/button_menu_item_model.o : cxx $s/ui/base/models/button_menu_item_model.cc
+build $o/ui/base/models/combobox_model.o : cxx $s/ui/base/models/combobox_model.cc
+build $o/ui/base/models/dialog_model.o : cxx $s/ui/base/models/dialog_model.cc
+build $o/ui/base/models/dialog_model_field.o : cxx $s/ui/base/models/dialog_model_field.cc
+build $o/ui/base/models/dialog_model_menu_model_adapter.o : cxx $s/ui/base/models/dialog_model_menu_model_adapter.cc
+build $o/ui/base/models/image_model.o : cxx $s/ui/base/models/image_model.cc
+build $o/ui/base/models/list_selection_model.o : cxx $s/ui/base/models/list_selection_model.cc
+build $o/ui/base/models/menu_model.o : cxx $s/ui/base/models/menu_model.cc
+build $o/ui/base/models/simple_combobox_model.o : cxx $s/ui/base/models/simple_combobox_model.cc
+build $o/ui/base/models/simple_menu_model.o : cxx $s/ui/base/models/simple_menu_model.cc
+build $o/ui/base/models/table_model.o : cxx $s/ui/base/models/table_model.cc
+build $o/ui/base/models/tree_model.o : cxx $s/ui/base/models/tree_model.cc
+build $o/ui/base/nine_image_painter_factory.o : cxx $s/ui/base/nine_image_painter_factory.cc
+build $o/ui/base/page_transition_types.o : cxx $s/ui/base/page_transition_types.cc
+build $o/ui/base/pointer/touch_ui_controller.o : cxx $s/ui/base/pointer/touch_ui_controller.cc
+build $o/ui/base/resource/resource_bundle.o : cxx $s/ui/base/resource/resource_bundle.cc
+build $o/ui/base/resource/scoped_startup_resource_bundle.o : cxx $s/ui/base/resource/scoped_startup_resource_bundle.cc
+build $o/ui/base/scoped_visibility_tracker.o : cxx $s/ui/base/scoped_visibility_tracker.cc
+build $o/ui/base/template_expressions.o : cxx $s/ui/base/template_expressions.cc
+build $o/ui/base/theme_provider.o : cxx $s/ui/base/theme_provider.cc
+build $o/ui/base/ui_base_exports.o : cxx $s/ui/base/ui_base_exports.cc
+build $o/ui/base/ui_base_paths.o : cxx $s/ui/base/ui_base_paths.cc
+build $o/ui/base/ui_base_switches.o : cxx $s/ui/base/ui_base_switches.cc
+build $o/ui/base/ui_base_switches_util.o : cxx $s/ui/base/ui_base_switches_util.cc
+build $o/ui/base/view_prop.o : cxx $s/ui/base/view_prop.cc
+build $o/ui/base/webui/i18n_source_stream.o : cxx $s/ui/base/webui/i18n_source_stream.cc
+build $o/ui/base/webui/jstemplate_builder.o : cxx $s/ui/base/webui/jstemplate_builder.cc
+build $o/ui/base/webui/web_ui_util.o : cxx $s/ui/base/webui/web_ui_util.cc
+build $o/ui/base/window_open_disposition_utils.o : cxx $s/ui/base/window_open_disposition_utils.cc
+build $o/ui/base/user_activity/user_activity_detector.o : cxx $s/ui/base/user_activity/user_activity_detector.cc
+build $o/ui/base/accelerators/accelerator.o : cxx $s/ui/base/accelerators/accelerator.cc
+build $o/ui/base/accelerators/accelerator_manager.o : cxx $s/ui/base/accelerators/accelerator_manager.cc
+build $o/ui/base/accelerators/media_keys_listener.o : cxx $s/ui/base/accelerators/media_keys_listener.cc
+build $o/ui/base/accelerators/media_keys_util.o : cxx $s/ui/base/accelerators/media_keys_util.cc
+build $o/ui/base/accelerators/menu_label_accelerator_util.o : cxx $s/ui/base/accelerators/menu_label_accelerator_util.cc
+build $o/ui/base/base_window.o : cxx $s/ui/base/base_window.cc
+build $o/ui/base/pointer/pointer_device_util.o : cxx $s/ui/base/pointer/pointer_device_util.cc
+build $o/ui/base/text/bytes_formatting.o : cxx $s/ui/base/text/bytes_formatting.cc
+build $o/ui/base/themed_vector_icon.o : cxx $s/ui/base/themed_vector_icon.cc
+build $o/ui/base/menu_source_utils.o : cxx $s/ui/base/menu_source_utils.cc
+build $o/ui/base/accelerators/menu_label_accelerator_util_linux.o : cxx $s/ui/base/accelerators/menu_label_accelerator_util_linux.cc
+build $o/ui/base/linux/linux_desktop.o : cxx $s/ui/base/linux/linux_desktop.cc
+build $o/ui/base/pointer/pointer_device_linux.o : cxx $s/ui/base/pointer/pointer_device_linux.cc
+build $o/ui/base/accelerators/media_keys_listener_stub.o : cxx $s/ui/base/accelerators/media_keys_listener_stub.cc
+build $o/ui/base/resource/resource_bundle_auralinux.o : cxx $s/ui/base/resource/resource_bundle_auralinux.cc
+build $o/ui/base/glib/scoped_gsignal.o : cxx $s/ui/base/glib/scoped_gsignal.cc
+build $o/ui/base/dragdrop/os_exchange_data_provider_non_backed.o : cxx $s/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
+
+
+build ${LIBPFX}ui${LIB} : ar $
+  $o/ui/base/class_property.o $
+  $o/ui/base/device_form_factor_desktop.o $
+  $o/ui/base/dragdrop/drop_target_event.o $
+  $o/ui/base/dragdrop/os_exchange_data.o $
+  $o/ui/base/dragdrop/os_exchange_data_provider_factory.o $
+  $o/ui/base/ime/utf_offset.o $
+  $o/ui/base/interaction/element_identifier.o $
+  $o/ui/base/interaction/element_tracker.o $
+  $o/ui/base/interaction/framework_specific_implementation.o $
+  $o/ui/base/interaction/interaction_sequence.o $
+  $o/ui/base/l10n/formatter.o $
+  $o/ui/base/l10n/l10n_font_util.o $
+  $o/ui/base/l10n/l10n_util.o $
+  $o/ui/base/l10n/time_format.o $
+  $o/ui/base/layout.o $
+  $o/ui/base/models/button_menu_item_model.o $
+  $o/ui/base/models/combobox_model.o $
+  $o/ui/base/models/dialog_model.o $
+  $o/ui/base/models/dialog_model_field.o $
+  $o/ui/base/models/dialog_model_menu_model_adapter.o $
+  $o/ui/base/models/image_model.o $
+  $o/ui/base/models/list_selection_model.o $
+  $o/ui/base/models/menu_model.o $
+  $o/ui/base/models/simple_combobox_model.o $
+  $o/ui/base/models/simple_menu_model.o $
+  $o/ui/base/models/table_model.o $
+  $o/ui/base/models/tree_model.o $
+  $o/ui/base/nine_image_painter_factory.o $
+  $o/ui/base/page_transition_types.o $
+  $o/ui/base/pointer/touch_ui_controller.o $
+  $o/ui/base/resource/resource_bundle.o $
+  $o/ui/base/resource/scoped_startup_resource_bundle.o $
+  $o/ui/base/scoped_visibility_tracker.o $
+  $o/ui/base/template_expressions.o $
+  $o/ui/base/theme_provider.o $
+  $o/ui/base/ui_base_exports.o $
+  $o/ui/base/ui_base_paths.o $
+  $o/ui/base/ui_base_switches.o $
+  $o/ui/base/ui_base_switches_util.o $
+  $o/ui/base/view_prop.o $
+  $o/ui/base/webui/i18n_source_stream.o $
+  $o/ui/base/webui/jstemplate_builder.o $
+  $o/ui/base/webui/web_ui_util.o $
+  $o/ui/base/window_open_disposition_utils.o $
+  $o/ui/base/user_activity/user_activity_detector.o $
+  $o/ui/base/accelerators/accelerator.o $
+  $o/ui/base/accelerators/accelerator_manager.o $
+  $o/ui/base/accelerators/media_keys_listener.o $
+  $o/ui/base/accelerators/media_keys_util.o $
+  $o/ui/base/accelerators/menu_label_accelerator_util.o $
+  $o/ui/base/base_window.o $
+  $o/ui/base/pointer/pointer_device_util.o $
+  $o/ui/base/text/bytes_formatting.o $
+  $o/ui/base/themed_vector_icon.o $
+  $o/ui/base/menu_source_utils.o $
+  $o/ui/base/accelerators/menu_label_accelerator_util_linux.o $
+  $o/ui/base/linux/linux_desktop.o $
+  $o/ui/base/pointer/pointer_device_linux.o $
+  $o/ui/base/accelerators/media_keys_listener_stub.o $
+  $o/ui/base/resource/resource_bundle_auralinux.o $
+  $o/ui/base/glib/scoped_gsignal.o $
+  $o/ui/base/dragdrop/os_exchange_data_provider_non_backed.o
+
+build ui : phony ${LIBPFX}ui${LIB}

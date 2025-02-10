@@ -1,0 +1,47 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/BCRYPTO_ASM_D asm_objs
+
+sa = $s/linux-x86/crypto
+
+build $o/chacha/chacha-x86-linux.o : cc $sa/chacha/chacha-x86-linux.S
+build $o/fipsmodule/x86-mont-linux.o : cc $sa/fipsmodule/x86-mont-linux.S
+build $o/fipsmodule/ghash-ssse3-x86-linux.o : cc $sa/fipsmodule/ghash-ssse3-x86-linux.S
+build $o/fipsmodule/bn-586-linux.o : cc $sa/fipsmodule/bn-586-linux.S
+build $o/fipsmodule/sha256-586-linux.o : cc $sa/fipsmodule/sha256-586-linux.S
+build $o/fipsmodule/ghash-x86-linux.o : cc $sa/fipsmodule/ghash-x86-linux.S
+build $o/fipsmodule/co-586-linux.o : cc $sa/fipsmodule/co-586-linux.S
+build $o/fipsmodule/aesni-x86-linux.o : cc $sa/fipsmodule/aesni-x86-linux.S
+build $o/fipsmodule/vpaes-x86-linux.o : cc $sa/fipsmodule/vpaes-x86-linux.S
+build $o/fipsmodule/sha512-586-linux.o : cc $sa/fipsmodule/sha512-586-linux.S
+build $o/fipsmodule/sha1-586-linux.o : cc $sa/fipsmodule/sha1-586-linux.S
+build $o/fipsmodule/md5-586-linux.o : cc $sa/fipsmodule/md5-586-linux.S
+
+build $o/d : phony $
+  $o/chacha/chacha-x86-linux.o $
+  $o/fipsmodule/x86-mont-linux.o $
+  $o/fipsmodule/ghash-ssse3-x86-linux.o $
+  $o/fipsmodule/bn-586-linux.o $
+  $o/fipsmodule/sha256-586-linux.o $
+  $o/fipsmodule/ghash-x86-linux.o $
+  $o/fipsmodule/co-586-linux.o $
+  $o/fipsmodule/aesni-x86-linux.o $
+  $o/fipsmodule/vpaes-x86-linux.o $
+  $o/fipsmodule/sha512-586-linux.o $
+  $o/fipsmodule/sha1-586-linux.o $
+  $o/fipsmodule/md5-586-linux.o
+
+asm_objs = $
+  $o/chacha/chacha-x86-linux.o $
+  $o/fipsmodule/x86-mont-linux.o $
+  $o/fipsmodule/ghash-ssse3-x86-linux.o $
+  $o/fipsmodule/bn-586-linux.o $
+  $o/fipsmodule/sha256-586-linux.o $
+  $o/fipsmodule/ghash-x86-linux.o $
+  $o/fipsmodule/co-586-linux.o $
+  $o/fipsmodule/aesni-x86-linux.o $
+  $o/fipsmodule/vpaes-x86-linux.o $
+  $o/fipsmodule/sha512-586-linux.o $
+  $o/fipsmodule/sha1-586-linux.o $
+  $o/fipsmodule/md5-586-linux.o

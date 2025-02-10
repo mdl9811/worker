@@ -1,0 +1,11 @@
+# Copyright (c) 2023 mdl. All rights reserved.
+
+rt = third_party/compiler-rt
+
+build $o/lib/builtins/os_version_check.o : cc $rt/lib/builtins/os_version_check.c
+
+build $o/d : phony $
+  $o/lib/builtins/os_version_check.o
+
+obj_files = $
+  $o/lib/builtins/os_version_check.o

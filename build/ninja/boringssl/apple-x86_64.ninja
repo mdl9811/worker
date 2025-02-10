@@ -1,0 +1,77 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/d asm_objs
+
+sa = $s/apple-x86_64/crypto
+
+build $o/cipher_extra/chacha20_poly1305_x86_64-apple.o : cc $sa/cipher_extra/chacha20_poly1305_x86_64-apple.S
+build $o/cipher_extra/aes128gcmsiv-x86_64-apple.o : cc $sa/cipher_extra/aes128gcmsiv-x86_64-apple.S
+build $o/chacha/chacha-x86_64-apple.o : cc $sa/chacha/chacha-x86_64-apple.S
+build $o/fipsmodule/x86_64-mont5-apple.o : cc $sa/fipsmodule/x86_64-mont5-apple.S
+build $o/fipsmodule/sha256-x86_64-apple.o : cc $sa/fipsmodule/sha256-x86_64-apple.S
+build $o/fipsmodule/vpaes-x86_64-apple.o : cc $sa/fipsmodule/vpaes-x86_64-apple.S
+build $o/fipsmodule/sha512-x86_64-apple.o : cc $sa/fipsmodule/sha512-x86_64-apple.S
+build $o/fipsmodule/md5-x86_64-apple.o : cc $sa/fipsmodule/md5-x86_64-apple.S
+build $o/fipsmodule/aesni-x86_64-apple.o : cc $sa/fipsmodule/aesni-x86_64-apple.S
+build $o/fipsmodule/rdrand-x86_64-apple.o : cc $sa/fipsmodule/rdrand-x86_64-apple.S
+build $o/fipsmodule/p256_beeu-x86_64-asm-apple.o : cc $sa/fipsmodule/p256_beeu-x86_64-asm-apple.S
+build $o/fipsmodule/aesni-gcm-x86_64-apple.o : cc $sa/fipsmodule/aesni-gcm-x86_64-apple.S
+build $o/fipsmodule/sha1-x86_64-apple.o : cc $sa/fipsmodule/sha1-x86_64-apple.S
+build $o/fipsmodule/rsaz-avx2-apple.o : cc $sa/fipsmodule/rsaz-avx2-apple.S
+build $o/fipsmodule/x86_64-mont-apple.o : cc $sa/fipsmodule/x86_64-mont-apple.S
+build $o/fipsmodule/p256-x86_64-asm-apple.o : cc $sa/fipsmodule/p256-x86_64-asm-apple.S
+build $o/fipsmodule/ghash-x86_64-apple.o : cc $sa/fipsmodule/ghash-x86_64-apple.S
+build $o/fipsmodule/ghash-ssse3-x86_64-apple.o : cc $sa/fipsmodule/ghash-ssse3-x86_64-apple.S
+build $o/fiat/asm/fiat_curve25519_adx_mul.o : cc $s/src/third_party/fiat/asm/fiat_curve25519_adx_mul.S
+build $o/fiat/asm/fiat_curve25519_adx_square.o : cc $s/src/third_party/fiat/asm/fiat_curve25519_adx_square.S
+build $o/fiat/asm/fiat_p256_adx_mul.o : cc $s/src/third_party/fiat/asm/fiat_p256_adx_mul.S
+build $o/fiat/asm/fiat_p256_adx_sqr.o : cc $s/src/third_party/fiat/asm/fiat_p256_adx_sqr.S
+
+build $o/d : phony $
+  $o/cipher_extra/chacha20_poly1305_x86_64-apple.o $
+  $o/cipher_extra/aes128gcmsiv-x86_64-apple.o $
+  $o/chacha/chacha-x86_64-apple.o $
+  $o/fipsmodule/x86_64-mont5-apple.o $
+  $o/fipsmodule/sha256-x86_64-apple.o $
+  $o/fipsmodule/vpaes-x86_64-apple.o $
+  $o/fipsmodule/sha512-x86_64-apple.o $
+  $o/fipsmodule/md5-x86_64-apple.o $
+  $o/fipsmodule/aesni-x86_64-apple.o $
+  $o/fipsmodule/rdrand-x86_64-apple.o $
+  $o/fipsmodule/p256_beeu-x86_64-asm-apple.o $
+  $o/fipsmodule/aesni-gcm-x86_64-apple.o $
+  $o/fipsmodule/sha1-x86_64-apple.o $
+  $o/fipsmodule/rsaz-avx2-apple.o $
+  $o/fipsmodule/x86_64-mont-apple.o $
+  $o/fipsmodule/p256-x86_64-asm-apple.o $
+  $o/fipsmodule/ghash-x86_64-apple.o $
+  $o/fipsmodule/ghash-ssse3-x86_64-apple.o $
+  $o/fiat/asm/fiat_curve25519_adx_mul.o $
+  $o/fiat/asm/fiat_curve25519_adx_square.o $
+  $o/fiat/asm/fiat_p256_adx_mul.o $
+  $o/fiat/asm/fiat_p256_adx_sqr.o
+
+asm_objs = $
+  $o/cipher_extra/chacha20_poly1305_x86_64-apple.o $
+  $o/cipher_extra/aes128gcmsiv-x86_64-apple.o $
+  $o/chacha/chacha-x86_64-apple.o $
+  $o/fipsmodule/x86_64-mont5-apple.o $
+  $o/fipsmodule/sha256-x86_64-apple.o $
+  $o/fipsmodule/vpaes-x86_64-apple.o $
+  $o/fipsmodule/sha512-x86_64-apple.o $
+  $o/fipsmodule/md5-x86_64-apple.o $
+  $o/fipsmodule/aesni-x86_64-apple.o $
+  $o/fipsmodule/rdrand-x86_64-apple.o $
+  $o/fipsmodule/p256_beeu-x86_64-asm-apple.o $
+  $o/fipsmodule/aesni-gcm-x86_64-apple.o $
+  $o/fipsmodule/sha1-x86_64-apple.o $
+  $o/fipsmodule/rsaz-avx2-apple.o $
+  $o/fipsmodule/x86_64-mont-apple.o $
+  $o/fipsmodule/p256-x86_64-asm-apple.o $
+  $o/fipsmodule/ghash-x86_64-apple.o $
+  $o/fipsmodule/ghash-ssse3-x86_64-apple.o $
+  $o/fiat/asm/fiat_curve25519_adx_mul.o $
+  $o/fiat/asm/fiat_curve25519_adx_square.o $
+  $o/fiat/asm/fiat_p256_adx_mul.o $
+  $o/fiat/asm/fiat_p256_adx_sqr.o

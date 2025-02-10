@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+subninja build/ninja/libcr.ninja
+subninja build/ninja/libabsl.ninja
+subninja build/ninja/libboringssl.ninja
+subninja build/ninja/nasm.ninja
+subninja build/ninja/libc++.ninja
+subninja build/ninja/libz.ninja
+subninja build/ninja/libevent.ninja
+subninja build/ninja/protobuf.ninja
+subninja build/ninja/libzstd.ninja
+subninja build/ninja/libicu.ninja

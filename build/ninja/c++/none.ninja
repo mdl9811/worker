@@ -1,0 +1,7 @@
+# Copyright (c) 2023 mdl. All rights reserved.
+
+build $o/empty.o : cc build/amalgamation/empty.c
+
+build $o/d : phony $o/empty.o
+
+obj_files = $o/empty.o

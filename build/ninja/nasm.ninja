@@ -1,0 +1,181 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s = third_party/nasm
+o = $obj/nasm
+
+CFLAGS = -Ithird_party/nasm -Ithird_party/nasm/asm -Ithird_party/nasm/disasm $
+  -Ithird_party/nasm/include -Ithird_party/nasm/output -Ithird_party/nasm/x86 $
+  -Wno-deprecated-declarations -Wno-unused-function -Wno-unused-but-set-variable $
+  -DHAVE_CONFIG_H -Wno-macro-redefined
+
+build $o/assemble.o : cc $s/asm/assemble.c
+build $o/directbl.o : cc $s/asm/directbl.c
+build $o/directiv.o : cc $s/asm/directiv.c
+build $o/error.o : cc $s/asm/error.c
+build $o/eval.o : cc $s/asm/eval.c
+build $o/exprdump.o : cc $s/asm/exprdump.c
+build $o/exprlib.o : cc $s/asm/exprlib.c
+build $o/floats.o : cc $s/asm/floats.c
+build $o/labels.o : cc $s/asm/labels.c
+build $o/listing.o : cc $s/asm/listing.c
+build $o/nasm.o : cc $s/asm/nasm.c
+build $o/parser.o : cc $s/asm/parser.c
+build $o/pptok.o : cc $s/asm/pptok.c
+build $o/pragma.o : cc $s/asm/pragma.c
+build $o/preproc-nop.o : cc $s/asm/preproc-nop.c
+build $o/preproc.o : cc $s/asm/preproc.c
+build $o/quote.o : cc $s/asm/quote.c
+build $o/rdstrnum.o : cc $s/asm/rdstrnum.c
+build $o/segalloc.o : cc $s/asm/segalloc.c
+build $o/srcfile.o : cc $s/asm/srcfile.c
+build $o/stdscan.o : cc $s/asm/stdscan.c
+build $o/strfunc.o : cc $s/asm/strfunc.c
+build $o/tokhash.o : cc $s/asm/tokhash.c
+build $o/warnings.o : cc $s/asm/warnings.c
+build $o/common.o : cc $s/common/common.c
+build $o/disasm.o : cc $s/disasm/disasm.c
+build $o/sync.o : cc $s/disasm/sync.c
+build $o/macros.o : cc $s/macros/macros.c
+build $o/alloc.o : cc $s/nasmlib/alloc.c
+build $o/asprintf.o : cc $s/nasmlib/asprintf.c
+build $o/badenum.o : cc $s/nasmlib/badenum.c
+build $o/bsi.o : cc $s/nasmlib/bsi.c
+build $o/crc64.o : cc $s/nasmlib/crc64.c
+build $o/file.o : cc $s/nasmlib/file.c
+build $o/filename.o : cc $s/nasmlib/filename.c
+build $o/hashtbl.o : cc $s/nasmlib/hashtbl.c
+build $o/ilog2.o : cc $s/nasmlib/ilog2.c
+build $o/md5c.o : cc $s/nasmlib/md5c.c
+build $o/mmap.o : cc $s/nasmlib/mmap.c
+build $o/nctype.o : cc $s/nasmlib/nctype.c
+build $o/path.o : cc $s/nasmlib/path.c
+build $o/perfhash.o : cc $s/nasmlib/perfhash.c
+build $o/raa.o : cc $s/nasmlib/raa.c
+build $o/rbtree.o : cc $s/nasmlib/rbtree.c
+build $o/readnum.o : cc $s/nasmlib/readnum.c
+build $o/realpath.o : cc $s/nasmlib/realpath.c
+build $o/rlimit.o : cc $s/nasmlib/rlimit.c
+build $o/saa.o : cc $s/nasmlib/saa.c
+build $o/string.o : cc $s/nasmlib/string.c
+build $o/strlist.o : cc $s/nasmlib/strlist.c
+build $o/ver.o : cc $s/nasmlib/ver.c
+build $o/zerobuf.o : cc $s/nasmlib/zerobuf.c
+build $o/codeview.o : cc $s/output/codeview.c
+build $o/legacy.o : cc $s/output/legacy.c
+build $o/nulldbg.o : cc $s/output/nulldbg.c
+build $o/nullout.o : cc $s/output/nullout.c
+build $o/outaout.o : cc $s/output/outaout.c
+build $o/outas86.o : cc $s/output/outas86.c
+build $o/outbin.o : cc $s/output/outbin.c
+build $o/outcoff.o : cc $s/output/outcoff.c
+build $o/outdbg.o : cc $s/output/outdbg.c
+build $o/outelf.o : cc $s/output/outelf.c
+build $o/outform.o : cc $s/output/outform.c
+build $o/outieee.o : cc $s/output/outieee.c
+build $o/outlib.o : cc $s/output/outlib.c
+build $o/outmacho.o : cc $s/output/outmacho.c
+build $o/outobj.o : cc $s/output/outobj.c
+build $o/outrdf2.o : cc $s/output/outrdf2.c
+build $o/snprintf.o : cc $s/stdlib/snprintf.c
+build $o/strlcpy.o : cc $s/stdlib/strlcpy.c
+build $o/strnlen.o : cc $s/stdlib/strnlen.c
+build $o/strrchrnul.o : cc $s/stdlib/strrchrnul.c
+build $o/vsnprintf.o : cc $s/stdlib/vsnprintf.c
+build $o/disp8.o : cc $s/x86/disp8.c
+build $o/iflag.o : cc $s/x86/iflag.c
+build $o/insnsa.o : cc $s/x86/insnsa.c
+build $o/insnsb.o : cc $s/x86/insnsb.c
+build $o/insnsd.o : cc $s/x86/insnsd.c
+build $o/insnsn.o : cc $s/x86/insnsn.c
+build $o/regdis.o : cc $s/x86/regdis.c
+build $o/regflags.o : cc $s/x86/regflags.c
+build $o/regs.o : cc $s/x86/regs.c
+build $o/regvals.o : cc $s/x86/regvals.c
+
+build $o/nasm$EXE : link $
+  $o/assemble.o $
+  $o/directbl.o $
+  $o/directiv.o $
+  $o/error.o $
+  $o/eval.o $
+  $o/exprdump.o $
+  $o/exprlib.o $
+  $o/floats.o $
+  $o/labels.o $
+  $o/listing.o $
+  $o/nasm.o $
+  $o/parser.o $
+  $o/pptok.o $
+  $o/pragma.o $
+  $o/preproc-nop.o $
+  $o/preproc.o $
+  $o/quote.o $
+  $o/rdstrnum.o $
+  $o/segalloc.o $
+  $o/srcfile.o $
+  $o/stdscan.o $
+  $o/strfunc.o $
+  $o/tokhash.o $
+  $o/warnings.o $
+  $o/common.o $
+  $o/disasm.o $
+  $o/sync.o $
+  $o/macros.o $
+  $o/alloc.o $
+  $o/asprintf.o $
+  $o/badenum.o $
+  $o/bsi.o $
+  $o/crc64.o $
+  $o/file.o $
+  $o/filename.o $
+  $o/hashtbl.o $
+  $o/ilog2.o $
+  $o/md5c.o $
+  $o/mmap.o $
+  $o/nctype.o $
+  $o/path.o $
+  $o/perfhash.o $
+  $o/raa.o $
+  $o/rbtree.o $
+  $o/readnum.o $
+  $o/realpath.o $
+  $o/rlimit.o $
+  $o/saa.o $
+  $o/string.o $
+  $o/strlist.o $
+  $o/ver.o $
+  $o/zerobuf.o $
+  $o/codeview.o $
+  $o/legacy.o $
+  $o/nulldbg.o $
+  $o/nullout.o $
+  $o/outaout.o $
+  $o/outas86.o $
+  $o/outbin.o $
+  $o/outcoff.o $
+  $o/outdbg.o $
+  $o/outelf.o $
+  $o/outform.o $
+  $o/outieee.o $
+  $o/outlib.o $
+  $o/outmacho.o $
+  $o/outobj.o $
+  $o/outrdf2.o $
+  $o/snprintf.o $
+  $o/strlcpy.o $
+  $o/strnlen.o $
+  $o/strrchrnul.o $
+  $o/vsnprintf.o $
+  $o/disp8.o $
+  $o/iflag.o $
+  $o/insnsa.o $
+  $o/insnsb.o $
+  $o/insnsd.o $
+  $o/insnsn.o $
+  $o/regdis.o $
+  $o/regflags.o $
+  $o/regs.o $
+  $o/regvals.o
+  ldflags = $DEPENDS_LIB

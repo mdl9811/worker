@@ -1,0 +1,28 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s=third_party/libevent
+o = $obj/libevent
+
+CFLAGS = -I$s $CR_FLAGS -I$s/$ARCH_LINEVENT $
+  -Wno-implicit-function-declaration -Wno-int-conversion -DHAVE_CONFIG_H
+
+build $o/event.o : cc $s/event.c
+build $o/evutil.o : cc $s/evutil.c
+build $o/log.o : cc $s/log.c
+build $o/poll.o : cc $s/poll.c
+build $o/select.o : cc $s/select.c
+build $o/signal.o : cc $s/signal.c
+build $o/strlcpy.o : cc $s/strlcpy.c
+build $o/epoll.o : cc $s/epoll.c
+
+build ${LIBPFX}event${LIB} : ar $
+  $o/event.o $
+  $o/evutil.o $
+  $o/log.o $
+  $o/poll.o $
+  $o/select.o $
+  $o/signal.o $
+  $o/strlcpy.o $
+  $o/epoll.o

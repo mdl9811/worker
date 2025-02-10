@@ -1,0 +1,301 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s = third_party/abseil-cpp/absl
+o = $obj/abseil-cpp
+
+CFLAGS = -Ithird_party/abseil-cpp -Wno-macro-redefined -Wno-extern-initializer
+
+build $o/base/internal/cycleclock.o : cxx $s/base/internal/cycleclock.cc
+build $o/base/internal/low_level_alloc.o : cxx $s/base/internal/low_level_alloc.cc
+build $o/base/internal/raw_logging.o : cxx $s/base/internal/raw_logging.cc
+build $o/base/internal/spinlock.o : cxx $s/base/internal/spinlock.cc
+build $o/base/internal/spinlock_wait.o : cxx $s/base/internal/spinlock_wait.cc
+build $o/base/internal/strerror.o : cxx $s/base/internal/strerror.cc
+build $o/base/internal/sysinfo.o : cxx $s/base/internal/sysinfo.cc
+build $o/base/internal/thread_identity.o : cxx $s/base/internal/thread_identity.cc
+build $o/base/internal/throw_delegate.o : cxx $s/base/internal/throw_delegate.cc
+build $o/base/internal/unscaledcycleclock.o : cxx $s/base/internal/unscaledcycleclock.cc
+build $o/base/log_severity.o : cxx $s/base/log_severity.cc
+build $o/container/internal/hashtablez_sampler.o : cxx $s/container/internal/hashtablez_sampler.cc
+build $o/container/internal/hashtablez_sampler_force_weak_definition.o : cxx $s/container/internal/hashtablez_sampler_force_weak_definition.cc
+build $o/container/internal/raw_hash_set.o : cxx $s/container/internal/raw_hash_set.cc
+build $o/crc/crc32c.o : cxx $s/crc/crc32c.cc
+build $o/crc/internal/cpu_detect.o : cxx $s/crc/internal/cpu_detect.cc
+build $o/crc/internal/crc.o : cxx $s/crc/internal/crc.cc
+build $o/crc/internal/crc_cord_state.o : cxx $s/crc/internal/crc_cord_state.cc
+build $o/crc/internal/crc_memcpy_fallback.o : cxx $s/crc/internal/crc_memcpy_fallback.cc
+build $o/crc/internal/crc_memcpy_x86_arm_combined.o : cxx $s/crc/internal/crc_memcpy_x86_arm_combined.cc
+build $o/crc/internal/crc_non_temporal_memcpy.o : cxx $s/crc/internal/crc_non_temporal_memcpy.cc
+build $o/crc/internal/crc_x86_arm_combined.o : cxx $s/crc/internal/crc_x86_arm_combined.cc
+build $o/debugging/failure_signal_handler.o : cxx $s/debugging/failure_signal_handler.cc
+build $o/debugging/internal/address_is_readable.o : cxx $s/debugging/internal/address_is_readable.cc
+build $o/debugging/internal/decode_rust_punycode.o : cxx $s/debugging/internal/decode_rust_punycode.cc
+build $o/debugging/internal/utf8_for_code_point.o : cxx $s/debugging/internal/utf8_for_code_point.cc
+build $o/debugging/internal/demangle_rust.o : cxx $s/debugging/internal/demangle_rust.cc
+build $o/debugging/internal/demangle.o : cxx $s/debugging/internal/demangle.cc
+build $o/debugging/internal/elf_mem_image.o : cxx $s/debugging/internal/elf_mem_image.cc
+build $o/debugging/internal/examine_stack.o : cxx $s/debugging/internal/examine_stack.cc
+build $o/debugging/internal/vdso_support.o : cxx $s/debugging/internal/vdso_support.cc
+build $o/debugging/stacktrace.o : cxx $s/debugging/stacktrace.cc
+build $o/debugging/symbolize.o : cxx $s/debugging/symbolize.cc
+build $o/flags/commandlineflag.o : cxx $s/flags/commandlineflag.cc
+build $o/flags/internal/commandlineflag.o : cxx $s/flags/internal/commandlineflag.cc
+build $o/flags/internal/flag.o : cxx $s/flags/internal/flag.cc
+build $o/flags/internal/private_handle_accessor.o : cxx $s/flags/internal/private_handle_accessor.cc
+build $o/flags/internal/program_name.o : cxx $s/flags/internal/program_name.cc
+build $o/flags/internal/usage.o : cxx $s/flags/internal/usage.cc
+build $o/flags/marshalling.o : cxx $s/flags/marshalling.cc
+build $o/flags/parse.o : cxx $s/flags/parse.cc
+build $o/flags/reflection.o : cxx $s/flags/reflection.cc
+build $o/flags/usage.o : cxx $s/flags/usage.cc
+build $o/flags/usage_config.o : cxx $s/flags/usage_config.cc
+build $o/hash/internal/city.o : cxx $s/hash/internal/city.cc
+build $o/hash/internal/hash.o : cxx $s/hash/internal/hash.cc
+build $o/hash/internal/low_level_hash.o : cxx $s/hash/internal/low_level_hash.cc
+build $o/log/die_if_null.o : cxx $s/log/die_if_null.cc
+build $o/log/flags.o : cxx $s/log/flags.cc
+build $o/log/globals.o : cxx $s/log/globals.cc
+build $o/log/initialize.o : cxx $s/log/initialize.cc
+build $o/log/internal/check_op.o : cxx $s/log/internal/check_op.cc
+build $o/log/internal/conditions.o : cxx $s/log/internal/conditions.cc
+build $o/log/internal/globals.o : cxx $s/log/internal/globals.cc
+build $o/log/internal/log_format.o : cxx $s/log/internal/log_format.cc
+build $o/log/internal/log_message.o : cxx $s/log/internal/log_message.cc
+build $o/log/internal/log_sink_set.o : cxx $s/log/internal/log_sink_set.cc
+build $o/log/internal/nullguard.o : cxx $s/log/internal/nullguard.cc
+build $o/log/internal/proto.o : cxx $s/log/internal/proto.cc
+build $o/log/log_entry.o : cxx $s/log/log_entry.cc
+build $o/log/log_sink.o : cxx $s/log/log_sink.cc
+build $o/numeric/int128.o : cxx $s/numeric/int128.cc
+build $o/profiling/internal/exponential_biased.o : cxx $s/profiling/internal/exponential_biased.cc
+build $o/random/discrete_distribution.o : cxx $s/random/discrete_distribution.cc
+build $o/random/gaussian_distribution.o : cxx $s/random/gaussian_distribution.cc
+build $o/random/internal/pool_urbg.o : cxx $s/random/internal/pool_urbg.cc
+build $o/random/internal/randen.o : cxx $s/random/internal/randen.cc
+build $o/random/internal/randen_detect.o : cxx $s/random/internal/randen_detect.cc
+build $o/random/internal/randen_hwaes.o : cxx $s/random/internal/randen_hwaes.cc
+build $o/random/internal/randen_round_keys.o : cxx $s/random/internal/randen_round_keys.cc
+build $o/random/internal/randen_slow.o : cxx $s/random/internal/randen_slow.cc
+build $o/random/internal/seed_material.o : cxx $s/random/internal/seed_material.cc
+build $o/random/seed_gen_exception.o : cxx $s/random/seed_gen_exception.cc
+build $o/random/seed_sequences.o : cxx $s/random/seed_sequences.cc
+build $o/status/internal/status_internal.o : cxx $s/status/internal/status_internal.cc
+build $o/status/status.o : cxx $s/status/status.cc
+build $o/status/statusor.o : cxx $s/status/statusor.cc
+build $o/status/status_payload_printer.o : cxx $s/status/status_payload_printer.cc
+build $o/strings/ascii.o : cxx $s/strings/ascii.cc
+build $o/strings/charconv.o : cxx $s/strings/charconv.cc
+build $o/strings/cord.o : cxx $s/strings/cord.cc
+build $o/strings/cord_analysis.o : cxx $s/strings/cord_analysis.cc
+build $o/strings/cord_buffer.o : cxx $s/strings/cord_buffer.cc
+build $o/strings/escaping.o : cxx $s/strings/escaping.cc
+build $o/strings/internal/charconv_bigint.o : cxx $s/strings/internal/charconv_bigint.cc
+build $o/strings/internal/charconv_parse.o : cxx $s/strings/internal/charconv_parse.cc
+build $o/strings/internal/cordz_functions.o : cxx $s/strings/internal/cordz_functions.cc
+build $o/strings/internal/cordz_handle.o : cxx $s/strings/internal/cordz_handle.cc
+build $o/strings/internal/cordz_info.o : cxx $s/strings/internal/cordz_info.cc
+build $o/strings/internal/cordz_sample_token.o : cxx $s/strings/internal/cordz_sample_token.cc
+build $o/strings/internal/cord_internal.o : cxx $s/strings/internal/cord_internal.cc
+build $o/strings/internal/cord_rep_btree.o : cxx $s/strings/internal/cord_rep_btree.cc
+build $o/strings/internal/cord_rep_btree_navigator.o : cxx $s/strings/internal/cord_rep_btree_navigator.cc
+build $o/strings/internal/cord_rep_btree_reader.o : cxx $s/strings/internal/cord_rep_btree_reader.cc
+build $o/strings/internal/cord_rep_consume.o : cxx $s/strings/internal/cord_rep_consume.cc
+build $o/strings/internal/cord_rep_crc.o : cxx $s/strings/internal/cord_rep_crc.cc
+build $o/strings/internal/escaping.o : cxx $s/strings/internal/escaping.cc
+build $o/strings/internal/memutil.o : cxx $s/strings/internal/memutil.cc
+build $o/strings/internal/ostringstream.o : cxx $s/strings/internal/ostringstream.cc
+build $o/strings/internal/stringify_sink.o : cxx $s/strings/internal/stringify_sink.cc
+build $o/strings/internal/str_format/arg.o : cxx $s/strings/internal/str_format/arg.cc
+build $o/strings/internal/str_format/bind.o : cxx $s/strings/internal/str_format/bind.cc
+build $o/strings/internal/str_format/extension.o : cxx $s/strings/internal/str_format/extension.cc
+build $o/strings/internal/str_format/float_conversion.o : cxx $s/strings/internal/str_format/float_conversion.cc
+build $o/strings/internal/str_format/output.o : cxx $s/strings/internal/str_format/output.cc
+build $o/strings/internal/str_format/parser.o : cxx $s/strings/internal/str_format/parser.cc
+build $o/strings/internal/utf8.o : cxx $s/strings/internal/utf8.cc
+build $o/strings/match.o : cxx $s/strings/match.cc
+build $o/strings/numbers.o : cxx $s/strings/numbers.cc
+build $o/strings/string_view.o : cxx $s/strings/string_view.cc
+build $o/strings/str_cat.o : cxx $s/strings/str_cat.cc
+build $o/strings/str_replace.o : cxx $s/strings/str_replace.cc
+build $o/strings/str_split.o : cxx $s/strings/str_split.cc
+build $o/strings/substitute.o : cxx $s/strings/substitute.cc
+build $o/synchronization/barrier.o : cxx $s/synchronization/barrier.cc
+build $o/synchronization/blocking_counter.o : cxx $s/synchronization/blocking_counter.cc
+build $o/synchronization/internal/create_thread_identity.o : cxx $s/synchronization/internal/create_thread_identity.cc
+build $o/synchronization/internal/futex_waiter.o : cxx $s/synchronization/internal/futex_waiter.cc
+build $o/synchronization/internal/graphcycles.o : cxx $s/synchronization/internal/graphcycles.cc
+build $o/synchronization/internal/kernel_timeout.o : cxx $s/synchronization/internal/kernel_timeout.cc
+build $o/synchronization/internal/per_thread_sem.o : cxx $s/synchronization/internal/per_thread_sem.cc
+build $o/synchronization/internal/pthread_waiter.o : cxx $s/synchronization/internal/pthread_waiter.cc
+build $o/synchronization/internal/sem_waiter.o : cxx $s/synchronization/internal/sem_waiter.cc
+build $o/synchronization/internal/stdcpp_waiter.o : cxx $s/synchronization/internal/stdcpp_waiter.cc
+build $o/synchronization/internal/waiter_base.o : cxx $s/synchronization/internal/waiter_base.cc
+build $o/synchronization/internal/win32_waiter.o : cxx $s/synchronization/internal/win32_waiter.cc
+build $o/synchronization/mutex.o : cxx $s/synchronization/mutex.cc
+build $o/synchronization/notification.o : cxx $s/synchronization/notification.cc
+build $o/time/civil_time.o : cxx $s/time/civil_time.cc
+build $o/time/clock.o : cxx $s/time/clock.cc
+build $o/time/duration.o : cxx $s/time/duration.cc
+build $o/time/format.o : cxx $s/time/format.cc
+build $o/time/internal/cctz/src/civil_time_detail.o : cxx $s/time/internal/cctz/src/civil_time_detail.cc
+build $o/time/internal/cctz/src/time_zone_fixed.o : cxx $s/time/internal/cctz/src/time_zone_fixed.cc
+build $o/time/internal/cctz/src/time_zone_format.o : cxx $s/time/internal/cctz/src/time_zone_format.cc
+build $o/time/internal/cctz/src/time_zone_if.o : cxx $s/time/internal/cctz/src/time_zone_if.cc
+build $o/time/internal/cctz/src/time_zone_impl.o : cxx $s/time/internal/cctz/src/time_zone_impl.cc
+build $o/time/internal/cctz/src/time_zone_info.o : cxx $s/time/internal/cctz/src/time_zone_info.cc
+build $o/time/internal/cctz/src/time_zone_libc.o : cxx $s/time/internal/cctz/src/time_zone_libc.cc
+build $o/time/internal/cctz/src/time_zone_lookup.o : cxx $s/time/internal/cctz/src/time_zone_lookup.cc
+build $o/time/internal/cctz/src/time_zone_posix.o : cxx $s/time/internal/cctz/src/time_zone_posix.cc
+build $o/time/internal/cctz/src/zone_info_source.o : cxx $s/time/internal/cctz/src/zone_info_source.cc
+build $o/time/time.o : cxx $s/time/time.cc
+build $o/types/bad_optional_access.o : cxx $s/types/bad_optional_access.cc
+build $o/types/bad_variant_access.o : cxx $s/types/bad_variant_access.cc
+
+build ${LIBPFX}absl${LIB} : ar $
+  $o/base/internal/cycleclock.o $
+  $o/base/internal/low_level_alloc.o $
+  $o/base/internal/raw_logging.o $
+  $o/base/internal/spinlock.o $
+  $o/base/internal/spinlock_wait.o $
+  $o/base/internal/strerror.o $
+  $o/base/internal/sysinfo.o $
+  $o/base/internal/thread_identity.o $
+  $o/base/internal/throw_delegate.o $
+  $o/base/internal/unscaledcycleclock.o $
+  $o/base/log_severity.o $
+  $o/container/internal/hashtablez_sampler.o $
+  $o/container/internal/hashtablez_sampler_force_weak_definition.o $
+  $o/container/internal/raw_hash_set.o $
+  $o/crc/crc32c.o $
+  $o/crc/internal/cpu_detect.o $
+  $o/crc/internal/crc.o $
+  $o/crc/internal/crc_cord_state.o $
+  $o/crc/internal/crc_memcpy_fallback.o $
+  $o/crc/internal/crc_memcpy_x86_arm_combined.o $
+  $o/crc/internal/crc_non_temporal_memcpy.o $
+  $o/crc/internal/crc_x86_arm_combined.o $
+  $o/debugging/failure_signal_handler.o $
+  $o/debugging/internal/address_is_readable.o $
+  $o/debugging/internal/decode_rust_punycode.o $
+  $o/debugging/internal/utf8_for_code_point.o $
+  $o/debugging/internal/demangle_rust.o $
+  $o/debugging/internal/demangle.o $
+  $o/debugging/internal/elf_mem_image.o $
+  $o/debugging/internal/examine_stack.o $
+  $o/debugging/internal/vdso_support.o $
+  $o/debugging/stacktrace.o $
+  $o/debugging/symbolize.o $
+  $o/flags/commandlineflag.o $
+  $o/flags/internal/commandlineflag.o $
+  $o/flags/internal/flag.o $
+  $o/flags/internal/private_handle_accessor.o $
+  $o/flags/internal/program_name.o $
+  $o/flags/internal/usage.o $
+  $o/flags/marshalling.o $
+  $o/flags/parse.o $
+  $o/flags/reflection.o $
+  $o/flags/usage.o $
+  $o/flags/usage_config.o $
+  $o/hash/internal/city.o $
+  $o/hash/internal/hash.o $
+  $o/hash/internal/low_level_hash.o $
+  $o/log/die_if_null.o $
+  $o/log/flags.o $
+  $o/log/globals.o $
+  $o/log/initialize.o $
+  $o/log/internal/check_op.o $
+  $o/log/internal/conditions.o $
+  $o/log/internal/globals.o $
+  $o/log/internal/log_format.o $
+  $o/log/internal/log_message.o $
+  $o/log/internal/log_sink_set.o $
+  $o/log/internal/nullguard.o $
+  $o/log/internal/proto.o $
+  $o/log/log_entry.o $
+  $o/log/log_sink.o $
+  $o/numeric/int128.o $
+  $o/profiling/internal/exponential_biased.o $
+  $o/random/discrete_distribution.o $
+  $o/random/gaussian_distribution.o $
+  $o/random/internal/pool_urbg.o $
+  $o/random/internal/randen.o $
+  $o/random/internal/randen_detect.o $
+  $o/random/internal/randen_hwaes.o $
+  $o/random/internal/randen_round_keys.o $
+  $o/random/internal/randen_slow.o $
+  $o/random/internal/seed_material.o $
+  $o/random/seed_gen_exception.o $
+  $o/random/seed_sequences.o $
+  $o/status/internal/status_internal.o $
+  $o/status/status.o $
+  $o/status/statusor.o $
+  $o/status/status_payload_printer.o $
+  $o/strings/ascii.o $
+  $o/strings/charconv.o $
+  $o/strings/cord.o $
+  $o/strings/cord_analysis.o $
+  $o/strings/cord_buffer.o $
+  $o/strings/escaping.o $
+  $o/strings/internal/charconv_bigint.o $
+  $o/strings/internal/charconv_parse.o $
+  $o/strings/internal/cordz_functions.o $
+  $o/strings/internal/cordz_handle.o $
+  $o/strings/internal/cordz_info.o $
+  $o/strings/internal/cordz_sample_token.o $
+  $o/strings/internal/cord_internal.o $
+  $o/strings/internal/cord_rep_btree.o $
+  $o/strings/internal/cord_rep_btree_navigator.o $
+  $o/strings/internal/cord_rep_btree_reader.o $
+  $o/strings/internal/cord_rep_consume.o $
+  $o/strings/internal/cord_rep_crc.o $
+  $o/strings/internal/escaping.o $
+  $o/strings/internal/memutil.o $
+  $o/strings/internal/ostringstream.o $
+  $o/strings/internal/stringify_sink.o $
+  $o/strings/internal/str_format/arg.o $
+  $o/strings/internal/str_format/bind.o $
+  $o/strings/internal/str_format/extension.o $
+  $o/strings/internal/str_format/float_conversion.o $
+  $o/strings/internal/str_format/output.o $
+  $o/strings/internal/str_format/parser.o $
+  $o/strings/internal/utf8.o $
+  $o/strings/match.o $
+  $o/strings/numbers.o $
+  $o/strings/string_view.o $
+  $o/strings/str_cat.o $
+  $o/strings/str_replace.o $
+  $o/strings/str_split.o $
+  $o/strings/substitute.o $
+  $o/synchronization/barrier.o $
+  $o/synchronization/blocking_counter.o $
+  $o/synchronization/internal/create_thread_identity.o $
+  $o/synchronization/internal/futex_waiter.o $
+  $o/synchronization/internal/graphcycles.o $
+  $o/synchronization/internal/kernel_timeout.o $
+  $o/synchronization/internal/per_thread_sem.o $
+  $o/synchronization/internal/pthread_waiter.o $
+  $o/synchronization/internal/sem_waiter.o $
+  $o/synchronization/internal/stdcpp_waiter.o $
+  $o/synchronization/internal/waiter_base.o $
+  $o/synchronization/internal/win32_waiter.o $
+  $o/synchronization/mutex.o $
+  $o/synchronization/notification.o $
+  $o/time/civil_time.o $
+  $o/time/clock.o $
+  $o/time/duration.o $
+  $o/time/format.o $
+  $o/time/internal/cctz/src/civil_time_detail.o $
+  $o/time/internal/cctz/src/time_zone_fixed.o $
+  $o/time/internal/cctz/src/time_zone_format.o $
+  $o/time/internal/cctz/src/time_zone_if.o $
+  $o/time/internal/cctz/src/time_zone_impl.o $
+  $o/time/internal/cctz/src/time_zone_info.o $
+  $o/time/internal/cctz/src/time_zone_libc.o $
+  $o/time/internal/cctz/src/time_zone_lookup.o $
+  $o/time/internal/cctz/src/time_zone_posix.o $
+  $o/time/internal/cctz/src/zone_info_source.o $
+  $o/time/time.o $
+  $o/types/bad_optional_access.o $
+  $o/types/bad_variant_access.o

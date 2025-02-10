@@ -1,0 +1,70 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/BCRYPTO_ASM_D asm_objs
+
+sa = $s/win-x86_64/crypto
+
+rule nasm
+  command = $nasm -fwin64 -o $out $in
+  description = NASM $out
+
+build $o/chacha-x86_64.o : nasm $gcrypto/chacha-x86_64-win.asm | $nasm
+
+build $o/aes128gcmsiv-x86_64.o : nasm $gcrypto/aes128gcmsiv-x86_64-win.asm | $nasm
+build $o/chacha20_poly1305_x86_64.o : nasm $gcrypto/chacha20_poly1305_x86_64-win.asm | $nasm
+build $o/md5-x86_64.o : nasm $gcrypto/md5-x86_64-win.asm | $nasm
+
+build $o/aesni-gcm-x86_64.o : nasm $gbcm/aesni-gcm-x86_64-win.asm | $nasm
+build $o/aesni-x86_64.o : nasm $gbcm/aesni-x86_64-win.asm | $nasm
+build $o/ghash-ssse3-x86_64.o : nasm $gbcm/ghash-ssse3-x86_64-win.asm | $nasm
+build $o/ghash-x86_64.o : nasm $gbcm/ghash-x86_64-win.asm | $nasm
+
+build $o/p256-x86_64-asm.o : nasm $gbcm/p256-x86_64-asm-win.asm | $nasm
+build $o/p256_beeu-x86_64-asm.o : nasm $gbcm/p256_beeu-x86_64-asm-win.asm | $nasm
+build $o/rdrand-x86_64.o : nasm $gbcm/rdrand-x86_64-win.asm | $nasm
+build $o/rsaz-avx2.o : nasm $gbcm/rsaz-avx2-win.asm | $nasm
+build $o/sha1-x86_64.o : nasm $gbcm/sha1-x86_64-win.asm | $nasm
+build $o/sha256-x86_64.o : nasm $gbcm/sha256-x86_64-win.asm | $nasm
+build $o/sha512-x86_64.o : nasm $gbcm/sha512-x86_64-win.asm | $nasm
+build $o/vpaes-x86_64.o : nasm $gbcm/vpaes-x86_64-win.asm | $nasm
+build $o/x86_64-mont.o : nasm $gbcm/x86_64-mont-win.asm | $nasm
+build $o/x86_64-mont5.o : nasm $gbcm/x86_64-mont5-win.asm | $nasm
+
+build $o/d : phony $o/chacha-x86_64.o $
+  $o/aes128gcmsiv-x86_64.o $
+  $o/chacha20_poly1305_x86_64.o $
+  $o/aesni-gcm-x86_64.o $
+  $o/aesni-x86_64.o $
+  $o/ghash-ssse3-x86_64.o $
+  $o/ghash-x86_64.o $
+  $o/md5-x86_64.o $
+  $o/p256-x86_64-asm.o $
+  $o/p256_beeu-x86_64-asm.o $
+  $o/rdrand-x86_64.o $
+  $o/rsaz-avx2.o $
+  $o/sha1-x86_64.o $
+  $o/sha256-x86_64.o $
+  $o/sha512-x86_64.o $
+  $o/vpaes-x86_64.o $
+  $o/x86_64-mont.o $
+  $o/x86_64-mont5.o
+
+asm_objs = $o/chacha-x86_64.o $
+  $o/aes128gcmsiv-x86_64.o $
+  $o/chacha20_poly1305_x86_64.o $
+  $o/aesni-gcm-x86_64.o $
+  $o/aesni-x86_64.o $
+  $o/ghash-ssse3-x86_64.o $
+  $o/ghash-x86_64.o $
+  $o/md5-x86_64.o $
+  $o/p256-x86_64-asm.o $
+  $o/p256_beeu-x86_64-asm.o $
+  $o/rdrand-x86_64.o $
+  $o/rsaz-avx2.o $
+  $o/sha1-x86_64.o $
+  $o/sha256-x86_64.o $
+  $o/sha512-x86_64.o $
+  $o/vpaes-x86_64.o $
+  $o/x86_64-mont.o $
+  $o/x86_64-mont5.o

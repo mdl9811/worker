@@ -1,0 +1,635 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s = third_party/boringssl
+o = $obj/boringssl
+sc = third_party/boringssl/src/crypto
+pkic = third_party/boringssl/src/pki
+gbcm = third_party/boringssl/src/gen/bcm
+gcrypto = third_party/boringssl/src/gen/crypto
+
+CFLAGS = -I$s/src/include -I$pkic -D_HAS_EXCEPTIONS=0 -DDCHECK_ALWAYS_ON=0 $
+  -DBORINGSSL_IMPLEMENTATION -DBORINGSSL_ALLOW_CXX_RUNTIME -Wno-macro-redefined $
+  -DBORINGSSL_NO_STATIC_INITIALIZER -DOPENSSL_SMALL -Wno-microsoft-anon-tag $
+  -Ithird_party/libc++/src/include
+
+
+include build/ninja/boringssl/$ARCH_FILE.ninja
+
+build $o/err_data.o : cc $gcrypto/err_data.c
+build $o/bio/base64_bio.o : cc $s/src/decrepit/bio/base64_bio.c
+build $o/blowfish/blowfish.o : cc $s/src/decrepit/blowfish/blowfish.c
+
+build $o/asn1/a_bitstr.o : cc $sc/asn1/a_bitstr.c
+build $o/asn1/a_bool.o : cc $sc/asn1/a_bool.c
+build $o/asn1/a_d2i_fp.o : cc $sc/asn1/a_d2i_fp.c
+build $o/asn1/a_dup.o : cc $sc/asn1/a_dup.c
+build $o/asn1/a_gentm.o : cc $sc/asn1/a_gentm.c
+build $o/asn1/a_i2d_fp.o : cc $sc/asn1/a_i2d_fp.c
+build $o/asn1/a_int.o : cc $sc/asn1/a_int.c
+build $o/asn1/a_mbstr.o : cc $sc/asn1/a_mbstr.c
+build $o/asn1/a_object.o : cc $sc/asn1/a_object.c
+build $o/asn1/a_octet.o : cc $sc/asn1/a_octet.c
+build $o/asn1/a_strex.o : cc $sc/asn1/a_strex.c
+build $o/asn1/a_strnid.o : cc $sc/asn1/a_strnid.c
+build $o/asn1/a_time.o : cc $sc/asn1/a_time.c
+build $o/asn1/a_type.o : cc $sc/asn1/a_type.c
+build $o/asn1/a_utctm.o : cc $sc/asn1/a_utctm.c
+build $o/asn1/asn1_lib.o : cc $sc/asn1/asn1_lib.c
+build $o/asn1/asn1_par.o : cc $sc/asn1/asn1_par.c
+build $o/asn1/asn_pack.o : cc $sc/asn1/asn_pack.c
+build $o/asn1/f_int.o : cc $sc/asn1/f_int.c
+build $o/asn1/f_string.o : cc $sc/asn1/f_string.c
+build $o/asn1/posix_time.o : cc $sc/asn1/posix_time.c
+build $o/asn1/tasn_dec.o : cc $sc/asn1/tasn_dec.c
+build $o/asn1/tasn_enc.o : cc $sc/asn1/tasn_enc.c
+build $o/asn1/tasn_fre.o : cc $sc/asn1/tasn_fre.c
+build $o/asn1/tasn_new.o : cc $sc/asn1/tasn_new.c
+build $o/asn1/tasn_typ.o : cc $sc/asn1/tasn_typ.c
+build $o/asn1/tasn_utl.o : cc $sc/asn1/tasn_utl.c
+build $o/base64/base64.o : cc $sc/base64/base64.c
+build $o/bio/bio.o : cc $sc/bio/bio.c
+build $o/bio/bio_mem.o : cc $sc/bio/bio_mem.c
+build $o/bio/connect.o : cc $sc/bio/connect.c
+build $o/bio/errno.o : cc $sc/bio/errno.c
+build $o/bio/fd.o : cc $sc/bio/fd.c
+build $o/bio/file.o : cc $sc/bio/file.c
+build $o/bio/hexdump.o : cc $sc/bio/hexdump.c
+build $o/bio/pair.o : cc $sc/bio/pair.c
+build $o/bio/printf.o : cc $sc/bio/printf.c
+build $o/bio/socket.o : cc $sc/bio/socket.c
+build $o/bio/socket_helper.o : cc $sc/bio/socket_helper.c
+build $o/blake2/blake2.o : cc $sc/blake2/blake2.c
+build $o/bn_extra/bn_asn1.o : cc $sc/bn_extra/bn_asn1.c
+build $o/bn_extra/convert.o : cc $sc/bn_extra/convert.c
+build $o/buf/buf.o : cc $sc/buf/buf.c
+build $o/bytestring/asn1_compat.o : cc $sc/bytestring/asn1_compat.c
+build $o/bytestring/ber.o : cc $sc/bytestring/ber.c
+build $o/bytestring/cbb.o : cc $sc/bytestring/cbb.c
+build $o/bytestring/cbs.o : cc $sc/bytestring/cbs.c
+build $o/bytestring/unicode.o : cc $sc/bytestring/unicode.c
+build $o/chacha/chacha.o : cc $sc/chacha/chacha.c
+build $o/cipher_extra/cipher_extra.o : cc $sc/cipher_extra/cipher_extra.c
+build $o/cipher_extra/derive_key.o : cc $sc/cipher_extra/derive_key.c
+build $o/cipher_extra/e_aesctrhmac.o : cc $sc/cipher_extra/e_aesctrhmac.c
+build $o/cipher_extra/e_aesgcmsiv.o : cc $sc/cipher_extra/e_aesgcmsiv.c
+build $o/cipher_extra/e_chacha20poly1305.o : cc $sc/cipher_extra/e_chacha20poly1305.c
+build $o/cipher_extra/e_des.o : cc $sc/cipher_extra/e_des.c
+build $o/cipher_extra/e_null.o : cc $sc/cipher_extra/e_null.c
+build $o/cipher_extra/e_rc2.o : cc $sc/cipher_extra/e_rc2.c
+build $o/cipher_extra/e_rc4.o : cc $sc/cipher_extra/e_rc4.c
+build $o/cipher_extra/e_tls.o : cc $sc/cipher_extra/e_tls.c
+build $o/cipher_extra/tls_cbc.o : cc $sc/cipher_extra/tls_cbc.c
+build $o/conf/conf.o : cc $sc/conf/conf.c
+build $o/cpu_aarch64_apple.o : cc $sc/cpu_aarch64_apple.c
+build $o/cpu_aarch64_fuchsia.o : cc $sc/cpu_aarch64_fuchsia.c
+build $o/cpu_aarch64_linux.o : cc $sc/cpu_aarch64_linux.c
+build $o/cpu_aarch64_win.o : cc $sc/cpu_aarch64_win.c
+build $o/cpu_arm_linux.o : cc $sc/cpu_arm_linux.c
+build $o/cpu_intel.o : cc $sc/cpu_intel.c
+build $o/crypto.o : cc $sc/crypto.c
+build $o/curve25519/curve25519.o : cc $sc/curve25519/curve25519.c
+build $o/curve25519/spake25519.o : cc $sc/curve25519/spake25519.c
+build $o/des/des.o : cc $sc/des/des.c
+build $o/dh_extra/dh_asn1.o : cc $sc/dh_extra/dh_asn1.c
+build $o/dh_extra/params.o : cc $sc/dh_extra/params.c
+build $o/digest_extra/digest_extra.o : cc $sc/digest_extra/digest_extra.c
+build $o/dsa/dsa.o : cc $sc/dsa/dsa.c
+build $o/dsa/dsa_asn1.o : cc $sc/dsa/dsa_asn1.c
+build $o/ec_extra/ec_asn1.o : cc $sc/ec_extra/ec_asn1.c
+build $o/ec_extra/ec_derive.o : cc $sc/ec_extra/ec_derive.c
+build $o/ec_extra/hash_to_curve.o : cc $sc/ec_extra/hash_to_curve.c
+build $o/ecdh_extra/ecdh_extra.o : cc $sc/ecdh_extra/ecdh_extra.c
+build $o/ecdsa_extra/ecdsa_asn1.o : cc $sc/ecdsa_extra/ecdsa_asn1.c
+build $o/engine/engine.o : cc $sc/engine/engine.c
+build $o/err/err.o : cc $sc/err/err.c
+build $o/evp/evp.o : cc $sc/evp/evp.c
+build $o/evp/evp_asn1.o : cc $sc/evp/evp_asn1.c
+build $o/evp/evp_ctx.o : cc $sc/evp/evp_ctx.c
+build $o/evp/p_dsa_asn1.o : cc $sc/evp/p_dsa_asn1.c
+build $o/evp/p_ec.o : cc $sc/evp/p_ec.c
+build $o/evp/p_ec_asn1.o : cc $sc/evp/p_ec_asn1.c
+build $o/evp/p_ed25519.o : cc $sc/evp/p_ed25519.c
+build $o/evp/p_ed25519_asn1.o : cc $sc/evp/p_ed25519_asn1.c
+build $o/evp/p_hkdf.o : cc $sc/evp/p_hkdf.c
+build $o/evp/p_rsa.o : cc $sc/evp/p_rsa.c
+build $o/evp/p_rsa_asn1.o : cc $sc/evp/p_rsa_asn1.c
+build $o/evp/p_x25519.o : cc $sc/evp/p_x25519.c
+build $o/evp/p_x25519_asn1.o : cc $sc/evp/p_x25519_asn1.c
+build $o/evp/pbkdf.o : cc $sc/evp/pbkdf.c
+build $o/evp/print.o : cc $sc/evp/print.c
+build $o/evp/scrypt.o : cc $sc/evp/scrypt.c
+build $o/evp/sign.o : cc $sc/evp/sign.c
+build $o/evp/p_dh_asn1.o : cc $sc/evp/p_dh_asn1.c
+build $o/evp/p_dh.o : cc $sc/evp/p_dh.c
+build $o/ex_data.o : cc $sc/ex_data.c
+build $o/fipsmodule/bcm.o : cc $sc/fipsmodule/bcm.c
+build $o/fipsmodule/fips_shared_support.o : cc $sc/fipsmodule/fips_shared_support.c
+build $o/hpke/hpke.o : cc $sc/hpke/hpke.c
+build $o/hrss/hrss.o : cc $sc/hrss/hrss.c
+build $o/keccak/keccak.o : cc $sc/keccak/keccak.c
+build $o/kyber/kyber.o : cc $sc/kyber/kyber.c
+build $o/lhash/lhash.o : cc $sc/lhash/lhash.c
+build $o/sha/sha1.o : cc $sc/sha/sha1.c
+build $o/sha/sha256.o : cc $sc/sha/sha256.c
+build $o/sha/sha512.o : cc $sc/sha/sha512.c
+build $o/md4/md4.o : cc $sc/md4/md4.c
+build $o/md5/md5.o : cc $sc/md5/md5.c
+build $o/mlkem/mlkem.o : cxx $sc/mlkem/mlkem.cc
+build $o/mem.o : cc $sc/mem.c
+build $o/obj/obj.o : cc $sc/obj/obj.c
+build $o/obj/obj_xref.o : cc $sc/obj/obj_xref.c
+build $o/pem/pem_all.o : cc $sc/pem/pem_all.c
+build $o/pem/pem_info.o : cc $sc/pem/pem_info.c
+build $o/pem/pem_lib.o : cc $sc/pem/pem_lib.c
+build $o/pem/pem_oth.o : cc $sc/pem/pem_oth.c
+build $o/pem/pem_pk8.o : cc $sc/pem/pem_pk8.c
+build $o/pem/pem_pkey.o : cc $sc/pem/pem_pkey.c
+build $o/pem/pem_x509.o : cc $sc/pem/pem_x509.c
+build $o/pem/pem_xaux.o : cc $sc/pem/pem_xaux.c
+build $o/pkcs7/pkcs7.o : cc $sc/pkcs7/pkcs7.c
+build $o/pkcs7/pkcs7_x509.o : cc $sc/pkcs7/pkcs7_x509.c
+build $o/pkcs8/p5_pbev2.o : cc $sc/pkcs8/p5_pbev2.c
+build $o/pkcs8/pkcs8.o : cc $sc/pkcs8/pkcs8.c
+build $o/pkcs8/pkcs8_x509.o : cc $sc/pkcs8/pkcs8_x509.c
+build $o/poly1305/poly1305.o : cc $sc/poly1305/poly1305.c
+build $o/poly1305/poly1305_arm.o : cc $sc/poly1305/poly1305_arm.c
+build $o/poly1305/poly1305_vec.o : cc $sc/poly1305/poly1305_vec.c
+build $o/pool/pool.o : cc $sc/pool/pool.c
+build $o/rand_extra/deterministic.o : cc $sc/rand_extra/deterministic.c
+build $o/rand_extra/forkunsafe.o : cc $sc/rand_extra/forkunsafe.c
+build $o/rand_extra/passive.o : cc $sc/rand_extra/passive.c
+build $o/rand_extra/rand_extra.o : cc $sc/rand_extra/rand_extra.c
+build $o/rand_extra/windows.o : cc $sc/rand_extra/windows.c
+build $o/rand_extra/urandom.o : cc $sc/rand_extra/urandom.c
+build $o/rand_extra/fork_detect.o : cc $sc/rand_extra/fork_detect.c
+build $o/rc4/rc4.o : cc $sc/rc4/rc4.c
+build $o/refcount.o : cc $sc/refcount.c
+build $o/rsa_extra/rsa_asn1.o : cc $sc/rsa_extra/rsa_asn1.c
+build $o/rsa_extra/rsa_crypt.o : cc $sc/rsa_extra/rsa_crypt.c
+build $o/rsa_extra/rsa_print.o : cc $sc/rsa_extra/rsa_print.c
+build $o/siphash/siphash.o : cc $sc/siphash/siphash.c
+build $o/stack/stack.o : cc $sc/stack/stack.c
+build $o/thread.o : cc $sc/thread.c
+build $o/thread_none.o : cc $sc/thread_none.c
+build $o/thread_pthread.o : cc $sc/thread_pthread.c
+build $o/thread_win.o : cc $sc/thread_win.c
+build $o/trust_token/pmbtoken.o : cc $sc/trust_token/pmbtoken.c
+build $o/trust_token/trust_token.o : cc $sc/trust_token/trust_token.c
+build $o/trust_token/voprf.o : cc $sc/trust_token/voprf.c
+build $o/x509/a_digest.o : cc $sc/x509/a_digest.c
+build $o/x509/a_sign.o : cc $sc/x509/a_sign.c
+build $o/x509/a_verify.o : cc $sc/x509/a_verify.c
+build $o/x509/algorithm.o : cc $sc/x509/algorithm.c
+build $o/x509/asn1_gen.o : cc $sc/x509/asn1_gen.c
+build $o/x509/by_dir.o : cc $sc/x509/by_dir.c
+build $o/x509/by_file.o : cc $sc/x509/by_file.c
+build $o/x509/i2d_pr.o : cc $sc/x509/i2d_pr.c
+build $o/x509/name_print.o : cc $sc/x509/name_print.c
+build $o/x509/policy.o : cc $sc/x509/policy.c
+build $o/x509/rsa_pss.o : cc $sc/x509/rsa_pss.c
+build $o/x509/t_crl.o : cc $sc/x509/t_crl.c
+build $o/x509/t_req.o : cc $sc/x509/t_req.c
+build $o/x509/t_x509.o : cc $sc/x509/t_x509.c
+build $o/x509/t_x509a.o : cc $sc/x509/t_x509a.c
+build $o/x509/x509.o : cc $sc/x509/x509.c
+build $o/x509/x509_att.o : cc $sc/x509/x509_att.c
+build $o/x509/x509_cmp.o : cc $sc/x509/x509_cmp.c
+build $o/x509/x509_d2.o : cc $sc/x509/x509_d2.c
+build $o/x509/x509_def.o : cc $sc/x509/x509_def.c
+build $o/x509/x509_ext.o : cc $sc/x509/x509_ext.c
+build $o/x509/x509_lu.o : cc $sc/x509/x509_lu.c
+build $o/x509/x509_obj.o : cc $sc/x509/x509_obj.c
+build $o/x509/x509_req.o : cc $sc/x509/x509_req.c
+build $o/x509/x509_set.o : cc $sc/x509/x509_set.c
+build $o/x509/x509_trs.o : cc $sc/x509/x509_trs.c
+build $o/x509/x509_txt.o : cc $sc/x509/x509_txt.c
+build $o/x509/x509_v3.o : cc $sc/x509/x509_v3.c
+build $o/x509/x509_vfy.o : cc $sc/x509/x509_vfy.c
+build $o/x509/x509_vpm.o : cc $sc/x509/x509_vpm.c
+build $o/x509/x509cset.o : cc $sc/x509/x509cset.c
+build $o/x509/x509name.o : cc $sc/x509/x509name.c
+build $o/x509/x509rset.o : cc $sc/x509/x509rset.c
+build $o/x509/x509spki.o : cc $sc/x509/x509spki.c
+build $o/x509/x_algor.o : cc $sc/x509/x_algor.c
+build $o/x509/x_all.o : cc $sc/x509/x_all.c
+build $o/x509/x_attrib.o : cc $sc/x509/x_attrib.c
+build $o/x509/x_crl.o : cc $sc/x509/x_crl.c
+build $o/x509/x_exten.o : cc $sc/x509/x_exten.c
+build $o/x509/x_name.o : cc $sc/x509/x_name.c
+build $o/x509/x_pubkey.o : cc $sc/x509/x_pubkey.c
+build $o/x509/x_req.o : cc $sc/x509/x_req.c
+build $o/x509/x_sig.o : cc $sc/x509/x_sig.c
+build $o/x509/x_spki.o : cc $sc/x509/x_spki.c
+build $o/x509/x_val.o : cc $sc/x509/x_val.c
+build $o/x509/x_x509.o : cc $sc/x509/x_x509.c
+build $o/x509/x_x509a.o : cc $sc/x509/x_x509a.c
+
+build $o/x509/v3_akey.o : cc $sc/x509/v3_akey.c
+build $o/x509/v3_akeya.o : cc $sc/x509/v3_akeya.c
+build $o/x509/v3_alt.o : cc $sc/x509/v3_alt.c
+build $o/x509/v3_bcons.o : cc $sc/x509/v3_bcons.c
+build $o/x509/v3_bitst.o : cc $sc/x509/v3_bitst.c
+build $o/x509/v3_conf.o : cc $sc/x509/v3_conf.c
+build $o/x509/v3_cpols.o : cc $sc/x509/v3_cpols.c
+build $o/x509/v3_crld.o : cc $sc/x509/v3_crld.c
+build $o/x509/v3_enum.o : cc $sc/x509/v3_enum.c
+build $o/x509/v3_extku.o : cc $sc/x509/v3_extku.c
+build $o/x509/v3_genn.o : cc $sc/x509/v3_genn.c
+build $o/x509/v3_ia5.o : cc $sc/x509/v3_ia5.c
+build $o/x509/v3_info.o : cc $sc/x509/v3_info.c
+build $o/x509/v3_int.o : cc $sc/x509/v3_int.c
+build $o/x509/v3_lib.o : cc $sc/x509/v3_lib.c
+build $o/x509/v3_ncons.o : cc $sc/x509/v3_ncons.c
+build $o/x509/v3_ocsp.o : cc $sc/x509/v3_ocsp.c
+build $o/x509/v3_pcons.o : cc $sc/x509/v3_pcons.c
+build $o/x509/v3_pmaps.o : cc $sc/x509/v3_pmaps.c
+build $o/x509/v3_prn.o : cc $sc/x509/v3_prn.c
+build $o/x509/v3_purp.o : cc $sc/x509/v3_purp.c
+build $o/x509/v3_skey.o : cc $sc/x509/v3_skey.c
+build $o/x509/v3_utl.o : cc $sc/x509/v3_utl.c
+
+build $o/cert_error_id.o : cxx $pkic/cert_error_id.cc
+build $o/cert_error_params.o : cxx $pkic/cert_error_params.cc
+build $o/cert_errors.o : cxx $pkic/cert_errors.cc
+build $o/cert_issuer_source_static.o : cxx $pkic/cert_issuer_source_static.cc
+build $o/certificate.o : cxx $pkic/certificate.cc
+build $o/certificate_policies.o : cxx $pkic/certificate_policies.cc
+build $o/common_cert_errors.o : cxx $pkic/common_cert_errors.cc
+build $o/crl.o : cxx $pkic/crl.cc
+build $o/encode_values.o : cxx $pkic/encode_values.cc
+build $o/extended_key_usage.o : cxx $pkic/extended_key_usage.cc
+build $o/general_names.o : cxx $pkic/general_names.cc
+build $o/input.o : cxx $pkic/input.cc
+build $o/ip_util.o : cxx $pkic/ip_util.cc
+build $o/name_constraints.o : cxx $pkic/name_constraints.cc
+build $o/ocsp.o : cxx $pkic/ocsp.cc
+build $o/ocsp_verify_result.o : cxx $pkic/ocsp_verify_result.cc
+build $o/parse_certificate.o : cxx $pkic/parse_certificate.cc
+build $o/parse_name.o : cxx $pkic/parse_name.cc
+build $o/parse_values.o : cxx $pkic/parse_values.cc
+build $o/parsed_certificate.o : cxx $pkic/parsed_certificate.cc
+build $o/parser.o : cxx $pkic/parser.cc
+build $o/path_builder.o : cxx $pkic/path_builder.cc
+build $o/pem.o : cxx $pkic/pem.cc
+build $o/revocation_util.o : cxx $pkic/revocation_util.cc
+build $o/signature_algorithm.o : cxx $pkic/signature_algorithm.cc
+build $o/simple_path_builder_delegate.o : cxx $pkic/simple_path_builder_delegate.cc
+build $o/string_util.o : cxx $pkic/string_util.cc
+build $o/trust_store.o : cxx $pkic/trust_store.cc
+build $o/trust_store_collection.o : cxx $pkic/trust_store_collection.cc
+build $o/trust_store_in_memory.o : cxx $pkic/trust_store_in_memory.cc
+build $o/verify_certificate_chain.o : cxx $pkic/verify_certificate_chain.cc
+build $o/verify_name_match.o : cxx $pkic/verify_name_match.cc
+build $o/verify_signed_data.o : cxx $pkic/verify_signed_data.cc
+build $o/verify_error.o : cxx $pkic/verify_error.cc
+
+build ${LIBPFX}crypto${LIB} : ar $
+  $o/err_data.o $
+  $o/bio/base64_bio.o $
+  $o/blowfish/blowfish.o $
+  $o/asn1/a_bitstr.o $
+  $o/asn1/a_bool.o $
+  $o/asn1/a_d2i_fp.o $
+  $o/asn1/a_dup.o $
+  $o/asn1/a_gentm.o $
+  $o/asn1/a_i2d_fp.o $
+  $o/asn1/a_int.o $
+  $o/asn1/a_mbstr.o $
+  $o/asn1/a_object.o $
+  $o/asn1/a_octet.o $
+  $o/asn1/a_strex.o $
+  $o/asn1/a_strnid.o $
+  $o/asn1/a_time.o $
+  $o/asn1/a_type.o $
+  $o/asn1/a_utctm.o $
+  $o/asn1/asn1_lib.o $
+  $o/asn1/asn1_par.o $
+  $o/asn1/asn_pack.o $
+  $o/asn1/f_int.o $
+  $o/asn1/f_string.o $
+  $o/asn1/posix_time.o $
+  $o/asn1/tasn_dec.o $
+  $o/asn1/tasn_enc.o $
+  $o/asn1/tasn_fre.o $
+  $o/asn1/tasn_new.o $
+  $o/asn1/tasn_typ.o $
+  $o/asn1/tasn_utl.o $
+  $o/base64/base64.o $
+  $o/bio/bio.o $
+  $o/bio/bio_mem.o $
+  $o/bio/connect.o $
+  $o/bio/errno.o $
+  $o/bio/fd.o $
+  $o/bio/file.o $
+  $o/bio/hexdump.o $
+  $o/bio/pair.o $
+  $o/bio/printf.o $
+  $o/bio/socket.o $
+  $o/bio/socket_helper.o $
+  $o/blake2/blake2.o $
+  $o/bn_extra/bn_asn1.o $
+  $o/bn_extra/convert.o $
+  $o/buf/buf.o $
+  $o/bytestring/asn1_compat.o $
+  $o/bytestring/ber.o $
+  $o/bytestring/cbb.o $
+  $o/bytestring/cbs.o $
+  $o/bytestring/unicode.o $
+  $o/chacha/chacha.o $
+  $o/cipher_extra/cipher_extra.o $
+  $o/cipher_extra/derive_key.o $
+  $o/cipher_extra/e_aesctrhmac.o $
+  $o/cipher_extra/e_aesgcmsiv.o $
+  $o/cipher_extra/e_chacha20poly1305.o $
+  $o/cipher_extra/e_des.o $
+  $o/cipher_extra/e_null.o $
+  $o/cipher_extra/e_rc2.o $
+  $o/cipher_extra/e_rc4.o $
+  $o/cipher_extra/e_tls.o $
+  $o/cipher_extra/tls_cbc.o $
+  $o/conf/conf.o $
+  $o/cpu_aarch64_apple.o $
+  $o/cpu_aarch64_fuchsia.o $
+  $o/cpu_aarch64_linux.o $
+  $o/cpu_aarch64_win.o $
+  $o/cpu_arm_linux.o $
+  $o/cpu_intel.o $
+  $o/crypto.o $
+  $o/curve25519/curve25519.o $
+  $o/curve25519/spake25519.o $
+  $o/des/des.o $
+  $o/dh_extra/dh_asn1.o $
+  $o/dh_extra/params.o $
+  $o/digest_extra/digest_extra.o $
+  $o/dsa/dsa.o $
+  $o/dsa/dsa_asn1.o $
+  $o/ec_extra/ec_asn1.o $
+  $o/ec_extra/ec_derive.o $
+  $o/ec_extra/hash_to_curve.o $
+  $o/ecdh_extra/ecdh_extra.o $
+  $o/ecdsa_extra/ecdsa_asn1.o $
+  $o/engine/engine.o $
+  $o/err/err.o $
+  $o/evp/evp.o $
+  $o/evp/evp_asn1.o $
+  $o/evp/evp_ctx.o $
+  $o/evp/p_dsa_asn1.o $
+  $o/evp/p_ec.o $
+  $o/evp/p_ec_asn1.o $
+  $o/evp/p_ed25519.o $
+  $o/evp/p_ed25519_asn1.o $
+  $o/evp/p_hkdf.o $
+  $o/evp/p_rsa.o $
+  $o/evp/p_rsa_asn1.o $
+  $o/evp/p_x25519.o $
+  $o/evp/p_x25519_asn1.o $
+  $o/evp/pbkdf.o $
+  $o/evp/print.o $
+  $o/evp/scrypt.o $
+  $o/evp/sign.o $
+  $o/evp/p_dh_asn1.o $
+  $o/evp/p_dh.o $
+  $o/ex_data.o $
+  $o/fipsmodule/bcm.o $
+  $o/fipsmodule/fips_shared_support.o $
+  $o/hpke/hpke.o $
+  $o/hrss/hrss.o $
+  $o/keccak/keccak.o $
+  $o/kyber/kyber.o $
+  $o/lhash/lhash.o $
+  $o/sha/sha1.o $
+  $o/sha/sha256.o $
+  $o/sha/sha512.o $
+  $o/md4/md4.o $
+  $o/md5/md5.o $
+  $o/mlkem/mlkem.o $
+  $o/mem.o $
+  $o/obj/obj.o $
+  $o/obj/obj_xref.o $
+  $o/pem/pem_all.o $
+  $o/pem/pem_info.o $
+  $o/pem/pem_lib.o $
+  $o/pem/pem_oth.o $
+  $o/pem/pem_pk8.o $
+  $o/pem/pem_pkey.o $
+  $o/pem/pem_x509.o $
+  $o/pem/pem_xaux.o $
+  $o/pkcs7/pkcs7.o $
+  $o/pkcs7/pkcs7_x509.o $
+  $o/pkcs8/p5_pbev2.o $
+  $o/pkcs8/pkcs8.o $
+  $o/pkcs8/pkcs8_x509.o $
+  $o/poly1305/poly1305.o $
+  $o/poly1305/poly1305_arm.o $
+  $o/poly1305/poly1305_vec.o $
+  $o/pool/pool.o $
+  $o/rand_extra/deterministic.o $
+  $o/rand_extra/forkunsafe.o $
+  $o/rand_extra/passive.o $
+  $o/rand_extra/rand_extra.o $
+  $o/rand_extra/windows.o $
+  $o/rand_extra/urandom.o $
+  $o/rand_extra/fork_detect.o $
+  $o/rc4/rc4.o $
+  $o/refcount.o $
+  $o/rsa_extra/rsa_asn1.o $
+  $o/rsa_extra/rsa_crypt.o $
+  $o/rsa_extra/rsa_print.o $
+  $o/siphash/siphash.o $
+  $o/stack/stack.o $
+  $o/thread.o $
+  $o/thread_none.o $
+  $o/thread_pthread.o $
+  $o/thread_win.o $
+  $o/trust_token/pmbtoken.o $
+  $o/trust_token/trust_token.o $
+  $o/trust_token/voprf.o $
+  $o/x509/a_digest.o $
+  $o/x509/a_sign.o $
+  $o/x509/a_verify.o $
+  $o/x509/algorithm.o $
+  $o/x509/asn1_gen.o $
+  $o/x509/by_dir.o $
+  $o/x509/by_file.o $
+  $o/x509/i2d_pr.o $
+  $o/x509/name_print.o $
+  $o/x509/policy.o $
+  $o/x509/rsa_pss.o $
+  $o/x509/t_crl.o $
+  $o/x509/t_req.o $
+  $o/x509/t_x509.o $
+  $o/x509/t_x509a.o $
+  $o/x509/x509.o $
+  $o/x509/x509_att.o $
+  $o/x509/x509_cmp.o $
+  $o/x509/x509_d2.o $
+  $o/x509/x509_def.o $
+  $o/x509/x509_ext.o $
+  $o/x509/x509_lu.o $
+  $o/x509/x509_obj.o $
+  $o/x509/x509_req.o $
+  $o/x509/x509_set.o $
+  $o/x509/x509_trs.o $
+  $o/x509/x509_txt.o $
+  $o/x509/x509_v3.o $
+  $o/x509/x509_vfy.o $
+  $o/x509/x509_vpm.o $
+  $o/x509/x509cset.o $
+  $o/x509/x509name.o $
+  $o/x509/x509rset.o $
+  $o/x509/x509spki.o $
+  $o/x509/x_algor.o $
+  $o/x509/x_all.o $
+  $o/x509/x_attrib.o $
+  $o/x509/x_crl.o $
+  $o/x509/x_exten.o $
+  $o/x509/x_name.o $
+  $o/x509/x_pubkey.o $
+  $o/x509/x_req.o $
+  $o/x509/x_sig.o $
+  $o/x509/x_spki.o $
+  $o/x509/x_val.o $
+  $o/x509/x_x509.o $
+  $o/x509/x_x509a.o $
+  $o/x509/v3_akey.o $
+  $o/x509/v3_akeya.o $
+  $o/x509/v3_alt.o $
+  $o/x509/v3_bcons.o $
+  $o/x509/v3_bitst.o $
+  $o/x509/v3_conf.o $
+  $o/x509/v3_cpols.o $
+  $o/x509/v3_crld.o $
+  $o/x509/v3_enum.o $
+  $o/x509/v3_extku.o $
+  $o/x509/v3_genn.o $
+  $o/x509/v3_ia5.o $
+  $o/x509/v3_info.o $
+  $o/x509/v3_int.o $
+  $o/x509/v3_lib.o $
+  $o/x509/v3_ncons.o $
+  $o/x509/v3_ocsp.o $
+  $o/x509/v3_pcons.o $
+  $o/x509/v3_pmaps.o $
+  $o/x509/v3_prn.o $
+  $o/x509/v3_purp.o $
+  $o/x509/v3_skey.o $
+  $o/x509/v3_utl.o $
+  $o/cert_error_id.o $
+  $o/cert_error_params.o $
+  $o/cert_errors.o $
+  $o/cert_issuer_source_static.o $
+  $o/certificate.o $
+  $o/certificate_policies.o $
+  $o/common_cert_errors.o $
+  $o/crl.o $
+  $o/encode_values.o $
+  $o/extended_key_usage.o $
+  $o/general_names.o $
+  $o/input.o $
+  $o/ip_util.o $
+  $o/name_constraints.o $
+  $o/ocsp.o $
+  $o/ocsp_verify_result.o $
+  $o/parse_certificate.o $
+  $o/parse_name.o $
+  $o/parse_values.o $
+  $o/parsed_certificate.o $
+  $o/parser.o $
+  $o/path_builder.o $
+  $o/pem.o $
+  $o/revocation_util.o $
+  $o/signature_algorithm.o $
+  $o/simple_path_builder_delegate.o $
+  $o/string_util.o $
+  $o/trust_store.o $
+  $o/trust_store_collection.o $
+  $o/trust_store_in_memory.o $
+  $o/verify_certificate_chain.o $
+  $o/verify_name_match.o $
+  $o/verify_signed_data.o $
+  $o/verify_error.o | $o/d
+  ar_files = $asm_objs
+
+ss = third_party/boringssl/src/ssl
+
+build $o/bio_ssl.o : cxx $ss/bio_ssl.cc
+build $o/d1_both.o : cxx $ss/d1_both.cc
+build $o/d1_lib.o : cxx $ss/d1_lib.cc
+build $o/d1_pkt.o : cxx $ss/d1_pkt.cc
+build $o/d1_srtp.o : cxx $ss/d1_srtp.cc
+build $o/dtls_method.o : cxx $ss/dtls_method.cc
+build $o/dtls_record.o : cxx $ss/dtls_record.cc
+build $o/encrypted_client_hello.o : cxx $ss/encrypted_client_hello.cc
+build $o/extensions.o : cxx $ss/extensions.cc
+build $o/handoff.o : cxx $ss/handoff.cc
+build $o/handshake.o : cxx $ss/handshake.cc
+build $o/handshake_client.o : cxx $ss/handshake_client.cc
+build $o/handshake_server.o : cxx $ss/handshake_server.cc
+build $o/s3_both.o : cxx $ss/s3_both.cc
+build $o/s3_lib.o : cxx $ss/s3_lib.cc
+build $o/s3_pkt.o : cxx $ss/s3_pkt.cc
+build $o/ssl_aead_ctx.o : cxx $ss/ssl_aead_ctx.cc
+build $o/ssl_asn1.o : cxx $ss/ssl_asn1.cc
+build $o/ssl_buffer.o : cxx $ss/ssl_buffer.cc
+build $o/ssl_cert.o : cxx $ss/ssl_cert.cc
+build $o/ssl_cipher.o : cxx $ss/ssl_cipher.cc
+build $o/ssl_file.o : cxx $ss/ssl_file.cc
+build $o/ssl_credential.o : cxx $ss/ssl_credential.cc
+build $o/ssl_key_share.o : cxx $ss/ssl_key_share.cc
+build $o/ssl_lib.o : cxx $ss/ssl_lib.cc
+build $o/ssl_privkey.o : cxx $ss/ssl_privkey.cc
+build $o/ssl_session.o : cxx $ss/ssl_session.cc
+build $o/ssl_stat.o : cxx $ss/ssl_stat.cc
+build $o/ssl_transcript.o : cxx $ss/ssl_transcript.cc
+build $o/ssl_versions.o : cxx $ss/ssl_versions.cc
+build $o/ssl_x509.o : cxx $ss/ssl_x509.cc
+build $o/t1_enc.o : cxx $ss/t1_enc.cc
+build $o/tls13_both.o : cxx $ss/tls13_both.cc
+build $o/tls13_client.o : cxx $ss/tls13_client.cc
+build $o/tls13_enc.o : cxx $ss/tls13_enc.cc
+build $o/tls13_server.o : cxx $ss/tls13_server.cc
+build $o/tls_method.o : cxx $ss/tls_method.cc
+build $o/tls_record.o : cxx $ss/tls_record.cc
+
+build ${LIBPFX}ssl${LIB} : ar $
+  $o/bio_ssl.o $
+  $o/d1_both.o $
+  $o/d1_lib.o $
+  $o/d1_pkt.o $
+  $o/d1_srtp.o $
+  $o/dtls_method.o $
+  $o/dtls_record.o $
+  $o/encrypted_client_hello.o $
+  $o/extensions.o $
+  $o/handoff.o $
+  $o/handshake.o $
+  $o/handshake_client.o $
+  $o/handshake_server.o $
+  $o/s3_both.o $
+  $o/s3_lib.o $
+  $o/s3_pkt.o $
+  $o/ssl_aead_ctx.o $
+  $o/ssl_asn1.o $
+  $o/ssl_buffer.o $
+  $o/ssl_cert.o $
+  $o/ssl_cipher.o $
+  $o/ssl_file.o $
+  $o/ssl_credential.o $
+  $o/ssl_key_share.o $
+  $o/ssl_lib.o $
+  $o/ssl_privkey.o $
+  $o/ssl_session.o $
+  $o/ssl_stat.o $
+  $o/ssl_transcript.o $
+  $o/ssl_versions.o $
+  $o/ssl_x509.o $
+  $o/t1_enc.o $
+  $o/tls13_both.o $
+  $o/tls13_client.o $
+  $o/tls13_enc.o $
+  $o/tls13_server.o $
+  $o/tls_method.o $
+  $o/tls_record.o
+

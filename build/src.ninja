@@ -1,0 +1,120 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s=src
+o=$obj/src
+
+CFLAGS = $CR_FLAGS -I$s $
+  -Ithird_party/protobuf/src -Ithird_party/boringssl/src/include $
+  -Ibuild/config/chrome/gen/net/third_party/quiche/src $
+  -Wno-unneeded-internal-declaration -Wno-macro-redefined -Wno-inconsistent-dllimport $
+  -Wno-microsoft-anon-tag -Wno-extern-initializer -Wno-microsoft-include $
+
+CFLAGS = $CFLAGS -I$s $CR_FLAGS -DH2O_USE_LIBUV=0 -DH2O_HAS_PTHREAD_SETAFFINITY_NP
+
+build $o/worker.o : cxx $s/worker.cc
+build $o/workerd.o : cxx $s/workerd.cc
+build $o/mdl.o : cxx $s/mdl.cc
+
+#engine
+build $o/engine/command_line.o : cxx $s/engine/command_line.cc
+build $o/engine/command_type.o : cxx $s/engine/command_type.cc
+build $o/engine/worker_engine.o : cxx $s/engine/worker_engine.cc
+build $o/engine/session.o : cxx $s/engine/session.cc
+
+#functional
+build $o/functional/worker_functional_factory.o : cxx $s/functional/worker_functional_factory.cc
+build $o/functional/functional_interface.o : cxx $s/functional/functional_interface.cc
+build $o/functional/empty.o : cxx $s/functional/empty.cc
+build $o/functional/run.o : cxx $s/functional/run.cc
+build $o/functional/rm.o : cxx $s/functional/rm.cc
+build $o/functional/exec.o : cxx $s/functional/exec.cc
+build $o/functional/ps.o : cxx $s/functional/ps.cc
+
+#api
+build $o/api/gen/binary.o : cxx $s/api/gen/binary.cc
+build $o/api/gen/generate_container_id.o : cxx $s/api/gen/generate_container_id.cc
+build $o/api/gen/generate_file.o : cxx $s/api/gen/generate_file.cc
+build $o/api/gen/message_build.o : cxx $s/api/gen/message_build.cc
+build $o/api/worker/process.o : cxx $s/api/worker/process.cc
+build $o/api/worker/container.o : cxx $s/api/worker/container.cc
+build $o/api/worker/file_string.o : cxx $s/api/worker/file_string.cc
+build $o/api/worker/config_parser.o : cxx $s/api/worker/config_parser.cc
+build $o/api/rtc/tcp_server.o : cxx $s/api/rtc/tcp_server.cc
+build $o/api/rtc/tcp_server_connection.o : cxx $s/api/rtc/tcp_server_connection.cc
+build $o/api/rtc/connection.o : cxx $s/api/rtc/connection.cc
+build $o/api/rtc/http1_processor.o : cxx $s/api/rtc/http1_processor.cc
+build $o/api/rtc/io_buffer.o : cxx $s/api/rtc/io_buffer.cc
+build $o/api/rtc/channel.o : cxx $s/api/rtc/channel.cc
+build $o/api/rtc/cert_verifier.o : cxx $s/api/rtc/cert_verifier.cc
+build $o/api/rtc/url_fetcher.o : cxx $s/api/rtc/url_fetcher.cc
+  cflags = -Ithird_party/libcr/net/third_party/quiche/src $
+    -Ithird_party/libcr/net/third_party/quiche/overrides $
+    -Ithird_party/libcr/net/third_party/quiche/src/quiche/common/platform/default
+build $o/api/rtc/url_request.o : cxx $s/api/rtc/url_request.cc
+build $o/api/rtc/ssl_config_service.o : cxx $s/api/rtc/ssl_config_service.cc
+
+build $bin/worker${EXE} : link $
+  $o/worker.o $
+  $o/engine/session.o $
+  $o/api/rtc/io_buffer.o $
+  $o/api/rtc/http1_processor.o $
+  $o/api/rtc/cert_verifier.o $
+  $o/api/rtc/url_fetcher.o $
+  $o/api/rtc/url_request.o $
+  $o/api/rtc/ssl_config_service.o $
+  $o/api/gen/message_build.o $
+  $o/api/worker/process.o $
+  $o/api/worker/file_string.o $
+  $o/api/worker/config_parser.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+build $bin/mdl${EXE} : link $
+  $o/mdl.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+build $bin/workerd${EXE} : link $
+  $o/workerd.o $
+  $o/engine/worker_engine.o $
+  $o/engine/command_line.o $
+  $o/engine/command_type.o $
+  $
+  $o/functional/worker_functional_factory.o $
+  $o/functional/functional_interface.o $
+  $o/functional/empty.o $
+  $o/functional/run.o $
+  $o/functional/rm.o $
+  $o/functional/exec.o $
+  $o/functional/ps.o $
+  $
+  $o/api/gen/binary.o $
+  $o/api/gen/generate_container_id.o $
+  $o/api/gen/message_build.o $
+  $o/api/gen/generate_file.o $
+  $o/api/worker/process.o $
+  $o/api/worker/container.o $
+  $o/api/worker/file_string.o $
+  $o/api/worker/config_parser.o $
+  $
+  $o/api/rtc/tcp_server.o $
+  $o/api/rtc/tcp_server_connection.o $
+  $o/api/rtc/connection.o $
+  $o/api/rtc/channel.o $
+  $o/api/rtc/io_buffer.o $
+  $o/api/rtc/http1_processor.o $
+  ${LIBPFX}base$LIB ${LIBPFX}absl$LIB ${LIBPFX}ssl$LIB ${LIBPFX}crypto${LIB} $
+  ${LIBPFX}net$LIB ${LIBPFX}c++$LIB ${LIBPFX}ssl$LIB $PUB_LIB $
+  ${LIBPFX}protoc$LIB ${LIBPFX}protobuf_lite${LIB} ${LIBPFX}zstd${LIB} ${LIBPFX}icu$LIB $
+  ${LIBPFX}z$LIB
+  ldflags = $rust_lib -lcap
+
+include build/example.ninja

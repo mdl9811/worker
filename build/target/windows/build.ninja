@@ -1,0 +1,50 @@
+#
+# Copyright (c) 2023 mdl. All rights reserved.
+#
+
+include build/host/build.ninja
+
+STUB_FLAGS = -Ithird_party/libc++/src/include -Ithird_party/libc++ $
+  -Ithird_party/zlib -Ibuild/config/windows/um -Ibuild/config/windows/winrt $
+  -I. -Wno-nonportable-include-path -Wno-extern-c-compat
+
+rule cp
+  command = $cp $in $out
+  description = CP $out
+
+rule cc 
+  deps = msvc
+  command = $CLANG --driver-mode=cl /nologo /showIncludes:user /std:c11 /TC $
+  -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags
+  description = CC $out
+
+rule cxx 
+  deps = msvc
+  command = $CLANG --driver-mode=cl /nologo /showIncludes:user /std:c++20 /TP $
+  -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags 
+  description = CXX $out
+
+rule ar
+  command = $LLD_LINK /LIB /OUT:$out @$out.rsp
+  description = LIB $out
+  rspfile = $out.rsp
+  rspfile_content = $in $ar_files
+
+rule as
+  deps = msvc
+  command = $CLANG --driver-mode=cl /nologo /showIncludes:user $
+    -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags
+  description = CC $out
+
+rule link-dll
+  command = $LLD_LINK /DLL $OPT_LDFLAGS $LDFLAGS /OUT:$out $in $ldflags 
+  description = LINK $out
+
+rule link 
+  command = $LLD_LINK $OPT_LDFLAGS $LDFLAGS /OUT:$out $in $ldflags $
+  /pdbaltpath:%_PDB% /NATVIS:build/config/c++/libc++.natvis
+  description = LINK $out
+
+FORCE_INCLUDE = /FI
+
+subninja build/target/windows/$ARCH.ninja

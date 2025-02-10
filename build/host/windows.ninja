@@ -1,0 +1,77 @@
+#
+# Copyright (c) 2023 mdl. All rights reserved.
+#
+
+rule cp
+  command = $cp $in $out
+  description = CP $out
+
+rule cc 
+  deps = msvc
+  command = $CLANG --driver-mode=cl /nologo /showIncludes:user /std:c11 /TC $
+  -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags
+  description = CC $out
+
+rule cxx 
+  deps = msvc
+  command = $CLANG --driver-mode=cl /nologo /showIncludes:user /std:c++20 /TP $
+  -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags 
+  description = CXX $out
+
+rule ar
+  command = $LLD_LINK /LIB /OUT:$out @$out.rsp
+  description = LIB $out
+  rspfile = $out.rsp
+  rspfile_content = $in $ar_files
+
+rule link-dll
+  command = $LLD_LINK /DLL $OPT_LDFLAGS $LDFLAGS /OUT:$out $in $ldflags 
+  description = LINK $out
+
+rule link 
+  command = $LLD_LINK $OPT_LDFLAGS $LDFLAGS /OUT:$out $in $ldflags $
+  /pdbaltpath:%_PDB% /NATVIS:build/config/c++/libc++.natvis
+  description = LINK $out
+
+DEPENDS_LIB = $DEPENDS_LIB
+
+SDK = third_party/windows/sdk
+MSVC = third_party/windows/msvc
+
+TARGET_CFLAGS = -Ibuild/config/windows/override $
+  -imsvc$MSVC/include -imsvc$SDK/include/ucrt $
+  -imsvc$SDK/include/shared -imsvc$SDK/include/um -imsvc$SDK/include/winrt $
+  $STUB_FLAGS 
+
+TARGET_LDFLAGS = -libpath:$MSVC/lib/x64 -libpath:$SDK/lib/um/x64 -libpath:$lib
+
+OPT_LDFLAGS = /machine:x64 $OPT_LDFLAGS
+
+OPT_CFLAGS = $CONF_CFLAGS -Ithird_party/libc++/src/include -Ithird_party/libc++ $
+  -Ithird_party/libc++abi/src/include -Wno-deprecated-declarations $TARGET_CFLAGS
+
+CR_LDFLAGS = kernel32.lib setupapi.lib user32.lib shell32.lib userenv.lib $
+  gdi32.lib powrprof.lib oleaut32.lib winmm.lib ncrypt.lib shlwapi.lib $
+  version.lib propsys.lib ws2_32.lib wbemuuid.lib delayimp.lib winhttp.lib $
+  iphlpapi.lib crypt32.lib secur32.lib urlmon.lib dhcpcsvc.lib advapi32.lib $
+  shcore.lib dbghelp.lib ntdll.lib
+
+
+OPT_LDFLAGS = $OPT_LDFLAGS $CR_LDFLAGS $TARGET_LDFLAGS
+EXCEPTION = 
+RTTI = 
+
+CXXEX = win
+
+host_out = out/$TARGET/host/x86_64
+bin = $host_out/bin
+lib = $host_out/lib
+obj = $host_out/obj
+gen = $host_out/gen
+
+LIBPFX = $host_out/lib/lib
+
+subninja build/ninja/nasm.ninja
+subninja build/ninja/protobuf.ninja
+subninja build/ninja/libabsl.ninja
+subninja build/ninja/libc++.ninja

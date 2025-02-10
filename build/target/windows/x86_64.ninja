@@ -1,0 +1,94 @@
+#
+# Copyright (c) 2023 mdl. All rights reserved.
+#
+
+ARCH_CFLAGS = -target x86_64-pc-windows-msvc -m64 -msse3 -D_WIN64
+
+SIMD_FLAGS = -msse4.2 -mavx -mavx2 -mfma
+EXE=.exe
+LIB=.lib
+DLL=.dll
+
+out = out/windows/x86_64/$BUILD
+bin = $out/bin
+lib = $out/lib
+obj = $out/obj
+gen = $out/gen
+
+LIBPFX=$out/lib/
+
+ARCH_FILE = win-x64
+
+CXXEX = win
+
+SDK = third_party/windows/sdk
+MSVC = third_party/windows/msvc
+
+TARGET_CFLAGS = $TARGET_CFLAGS -Ibuild/config/windows/override $
+  -imsvc$MSVC/include -imsvc$SDK/include/ucrt $
+  -imsvc$SDK/include/shared -imsvc$SDK/include/um -imsvc$SDK/include/winrt $
+  $STUB_FLAGS
+
+TARGET_LDFLAGS = -libpath:$MSVC/lib/x64 -libpath:$SDK/lib/um/x64 -libpath:$lib
+
+OPT_LDFLAGS = /machine:x64 $OPT_LDFLAGS
+
+OPT_CFLAGS = $ARCH_CFLAGS $OPT_CFLAGS $CONF_CFLAGS
+
+CR_LDFLAGS = kernel32.lib setupapi.lib user32.lib shell32.lib userenv.lib $
+  gdi32.lib powrprof.lib oleaut32.lib winmm.lib ncrypt.lib shlwapi.lib $
+  version.lib propsys.lib ws2_32.lib wbemuuid.lib delayimp.lib winhttp.lib $
+  iphlpapi.lib crypt32.lib secur32.lib urlmon.lib dhcpcsvc.lib advapi32.lib $
+  shcore.lib dbghelp.lib ntdll.lib
+
+
+OPT_LDFLAGS = $OPT_LDFLAGS $CR_LDFLAGS $TARGET_LDFLAGS
+EXCEPTION = /EHsc
+RTTI = /GR
+
+ARCH_TARGET = posix
+
+MSVC_LIB = $MSVC/lib/x64
+DEPENDS_LIB = libcmtd.lib oldnames.lib libvcruntimed.lib $
+  kernel32.lib uuid.lib libucrtd.lib ole32.lib
+
+ZLIB_FLAGS = $CR_FLAGS -msse4.2 -mpclmul -DX86_WINDOWS $
+  -DADLER32_SIMD_SSSE3 -DINFLATE_CHUNK_SIMD_SSE2 -DINFLATE_CHUNK_READ_64LE $
+  -DDEFLATE_SLIDE_HASH_SSE2 -DCRC32_SIMD_SSE42_PCLMUL -DADLER32_SIMD_SSSE3
+
+rust_lib = third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libtest_test.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libunicode_width_unicode_width.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_std_rustc_std_workspace_std.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libgetopts_getopts.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libobject_object.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libadler_adler.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libminiz_oxide_miniz_oxide.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libgimli_gimli.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libaddr2line_addr2line.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd_detect_std_detect.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_demangle_rustc_demangle.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libpanic_unwind_panic_unwind.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libunwind_unwind.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/liblibc_libc.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libpanic_abort_panic_abort.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libmemchr_memchr.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_alloc_rustc_std_workspace_alloc.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libhashbrown_hashbrown.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcfg_if_cfg_if.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libprofiler_builtins_profiler_builtins.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore_core.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_core_rustc_std_workspace_core.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcompiler_builtins_compiler_builtins.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/liballoc_alloc.rlib $
+  third_party/local_rustc_sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd_std.rlib
+
+build $lib/empty.o : cxx build/amalgamation/empty.cc
+
+PUB_LIB = $lib/empty.o
+
+
+include build/target/windows/$BUILD.ninja
+include build/depends.ninja
+include build/phnoy.ninja
+
+subninja build/src.ninja

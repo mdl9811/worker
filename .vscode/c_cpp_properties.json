@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "name": "linux-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "__STDC_CONSTANT_MACROS",
+        "__STDC_FORMAT_MACROS",
+        "U_COMMON_IMPLEMENTATION",
+        "U_ICUDATAENTRY_IN_COMMON",
+        "UCONFIG_ONLY_HTML_CONVERSION=1",
+        "UCONFIG_USE_WINDOWS_LCID_MAPPING_API=0",
+        "U_CHARSET_IS_UTF8=1",
+        "U_USING_ICU_NAMESPACE=0",
+        "U_ENABLE_DYLOAD=0",
+        "U_ENABLE_TRACING=1",
+        "U_ENABLE_RESOURCE_TRACING=0",
+        "U_STATIC_IMPLEMENTATION",
+        "U_I18N_IMPLEMENTATION",
+        "GOOGLE_PROTOBUF_NO_RTTI",
+        "_LIBCPP_DISABLE_DEPRECATION_WARNINGS"
+      ],
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "linux-gcc-x64",
+      "configurationProvider": "ms-vscode.makefile-tools",
+      "compilerPath": "C:/MinGW/bin/gcc.exe"
+    }
+  ],
+  "version": 4
+}

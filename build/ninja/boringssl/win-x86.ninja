@@ -1,0 +1,49 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/d asm_objs
+
+sa = $s/win-x86/crypto
+
+rule nasm
+  command = $nasm -fwin32 -o $out $in
+  description = NASM $out
+
+build $o/chacha-x86.o : nasm $sa/chacha/chacha-x86-win.asm | $nasm
+build $o/aesni-x86.o : nasm $sa/fipsmodule/aesni-x86-win.asm | $nasm
+build $o/bn-586.o : nasm $sa/fipsmodule/bn-586-win.asm | $nasm
+build $o/co-586.o : nasm $sa/fipsmodule/co-586-win.asm | $nasm
+build $o/ghash-ssse3-x86.o : nasm $sa/fipsmodule/ghash-ssse3-x86-win.asm | $nasm
+build $o/ghash-x86.o : nasm $sa/fipsmodule/ghash-x86-win.asm | $nasm
+build $o/md5-586.o : nasm $sa/fipsmodule/md5-586-win.asm | $nasm
+build $o/sha1-586.o : nasm $sa/fipsmodule/sha1-586-win.asm | $nasm
+build $o/sha256-586.o : nasm $sa/fipsmodule/sha256-586-win.asm | $nasm
+build $o/sha512-586.o : nasm $sa/fipsmodule/sha512-586-win.asm | $nasm
+build $o/vpaes-x86.o : nasm $sa/fipsmodule/vpaes-x86-win.asm | $nasm
+build $o/x86-mont.o : nasm $sa/fipsmodule/x86-mont-win.asm | $nasm
+
+build $o/d : phony $o/chacha-x86.o $
+  $o/aesni-x86.o $
+  $o/bn-586.o $
+  $o/co-586.o $
+  $o/ghash-ssse3-x86.o $
+  $o/ghash-x86.o $
+  $o/md5-586.o $
+  $o/sha1-586.o $
+  $o/sha256-586.o $
+  $o/sha512-586.o $
+  $o/vpaes-x86.o $
+  $o/x86-mont.o
+
+asm_objs = $o/chacha-x86.o $
+  $o/aesni-x86.o $
+  $o/bn-586.o $
+  $o/co-586.o $
+  $o/ghash-ssse3-x86.o $
+  $o/ghash-x86.o $
+  $o/md5-586.o $
+  $o/sha1-586.o $
+  $o/sha256-586.o $
+  $o/sha512-586.o $
+  $o/vpaes-x86.o $
+  $o/x86-mont.o

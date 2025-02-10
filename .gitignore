@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2022 mdl. All rights reserved.
+#
+
+.vs/
+.cache/
+
+out
+out/
+log/
+.ninja_deps
+.ninja_log
+rsyncshell
+

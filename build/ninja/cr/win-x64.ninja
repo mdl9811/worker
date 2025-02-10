@@ -1,0 +1,425 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_tls_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_tls_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/scoped_clear_last_error_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/scoped_clear_last_error_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_win.cc
+build $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_win.o : cxx $s/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_win.cc
+build $o/base/process/process_handle_win.o : cxx $s/base/process/process_handle_win.cc
+build $o/base/scoped_clear_last_error_win.o : cxx $s/base/scoped_clear_last_error_win.cc
+build $o/base/threading/platform_thread_win.o : cxx $s/base/threading/platform_thread_win.cc
+build $o/base/debug/debugger_win.o : cxx $s/base/debug/debugger_win.cc
+build $o/base/base_paths_win.o : cxx $s/base/base_paths_win.cc
+build $o/base/debug/gdi_debug_util_win.o : cxx $s/base/debug/gdi_debug_util_win.cc
+build $o/base/file_version_info_win.o : cxx $s/base/file_version_info_win.cc
+build $o/base/process/kill_win.o : cxx $s/base/process/kill_win.cc
+build $o/base/process/launch_win.o : cxx $s/base/process/launch_win.cc
+build $o/base/process/memory_win.o : cxx $s/base/process/memory_win.cc
+build $o/base/process/process_info_win.o : cxx $s/base/process/process_info_win.cc
+build $o/base/process/process_iterator_win.o : cxx $s/base/process/process_iterator_win.cc
+build $o/base/process/process_metrics_win.o : cxx $s/base/process/process_metrics_win.cc
+build $o/base/process/process_win.o : cxx $s/base/process/process_win.cc
+build $o/base/profiler/module_cache_win.o : cxx $s/base/profiler/module_cache_win.cc
+build $o/base/profiler/native_unwinder_win.o : cxx $s/base/profiler/native_unwinder_win.cc
+build $o/base/profiler/stack_sampler_win.o : cxx $s/base/profiler/stack_sampler_win.cc
+build $o/base/profiler/suspendable_thread_delegate_win.o : cxx $s/base/profiler/suspendable_thread_delegate_win.cc
+build $o/base/profiler/win32_stack_frame_unwinder.o : cxx $s/base/profiler/win32_stack_frame_unwinder.cc
+build $o/base/rand_util_win.o : cxx $s/base/rand_util_win.cc
+build $o/base/strings/strcat_win.o : cxx $s/base/strings/strcat_win.cc
+build $o/base/strings/string_number_conversions_win.o : cxx $s/base/strings/string_number_conversions_win.cc
+build $o/base/strings/string_split_win.o : cxx $s/base/strings/string_split_win.cc
+build $o/base/strings/string_util_win.o : cxx $s/base/strings/string_util_win.cc
+build $o/base/strings/sys_string_conversions_win.o : cxx $s/base/strings/sys_string_conversions_win.cc
+build $o/base/sync_socket_win.o : cxx $s/base/sync_socket_win.cc
+build $o/base/synchronization/condition_variable_win.o : cxx $s/base/synchronization/condition_variable_win.cc
+build $o/base/synchronization/lock_impl_win.o : cxx $s/base/synchronization/lock_impl_win.cc
+build $o/base/synchronization/waitable_event_watcher_win.o : cxx $s/base/synchronization/waitable_event_watcher_win.cc
+build $o/base/synchronization/waitable_event_win.o : cxx $s/base/synchronization/waitable_event_win.cc
+build $o/base/system/sys_info_win.o : cxx $s/base/system/sys_info_win.cc
+build $o/base/threading/thread_local_storage_win.o : cxx $s/base/threading/thread_local_storage_win.cc
+build $o/base/timer/hi_res_timer_manager_win.o : cxx $s/base/timer/hi_res_timer_manager_win.cc
+build $o/base/win/access_control_list.o : cxx $s/base/win/access_control_list.cc
+build $o/base/win/access_token.o : cxx $s/base/win/access_token.cc
+build $o/base/win/atl_throw.o : cxx $s/base/win/atl_throw.cc
+build $o/base/win/com_init_balancer.o : cxx $s/base/win/com_init_balancer.cc
+build $o/base/win/com_init_check_hook.o : cxx $s/base/win/com_init_check_hook.cc
+build $o/base/win/com_init_util.o : cxx $s/base/win/com_init_util.cc
+build $o/base/win/core_winrt_util.o : cxx $s/base/win/core_winrt_util.cc
+build $o/base/win/dark_mode_support.o : cxx $s/base/win/dark_mode_support.cc
+build $o/base/win/default_apps_util.o : cxx $s/base/win/default_apps_util.cc
+build $o/base/win/embedded_i18n/language_selector.o : cxx $s/base/win/embedded_i18n/language_selector.cc
+build $o/base/win/enum_variant.o : cxx $s/base/win/enum_variant.cc
+build $o/base/win/event_trace_controller.o : cxx $s/base/win/event_trace_controller.cc
+build $o/base/win/event_trace_provider.o : cxx $s/base/win/event_trace_provider.cc
+build $o/base/win/hstring_reference.o : cxx $s/base/win/hstring_reference.cc
+build $o/base/win/i18n.o : cxx $s/base/win/i18n.cc
+build $o/base/win/iat_patch_function.o : cxx $s/base/win/iat_patch_function.cc
+build $o/base/win/message_window.o : cxx $s/base/win/message_window.cc
+build $o/base/win/nt_status.o : cxx $s/base/win/nt_status.cc
+build $o/base/win/object_watcher.o : cxx $s/base/win/object_watcher.cc
+build $o/base/win/patch_util.o : cxx $s/base/win/patch_util.cc
+build $o/base/win/pe_image_reader.o : cxx $s/base/win/pe_image_reader.cc
+build $o/base/win/process_startup_helper.o : cxx $s/base/win/process_startup_helper.cc
+build $o/base/win/resource_exhaustion.o : cxx $s/base/win/resource_exhaustion.cc
+build $o/base/win/resource_util.o : cxx $s/base/win/resource_util.cc
+build $o/base/win/scoped_bstr.o : cxx $s/base/win/scoped_bstr.cc
+build $o/base/win/scoped_com_initializer.o : cxx $s/base/win/scoped_com_initializer.cc
+build $o/base/win/scoped_handle.o : cxx $s/base/win/scoped_handle.cc
+build $o/base/win/scoped_process_information.o : cxx $s/base/win/scoped_process_information.cc
+build $o/base/win/scoped_variant.o : cxx $s/base/win/scoped_variant.cc
+build $o/base/win/scoped_winrt_initializer.o : cxx $s/base/win/scoped_winrt_initializer.cc
+build $o/base/win/security_descriptor.o : cxx $s/base/win/security_descriptor.cc
+build $o/base/win/security_util.o : cxx $s/base/win/security_util.cc
+build $o/base/win/shortcut.o : cxx $s/base/win/shortcut.cc
+build $o/base/win/sid.o : cxx $s/base/win/sid.cc
+build $o/base/win/startup_information.o : cxx $s/base/win/startup_information.cc
+build $o/base/win/variant_vector.o : cxx $s/base/win/variant_vector.cc
+build $o/base/win/vector.o : cxx $s/base/win/vector.cc
+build $o/base/win/windows_version.o : cxx $s/base/win/windows_version.cc
+build $o/base/win/winrt_storage_util.o : cxx $s/base/win/winrt_storage_util.cc
+build $o/base/win/wmi.o : cxx $s/base/win/wmi.cc
+build $o/base/win/static_constants.o : cxx $s/base/win/static_constants.cc
+build $o/base/win/wrapped_window_proc.o : cxx $s/base/win/wrapped_window_proc.cc
+build $o/base/win/pe_image.o : cxx $s/base/win/pe_image.cc
+build $o/base/debug/handle_hooks_win.o : cxx $s/base/debug/handle_hooks_win.cc
+build $o/base/debug/invalid_access_win.o : cxx $s/base/debug/invalid_access_win.cc
+build $o/base/debug/stack_trace_win.o : cxx $s/base/debug/stack_trace_win.cc
+build $o/base/enterprise_util_win.o : cxx $s/base/enterprise_util_win.cc
+build $o/base/files/file_enumerator_win.o : cxx $s/base/files/file_enumerator_win.cc
+build $o/base/files/file_path_watcher_win.o : cxx $s/base/files/file_path_watcher_win.cc
+build $o/base/files/file_util_win.o : cxx $s/base/files/file_util_win.cc
+build $o/base/files/file_win.o : cxx $s/base/files/file_win.cc
+build $o/base/files/memory_mapped_file_win.o : cxx $s/base/files/memory_mapped_file_win.cc
+build $o/base/logging_win.o : cxx $s/base/logging_win.cc
+build $o/base/memory/page_size_win.o : cxx $s/base/memory/page_size_win.cc
+build $o/base/memory/platform_shared_memory_mapper_win.o : cxx $s/base/memory/platform_shared_memory_mapper_win.cc
+build $o/base/memory/platform_shared_memory_region_win.o : cxx $s/base/memory/platform_shared_memory_region_win.cc
+build $o/base/memory/protected_memory_win.o : cxx $s/base/memory/protected_memory_win.cc
+build $o/base/message_loop/message_pump_win.o : cxx $s/base/message_loop/message_pump_win.cc
+build $o/base/native_library_win.o : cxx $s/base/native_library_win.cc
+build $o/base/power_monitor/battery_level_provider_win.o : cxx $s/base/power_monitor/battery_level_provider_win.cc
+build $o/base/power_monitor/power_monitor_device_source_win.o : cxx $s/base/power_monitor/power_monitor_device_source_win.cc
+build $o/base/power_monitor/speed_limit_observer_win.o : cxx $s/base/power_monitor/speed_limit_observer_win.cc
+
+build $o/net/base/network_cost_change_notifier_win.o : cxx $s/net/base/network_cost_change_notifier_win.cc
+build $o/net/base/file_stream_context_win.o : cxx $s/net/base/file_stream_context_win.cc
+build $o/net/base/net_errors_win.o : cxx $s/net/base/net_errors_win.cc
+build $o/net/base/network_change_notifier_win.o : cxx $s/net/base/network_change_notifier_win.cc
+build $o/net/base/network_interfaces_win.o : cxx $s/net/base/network_interfaces_win.cc
+build $o/net/base/platform_mime_util_win.o : cxx $s/net/base/platform_mime_util_win.cc
+build $o/net/base/winsock_init.o : cxx $s/net/base/winsock_init.cc
+build $o/net/base/winsock_util.o : cxx $s/net/base/winsock_util.cc
+build $o/net/cert/x509_util_win.o : cxx $s/net/cert/x509_util_win.cc
+build $o/net/disk_cache/blockfile/file_win.o : cxx $s/net/disk_cache/blockfile/file_win.cc
+build $o/net/disk_cache/blockfile/mapped_file_win.o : cxx $s/net/disk_cache/blockfile/mapped_file_win.cc
+build $o/net/disk_cache/cache_util_win.o : cxx $s/net/disk_cache/cache_util_win.cc
+build $o/net/disk_cache/simple/simple_util_win.o : cxx $s/net/disk_cache/simple/simple_util_win.cc
+build $o/net/http/http_auth_handler_ntlm_win.o : cxx $s/net/http/http_auth_handler_ntlm_win.cc
+build $o/net/http/http_auth_sspi_win.o : cxx $s/net/http/http_auth_sspi_win.cc
+build $o/net/http/url_security_manager_win.o : cxx $s/net/http/url_security_manager_win.cc
+build $o/net/proxy_resolution/win/dhcp_pac_file_adapter_fetcher_win.o : cxx $s/net/proxy_resolution/win/dhcp_pac_file_adapter_fetcher_win.cc
+build $o/net/proxy_resolution/win/dhcp_pac_file_fetcher_win.o : cxx $s/net/proxy_resolution/win/dhcp_pac_file_fetcher_win.cc
+build $o/net/proxy_resolution/win/dhcpcsvc_init_win.o : cxx $s/net/proxy_resolution/win/dhcpcsvc_init_win.cc
+build $o/net/proxy_resolution/win/proxy_config_service_win.o : cxx $s/net/proxy_resolution/win/proxy_config_service_win.cc
+build $o/net/proxy_resolution/win/proxy_resolver_winhttp.o : cxx $s/net/proxy_resolution/win/proxy_resolver_winhttp.cc
+build $o/net/proxy_resolution/win/windows_system_proxy_resolution_request.o : cxx $s/net/proxy_resolution/win/windows_system_proxy_resolution_request.cc
+build $o/net/proxy_resolution/win/windows_system_proxy_resolution_service.o : cxx $s/net/proxy_resolution/win/windows_system_proxy_resolution_service.cc
+build $o/net/socket/tcp_socket_win.o : cxx $s/net/socket/tcp_socket_win.cc
+build $o/net/socket/udp_socket_win.o : cxx $s/net/socket/udp_socket_win.cc
+build $o/net/socket/tcp_socket_io_completion_port_win.o : cxx $s/net/socket/tcp_socket_io_completion_port_win.cc
+build $o/net/ssl/client_cert_store_win.o : cxx $s/net/ssl/client_cert_store_win.cc
+build $o/net/ssl/ssl_platform_key_win.o : cxx $s/net/ssl/ssl_platform_key_win.cc
+
+build $o/net/cert/internal/trust_store_win.o : cxx $s/net/cert/internal/trust_store_win.cc
+build $o/net/third_party/mozilla_win/cert/win_util.o : cxx $s/net/third_party/mozilla_win/cert/win_util.cc
+
+build $o/net/dns/address_sorter_win.o : cxx $s/net/dns/address_sorter_win.cc
+build $o/net/dns/dns_config_service_win.o : cxx $s/net/dns/dns_config_service_win.cc
+
+build $o/net/dns/public/win_dns_system_settings.o : cxx $s/net/dns/public/win_dns_system_settings.cc
+
+build $o/db : phony $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_tls_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/scoped_clear_last_error_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_win.o $
+  $o/base/process/process_handle_win.o $
+  $o/base/scoped_clear_last_error_win.o $
+  $o/base/threading/platform_thread_win.o $
+  $o/base/debug/debugger_win.o $
+  $o/base/base_paths_win.o $
+  $o/base/debug/gdi_debug_util_win.o $
+  $o/base/file_version_info_win.o $
+  $o/base/process/kill_win.o $
+  $o/base/process/launch_win.o $
+  $o/base/process/memory_win.o $
+  $o/base/process/process_info_win.o $
+  $o/base/process/process_iterator_win.o $
+  $o/base/process/process_metrics_win.o $
+  $o/base/process/process_win.o $
+  $o/base/profiler/module_cache_win.o $
+  $o/base/profiler/native_unwinder_win.o $
+  $o/base/profiler/stack_sampler_win.o $
+  $o/base/profiler/suspendable_thread_delegate_win.o $
+  $o/base/debug/handle_hooks_win.o $
+  $o/base/debug/invalid_access_win.o $
+  $o/base/debug/stack_trace_win.o $
+  $o/base/enterprise_util.o $
+  $o/base/enterprise_util_win.o $
+  $o/base/files/file_enumerator_win.o $
+  $o/base/files/file_path_watcher_win.o $
+  $o/base/files/file_util_win.o $
+  $o/base/files/file_win.o $
+  $o/base/files/memory_mapped_file_win.o $
+  $o/base/logging_win.o $
+  $o/base/memory/page_size_win.o $
+  $o/base/memory/platform_shared_memory_mapper_win.o $
+  $o/base/memory/platform_shared_memory_region_win.o $
+  $o/base/memory/protected_memory_win.o $
+  $o/base/message_loop/message_pump_win.o $
+  $o/base/native_library_win.o $
+  $o/base/power_monitor/battery_level_provider_win.o $
+  $o/base/power_monitor/power_monitor_device_source_win.o $
+  $o/base/power_monitor/speed_limit_observer_win.o $
+  $o/base/profiler/win32_stack_frame_unwinder.o $
+  $o/base/rand_util_win.o $
+  $o/base/strings/strcat_win.o $
+  $o/base/strings/string_number_conversions_win.o $
+  $o/base/strings/string_split_win.o $
+  $o/base/strings/string_util_win.o $
+  $o/base/strings/sys_string_conversions_win.o $
+  $o/base/sync_socket_win.o $
+  $o/base/synchronization/condition_variable_win.o $
+  $o/base/synchronization/lock_impl_win.o $
+  $o/base/synchronization/waitable_event_watcher_win.o $
+  $o/base/synchronization/waitable_event_win.o $
+  $o/base/system/sys_info_win.o $
+  $o/base/threading/thread_local_storage_win.o $
+  $o/base/timer/hi_res_timer_manager_win.o $
+  $o/base/win/access_control_list.o $
+  $o/base/win/access_token.o $
+  $o/base/win/com_init_balancer.o $
+  $o/base/win/com_init_check_hook.o $
+  $o/base/win/com_init_util.o $
+  $o/base/win/core_winrt_util.o $
+  $o/base/win/dark_mode_support.o $
+  $o/base/win/default_apps_util.o $
+  $o/base/win/embedded_i18n/language_selector.o $
+  $o/base/win/enum_variant.o $
+  $o/base/win/event_trace_controller.o $
+  $o/base/win/event_trace_provider.o $
+  $o/base/win/hstring_reference.o $
+  $o/base/win/i18n.o $
+  $o/base/win/iat_patch_function.o $
+  $o/base/win/message_window.o $
+  $o/base/win/nt_status.o $
+  $o/base/win/object_watcher.o $
+  $o/base/win/patch_util.o $
+  $o/base/win/pe_image_reader.o $
+  $o/base/win/process_startup_helper.o $
+  $o/base/win/resource_exhaustion.o $
+  $o/base/win/resource_util.o $
+  $o/base/win/scoped_bstr.o $
+  $o/base/win/scoped_com_initializer.o $
+  $o/base/win/scoped_handle.o $
+  $o/base/win/scoped_process_information.o $
+  $o/base/win/scoped_variant.o $
+  $o/base/win/scoped_winrt_initializer.o $
+  $o/base/win/security_descriptor.o $
+  $o/base/win/security_util.o $
+  $o/base/win/shortcut.o $
+  $o/base/win/sid.o $
+  $o/base/win/startup_information.o $
+  $o/base/win/variant_vector.o $
+  $o/base/win/vector.o $
+  $o/base/win/windows_version.o $
+  $o/base/win/winrt_storage_util.o $
+  $o/base/win/wmi.o $
+  $o/base/win/static_constants.o $
+  $o/base/win/wrapped_window_proc.o $
+  $o/base/win/pe_image.o
+
+ # $o/base/containers/flat_tree.o
+base_file = $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_tls_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/process/process_handle_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/scoped_clear_last_error_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/time/time_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_win.o $
+  $o/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/memory/page_size_win.o $
+  $o/base/process/process_handle_win.o $
+  $o/base/scoped_clear_last_error_win.o $
+  $o/base/threading/platform_thread_win.o $
+  $o/base/debug/debugger_win.o $
+  $o/base/base_paths_win.o $
+  $o/base/debug/gdi_debug_util_win.o $
+  $o/base/file_version_info_win.o $
+  $o/base/process/kill_win.o $
+  $o/base/process/launch_win.o $
+  $o/base/process/memory_win.o $
+  $o/base/process/process_info_win.o $
+  $o/base/process/process_iterator_win.o $
+  $o/base/process/process_metrics_win.o $
+  $o/base/process/process_win.o $
+  $o/base/profiler/module_cache_win.o $
+  $o/base/profiler/native_unwinder_win.o $
+  $o/base/profiler/stack_sampler_win.o $
+  $o/base/profiler/suspendable_thread_delegate_win.o $
+  $o/base/debug/handle_hooks_win.o $
+  $o/base/debug/invalid_access_win.o $
+  $o/base/debug/stack_trace_win.o $
+  $o/base/enterprise_util.o $
+  $o/base/enterprise_util_win.o $
+  $o/base/files/file_enumerator_win.o $
+  $o/base/files/file_path_watcher_win.o $
+  $o/base/files/file_util_win.o $
+  $o/base/files/file_win.o $
+  $o/base/files/memory_mapped_file_win.o $
+  $o/base/logging_win.o $
+  $o/base/memory/page_size_win.o $
+  $o/base/memory/platform_shared_memory_mapper_win.o $
+  $o/base/memory/platform_shared_memory_region_win.o $
+  $o/base/memory/protected_memory_win.o $
+  $o/base/message_loop/message_pump_win.o $
+  $o/base/native_library_win.o $
+  $o/base/power_monitor/battery_level_provider_win.o $
+  $o/base/power_monitor/power_monitor_device_source_win.o $
+  $o/base/power_monitor/speed_limit_observer_win.o $
+  $o/base/profiler/win32_stack_frame_unwinder.o $
+  $o/base/rand_util_win.o $
+  $o/base/strings/strcat_win.o $
+  $o/base/strings/string_number_conversions_win.o $
+  $o/base/strings/string_split_win.o $
+  $o/base/strings/string_util_win.o $
+  $o/base/strings/sys_string_conversions_win.o $
+  $o/base/sync_socket_win.o $
+  $o/base/synchronization/condition_variable_win.o $
+  $o/base/synchronization/lock_impl_win.o $
+  $o/base/synchronization/waitable_event_watcher_win.o $
+  $o/base/synchronization/waitable_event_win.o $
+  $o/base/system/sys_info_win.o $
+  $o/base/threading/thread_local_storage_win.o $
+  $o/base/timer/hi_res_timer_manager_win.o $
+  $o/base/win/access_control_list.o $
+  $o/base/win/access_token.o $
+  $o/base/win/com_init_balancer.o $
+  $o/base/win/com_init_check_hook.o $
+  $o/base/win/com_init_util.o $
+  $o/base/win/core_winrt_util.o $
+  $o/base/win/dark_mode_support.o $
+  $o/base/win/default_apps_util.o $
+  $o/base/win/embedded_i18n/language_selector.o $
+  $o/base/win/enum_variant.o $
+  $o/base/win/event_trace_controller.o $
+  $o/base/win/event_trace_provider.o $
+  $o/base/win/hstring_reference.o $
+  $o/base/win/i18n.o $
+  $o/base/win/iat_patch_function.o $
+  $o/base/win/message_window.o $
+  $o/base/win/nt_status.o $
+  $o/base/win/object_watcher.o $
+  $o/base/win/patch_util.o $
+  $o/base/win/pe_image_reader.o $
+  $o/base/win/process_startup_helper.o $
+  $o/base/win/resource_exhaustion.o $
+  $o/base/win/resource_util.o $
+  $o/base/win/scoped_bstr.o $
+  $o/base/win/scoped_com_initializer.o $
+  $o/base/win/scoped_handle.o $
+  $o/base/win/scoped_process_information.o $
+  $o/base/win/scoped_variant.o $
+  $o/base/win/scoped_winrt_initializer.o $
+  $o/base/win/security_descriptor.o $
+  $o/base/win/security_util.o $
+  $o/base/win/shortcut.o $
+  $o/base/win/sid.o $
+  $o/base/win/startup_information.o $
+  $o/base/win/variant_vector.o $
+  $o/base/win/vector.o $
+  $o/base/win/windows_version.o $
+  $o/base/win/winrt_storage_util.o $
+  $o/base/win/wmi.o $
+  $o/base/win/static_constants.o $
+  $o/base/win/wrapped_window_proc.o $
+  $o/base/win/pe_image.o
+
+build $o/dn : phony $
+  $o/net/base/file_stream_context_win.o $
+  $o/net/base/network_cost_change_notifier_win.o $
+  $o/net/base/net_errors_win.o $
+  $o/net/base/network_change_notifier_win.o $
+  $o/net/base/network_interfaces_win.o $
+  $o/net/base/platform_mime_util_win.o $
+  $o/net/base/winsock_init.o $
+  $o/net/base/winsock_util.o $
+  $o/net/cert/x509_util_win.o $
+  $o/net/disk_cache/blockfile/file_win.o $
+  $o/net/disk_cache/blockfile/mapped_file_win.o $
+  $o/net/disk_cache/cache_util_win.o $
+  $o/net/disk_cache/simple/simple_util_win.o $
+  $o/net/http/http_auth_handler_ntlm_win.o $
+  $o/net/http/http_auth_sspi_win.o $
+  $o/net/http/url_security_manager_win.o $
+  $o/net/proxy_resolution/win/dhcp_pac_file_adapter_fetcher_win.o $
+  $o/net/proxy_resolution/win/dhcp_pac_file_fetcher_win.o $
+  $o/net/proxy_resolution/win/dhcpcsvc_init_win.o $
+  $o/net/proxy_resolution/win/proxy_config_service_win.o $
+  $o/net/proxy_resolution/win/proxy_resolver_winhttp.o $
+  $o/net/proxy_resolution/win/windows_system_proxy_resolution_request.o $
+  $o/net/proxy_resolution/win/windows_system_proxy_resolution_service.o $
+  $o/net/socket/tcp_socket_win.o $
+  $o/net/socket/udp_socket_win.o $
+  $o/net/socket/tcp_socket_io_completion_port_win.o $
+  $o/net/ssl/client_cert_store_win.o $
+  $o/net/ssl/ssl_platform_key_win.o $
+  $o/net/cert/internal/trust_store_win.o $
+  $o/net/third_party/mozilla_win/cert/win_util.o $
+  $o/net/dns/address_sorter_win.o $
+  $o/net/dns/dns_config_service_win.o $
+  $o/net/dns/public/win_dns_system_settings.o
+
+net_file = $
+  $o/net/base/file_stream_context_win.o $
+  $o/net/base/network_cost_change_notifier_win.o $
+  $o/net/base/net_errors_win.o $
+  $o/net/base/network_change_notifier_win.o $
+  $o/net/base/network_interfaces_win.o $
+  $o/net/base/platform_mime_util_win.o $
+  $o/net/base/winsock_init.o $
+  $o/net/base/winsock_util.o $
+  $o/net/cert/x509_util_win.o $
+  $o/net/disk_cache/blockfile/file_win.o $
+  $o/net/disk_cache/blockfile/mapped_file_win.o $
+  $o/net/disk_cache/cache_util_win.o $
+  $o/net/disk_cache/simple/simple_util_win.o $
+  $o/net/http/http_auth_handler_ntlm_win.o $
+  $o/net/http/http_auth_sspi_win.o $
+  $o/net/http/url_security_manager_win.o $
+  $o/net/proxy_resolution/win/dhcp_pac_file_adapter_fetcher_win.o $
+  $o/net/proxy_resolution/win/dhcp_pac_file_fetcher_win.o $
+  $o/net/proxy_resolution/win/dhcpcsvc_init_win.o $
+  $o/net/proxy_resolution/win/proxy_config_service_win.o $
+  $o/net/proxy_resolution/win/proxy_resolver_winhttp.o $
+  $o/net/proxy_resolution/win/windows_system_proxy_resolution_request.o $
+  $o/net/proxy_resolution/win/windows_system_proxy_resolution_service.o $
+  $o/net/socket/tcp_socket_win.o $
+  $o/net/socket/udp_socket_win.o $
+  $o/net/socket/tcp_socket_io_completion_port_win.o $
+  $o/net/ssl/client_cert_store_win.o $
+  $o/net/ssl/ssl_platform_key_win.o $
+  $o/net/cert/internal/trust_store_win.o $
+  $o/net/third_party/mozilla_win/cert/win_util.o $
+  $o/net/dns/address_sorter_win.o $
+  $o/net/dns/dns_config_service_win.o $
+  $o/net/dns/public/win_dns_system_settings.o

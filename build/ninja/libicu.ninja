@@ -1,0 +1,905 @@
+#
+# Copyright (c) 2022 mdl. All rights reserved.
+#
+
+s = third_party/icu/source
+o = $obj/icu
+
+CFLAGS = -I$s/common -I$s/i18n $
+  -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS $
+  -DU_COMMON_IMPLEMENTATION -DU_ICUDATAENTRY_IN_COMMON $
+  -DUCONFIG_ONLY_HTML_CONVERSION=1 -DUCONFIG_USE_WINDOWS_LCID_MAPPING_API=0 $
+  -DU_CHARSET_IS_UTF8=1 -DU_USING_ICU_NAMESPACE=0 -DU_ENABLE_DYLOAD=0 $
+  -DU_ENABLE_TRACING=1 -DU_ENABLE_RESOURCE_TRACING=0 -DU_STATIC_IMPLEMENTATION $
+  -DU_I18N_IMPLEMENTATION -Wno-deprecated-declarations $
+  -Wno-ambiguous-reversed-operator $RTTI
+
+build $o/appendable.o : cxx $s/common/appendable.cpp
+build $o/bmpset.o : cxx $s/common/bmpset.cpp
+build $o/brkeng.o : cxx $s/common/brkeng.cpp
+build $o/brkiter.o : cxx $s/common/brkiter.cpp
+build $o/bytesinkutil.o : cxx $s/common/bytesinkutil.cpp
+build $o/bytestream.o : cxx $s/common/bytestream.cpp
+build $o/bytestrie.o : cxx $s/common/bytestrie.cpp
+build $o/bytestriebuilder.o : cxx $s/common/bytestriebuilder.cpp
+build $o/bytestrieiterator.o : cxx $s/common/bytestrieiterator.cpp
+build $o/caniter.o : cxx $s/common/caniter.cpp
+build $o/characterproperties.o : cxx $s/common/characterproperties.cpp
+build $o/chariter.o : cxx $s/common/chariter.cpp
+build $o/charstr.o : cxx $s/common/charstr.cpp
+build $o/cmemory.o : cxx $s/common/cmemory.cpp
+build $o/cstr.o : cxx $s/common/cstr.cpp
+build $o/cstring.o : cxx $s/common/cstring.cpp
+build $o/cwchar.o : cxx $s/common/cwchar.cpp
+build $o/dictbe.o : cxx $s/common/dictbe.cpp
+build $o/dictionarydata.o : cxx $s/common/dictionarydata.cpp
+build $o/dtintrv.o : cxx $s/common/dtintrv.cpp
+build $o/edits.o : cxx $s/common/edits.cpp
+build $o/emojiprops.o : cxx $s/common/emojiprops.cpp
+build $o/errorcode.o : cxx $s/common/errorcode.cpp
+build $o/filteredbrk.o : cxx $s/common/filteredbrk.cpp
+build $o/filterednormalizer2.o : cxx $s/common/filterednormalizer2.cpp
+build $o/icudataver.o : cxx $s/common/icudataver.cpp
+build $o/icuplug.o : cxx $s/common/icuplug.cpp
+build $o/loadednormalizer2impl.o : cxx $s/common/loadednormalizer2impl.cpp
+build $o/localebuilder.o : cxx $s/common/localebuilder.cpp
+build $o/localematcher.o : cxx $s/common/localematcher.cpp
+build $o/localeprioritylist.o : cxx $s/common/localeprioritylist.cpp
+build $o/locavailable.o : cxx $s/common/locavailable.cpp
+build $o/locbased.o : cxx $s/common/locbased.cpp
+build $o/locdispnames.o : cxx $s/common/locdispnames.cpp
+build $o/locdistance.o : cxx $s/common/locdistance.cpp
+build $o/locdspnm.o : cxx $s/common/locdspnm.cpp
+build $o/locid.o : cxx $s/common/locid.cpp
+build $o/loclikely.o : cxx $s/common/loclikely.cpp
+build $o/loclikelysubtags.o : cxx $s/common/loclikelysubtags.cpp
+build $o/locmap.o : cxx $s/common/locmap.cpp
+build $o/locresdata.o : cxx $s/common/locresdata.cpp
+build $o/locutil.o : cxx $s/common/locutil.cpp
+build $o/lsr.o : cxx $s/common/lsr.cpp
+build $o/lstmbe.o : cxx $s/common/lstmbe.cpp
+build $o/messagepattern.o : cxx $s/common/messagepattern.cpp
+build $o/mlbe.o : cxx $s/common/mlbe.cpp
+build $o/normalizer2.o : cxx $s/common/normalizer2.cpp
+build $o/normalizer2impl.o : cxx $s/common/normalizer2impl.cpp
+build $o/normlzr.o : cxx $s/common/normlzr.cpp
+build $o/parsepos.o : cxx $s/common/parsepos.cpp
+build $o/patternprops.o : cxx $s/common/patternprops.cpp
+build $o/pluralmap.o : cxx $s/common/pluralmap.cpp
+build $o/propname.o : cxx $s/common/propname.cpp
+build $o/propsvec.o : cxx $s/common/propsvec.cpp
+build $o/punycode.o : cxx $s/common/punycode.cpp
+build $o/putil.o : cxx $s/common/putil.cpp
+build $o/rbbi.o : cxx $s/common/rbbi.cpp
+build $o/rbbi_cache.o : cxx $s/common/rbbi_cache.cpp
+build $o/rbbidata.o : cxx $s/common/rbbidata.cpp
+build $o/rbbinode.o : cxx $s/common/rbbinode.cpp
+build $o/rbbirb.o : cxx $s/common/rbbirb.cpp
+build $o/rbbiscan.o : cxx $s/common/rbbiscan.cpp
+build $o/rbbisetb.o : cxx $s/common/rbbisetb.cpp
+build $o/rbbistbl.o : cxx $s/common/rbbistbl.cpp
+build $o/rbbitblb.o : cxx $s/common/rbbitblb.cpp
+build $o/resbund.o : cxx $s/common/resbund.cpp
+build $o/resbund_cnv.o : cxx $s/common/resbund_cnv.cpp
+build $o/resource.o : cxx $s/common/resource.cpp
+build $o/restrace.o : cxx $s/common/restrace.cpp
+build $o/ruleiter.o : cxx $s/common/ruleiter.cpp
+build $o/schriter.o : cxx $s/common/schriter.cpp
+build $o/serv.o : cxx $s/common/serv.cpp
+build $o/servlk.o : cxx $s/common/servlk.cpp
+build $o/servlkf.o : cxx $s/common/servlkf.cpp
+build $o/servls.o : cxx $s/common/servls.cpp
+build $o/servnotf.o : cxx $s/common/servnotf.cpp
+build $o/servrbf.o : cxx $s/common/servrbf.cpp
+build $o/servslkf.o : cxx $s/common/servslkf.cpp
+build $o/sharedobject.o : cxx $s/common/sharedobject.cpp
+build $o/simpleformatter.o : cxx $s/common/simpleformatter.cpp
+build $o/static_unicode_sets.o : cxx $s/common/static_unicode_sets.cpp
+build $o/stringpiece.o : cxx $s/common/stringpiece.cpp
+build $o/stringtriebuilder.o : cxx $s/common/stringtriebuilder.cpp
+build $o/uarrsort.o : cxx $s/common/uarrsort.cpp
+build $o/ubidi.o : cxx $s/common/ubidi.cpp
+build $o/ubidi_props.o : cxx $s/common/ubidi_props.cpp
+build $o/ubidiln.o : cxx $s/common/ubidiln.cpp
+build $o/ubiditransform.o : cxx $s/common/ubiditransform.cpp
+build $o/ubidiwrt.o : cxx $s/common/ubidiwrt.cpp
+build $o/ubrk.o : cxx $s/common/ubrk.cpp
+build $o/ucase.o : cxx $s/common/ucase.cpp
+build $o/ucasemap.o : cxx $s/common/ucasemap.cpp
+build $o/ucasemap_titlecase_brkiter.o : cxx $s/common/ucasemap_titlecase_brkiter.cpp
+build $o/ucat.o : cxx $s/common/ucat.cpp
+build $o/uchar.o : cxx $s/common/uchar.cpp
+build $o/ucharstrie.o : cxx $s/common/ucharstrie.cpp
+build $o/ucharstriebuilder.o : cxx $s/common/ucharstriebuilder.cpp
+build $o/ucharstrieiterator.o : cxx $s/common/ucharstrieiterator.cpp
+build $o/uchriter.o : cxx $s/common/uchriter.cpp
+build $o/ucln_cmn.o : cxx $s/common/ucln_cmn.cpp
+build $o/ucmndata.o : cxx $s/common/ucmndata.cpp
+build $o/ucnv.o : cxx $s/common/ucnv.cpp
+build $o/ucnv2022.o : cxx $s/common/ucnv2022.cpp
+build $o/ucnv_bld.o : cxx $s/common/ucnv_bld.cpp
+build $o/ucnv_cb.o : cxx $s/common/ucnv_cb.cpp
+build $o/ucnv_cnv.o : cxx $s/common/ucnv_cnv.cpp
+build $o/ucnv_ct.o : cxx $s/common/ucnv_ct.cpp
+build $o/ucnv_err.o : cxx $s/common/ucnv_err.cpp
+build $o/ucnv_ext.o : cxx $s/common/ucnv_ext.cpp
+build $o/ucnv_io.o : cxx $s/common/ucnv_io.cpp
+build $o/ucnv_lmb.o : cxx $s/common/ucnv_lmb.cpp
+build $o/ucnv_set.o : cxx $s/common/ucnv_set.cpp
+build $o/ucnv_u16.o : cxx $s/common/ucnv_u16.cpp
+build $o/ucnv_u32.o : cxx $s/common/ucnv_u32.cpp
+build $o/ucnv_u7.o : cxx $s/common/ucnv_u7.cpp
+build $o/ucnv_u8.o : cxx $s/common/ucnv_u8.cpp
+build $o/ucnvbocu.o : cxx $s/common/ucnvbocu.cpp
+build $o/ucnvdisp.o : cxx $s/common/ucnvdisp.cpp
+build $o/ucnvhz.o : cxx $s/common/ucnvhz.cpp
+build $o/ucnvisci.o : cxx $s/common/ucnvisci.cpp
+build $o/ucnvlat1.o : cxx $s/common/ucnvlat1.cpp
+build $o/ucnvmbcs.o : cxx $s/common/ucnvmbcs.cpp
+build $o/ucnvscsu.o : cxx $s/common/ucnvscsu.cpp
+build $o/ucnvsel.o : cxx $s/common/ucnvsel.cpp
+build $o/ucol_swp.o : cxx $s/common/ucol_swp.cpp
+build $o/ucptrie.o : cxx $s/common/ucptrie.cpp
+build $o/ucurr.o : cxx $s/common/ucurr.cpp
+build $o/udata.o : cxx $s/common/udata.cpp
+build $o/udatamem.o : cxx $s/common/udatamem.cpp
+build $o/udataswp.o : cxx $s/common/udataswp.cpp
+build $o/uenum.o : cxx $s/common/uenum.cpp
+build $o/uhash.o : cxx $s/common/uhash.cpp
+build $o/uhash_us.o : cxx $s/common/uhash_us.cpp
+build $o/uidna.o : cxx $s/common/uidna.cpp
+build $o/uinit.o : cxx $s/common/uinit.cpp
+build $o/uinvchar.o : cxx $s/common/uinvchar.cpp
+build $o/uiter.o : cxx $s/common/uiter.cpp
+build $o/ulist.o : cxx $s/common/ulist.cpp
+build $o/uloc.o : cxx $s/common/uloc.cpp
+build $o/uloc_keytype.o : cxx $s/common/uloc_keytype.cpp
+build $o/uloc_tag.o : cxx $s/common/uloc_tag.cpp
+  cflags = -Wno-ignored-pragma-optimize
+build $o/umapfile.o : cxx $s/common/umapfile.cpp
+build $o/umath.o : cxx $s/common/umath.cpp
+build $o/umutablecptrie.o : cxx $s/common/umutablecptrie.cpp
+build $o/umutex.o : cxx $s/common/umutex.cpp
+build $o/unames.o : cxx $s/common/unames.cpp
+build $o/unifiedcache.o : cxx $s/common/unifiedcache.cpp
+build $o/unifilt.o : cxx $s/common/unifilt.cpp
+build $o/unifunct.o : cxx $s/common/unifunct.cpp
+build $o/uniset.o : cxx $s/common/uniset.cpp
+build $o/uniset_closure.o : cxx $s/common/uniset_closure.cpp
+build $o/uniset_props.o : cxx $s/common/uniset_props.cpp
+build $o/unisetspan.o : cxx $s/common/unisetspan.cpp
+build $o/unistr.o : cxx $s/common/unistr.cpp
+build $o/unistr_case.o : cxx $s/common/unistr_case.cpp
+build $o/unistr_case_locale.o : cxx $s/common/unistr_case_locale.cpp
+build $o/unistr_cnv.o : cxx $s/common/unistr_cnv.cpp
+build $o/unistr_props.o : cxx $s/common/unistr_props.cpp
+build $o/unistr_titlecase_brkiter.o : cxx $s/common/unistr_titlecase_brkiter.cpp
+build $o/unorm.o : cxx $s/common/unorm.cpp
+build $o/unormcmp.o : cxx $s/common/unormcmp.cpp
+build $o/uobject.o : cxx $s/common/uobject.cpp
+build $o/uprops.o : cxx $s/common/uprops.cpp
+build $o/ures_cnv.o : cxx $s/common/ures_cnv.cpp
+build $o/uresbund.o : cxx $s/common/uresbund.cpp
+build $o/uresdata.o : cxx $s/common/uresdata.cpp
+build $o/usc_impl.o : cxx $s/common/usc_impl.cpp
+build $o/uscript.o : cxx $s/common/uscript.cpp
+build $o/uscript_props.o : cxx $s/common/uscript_props.cpp
+build $o/uset.o : cxx $s/common/uset.cpp
+build $o/uset_props.o : cxx $s/common/uset_props.cpp
+build $o/usetiter.o : cxx $s/common/usetiter.cpp
+build $o/ushape.o : cxx $s/common/ushape.cpp
+build $o/usprep.o : cxx $s/common/usprep.cpp
+build $o/ustack.o : cxx $s/common/ustack.cpp
+build $o/ustr_cnv.o : cxx $s/common/ustr_cnv.cpp
+build $o/ustr_titlecase_brkiter.o : cxx $s/common/ustr_titlecase_brkiter.cpp
+build $o/ustr_wcs.o : cxx $s/common/ustr_wcs.cpp
+build $o/ustrcase.o : cxx $s/common/ustrcase.cpp
+build $o/ustrcase_locale.o : cxx $s/common/ustrcase_locale.cpp
+build $o/ustrenum.o : cxx $s/common/ustrenum.cpp
+build $o/ustrfmt.o : cxx $s/common/ustrfmt.cpp
+build $o/ustring.o : cxx $s/common/ustring.cpp
+build $o/ustrtrns.o : cxx $s/common/ustrtrns.cpp
+build $o/utext.o : cxx $s/common/utext.cpp
+build $o/utf_impl.o : cxx $s/common/utf_impl.cpp
+build $o/util.o : cxx $s/common/util.cpp
+build $o/util_props.o : cxx $s/common/util_props.cpp
+build $o/utrace.o : cxx $s/common/utrace.cpp
+build $o/utrie.o : cxx $s/common/utrie.cpp
+build $o/utrie2.o : cxx $s/common/utrie2.cpp
+build $o/utrie2_builder.o : cxx $s/common/utrie2_builder.cpp
+build $o/utrie_swap.o : cxx $s/common/utrie_swap.cpp
+build $o/uts46.o : cxx $s/common/uts46.cpp
+build $o/utypes.o : cxx $s/common/utypes.cpp
+build $o/uvector.o : cxx $s/common/uvector.cpp
+build $o/uvectr32.o : cxx $s/common/uvectr32.cpp
+build $o/uvectr64.o : cxx $s/common/uvectr64.cpp
+build $o/wintz.o : cxx $s/common/wintz.cpp
+build $o/alphaindex.o : cxx $s/i18n/alphaindex.cpp
+build $o/anytrans.o : cxx $s/i18n/anytrans.cpp
+build $o/astro.o : cxx $s/i18n/astro.cpp
+build $o/basictz.o : cxx $s/i18n/basictz.cpp
+build $o/bocsu.o : cxx $s/i18n/bocsu.cpp
+build $o/brktrans.o : cxx $s/i18n/brktrans.cpp
+build $o/buddhcal.o : cxx $s/i18n/buddhcal.cpp
+build $o/calendar.o : cxx $s/i18n/calendar.cpp
+build $o/casetrn.o : cxx $s/i18n/casetrn.cpp
+build $o/cecal.o : cxx $s/i18n/cecal.cpp
+build $o/chnsecal.o : cxx $s/i18n/chnsecal.cpp
+build $o/choicfmt.o : cxx $s/i18n/choicfmt.cpp
+build $o/coleitr.o : cxx $s/i18n/coleitr.cpp
+build $o/coll.o : cxx $s/i18n/coll.cpp
+build $o/collation.o : cxx $s/i18n/collation.cpp
+build $o/collationbuilder.o : cxx $s/i18n/collationbuilder.cpp
+build $o/collationcompare.o : cxx $s/i18n/collationcompare.cpp
+build $o/collationdata.o : cxx $s/i18n/collationdata.cpp
+build $o/collationdatabuilder.o : cxx $s/i18n/collationdatabuilder.cpp
+build $o/collationdatareader.o : cxx $s/i18n/collationdatareader.cpp
+build $o/collationdatawriter.o : cxx $s/i18n/collationdatawriter.cpp
+build $o/collationfastlatin.o : cxx $s/i18n/collationfastlatin.cpp
+build $o/collationfastlatinbuilder.o : cxx $s/i18n/collationfastlatinbuilder.cpp
+build $o/collationfcd.o : cxx $s/i18n/collationfcd.cpp
+build $o/collationiterator.o : cxx $s/i18n/collationiterator.cpp
+build $o/collationkeys.o : cxx $s/i18n/collationkeys.cpp
+build $o/collationroot.o : cxx $s/i18n/collationroot.cpp
+build $o/collationrootelements.o : cxx $s/i18n/collationrootelements.cpp
+build $o/collationruleparser.o : cxx $s/i18n/collationruleparser.cpp
+build $o/collationsets.o : cxx $s/i18n/collationsets.cpp
+build $o/collationsettings.o : cxx $s/i18n/collationsettings.cpp
+build $o/collationtailoring.o : cxx $s/i18n/collationtailoring.cpp
+build $o/collationweights.o : cxx $s/i18n/collationweights.cpp
+build $o/compactdecimalformat.o : cxx $s/i18n/compactdecimalformat.cpp
+build $o/coptccal.o : cxx $s/i18n/coptccal.cpp
+build $o/cpdtrans.o : cxx $s/i18n/cpdtrans.cpp
+build $o/csdetect.o : cxx $s/i18n/csdetect.cpp
+build $o/csmatch.o : cxx $s/i18n/csmatch.cpp
+build $o/csr2022.o : cxx $s/i18n/csr2022.cpp
+build $o/csrecog.o : cxx $s/i18n/csrecog.cpp
+build $o/csrmbcs.o : cxx $s/i18n/csrmbcs.cpp
+build $o/csrsbcs.o : cxx $s/i18n/csrsbcs.cpp
+build $o/csrucode.o : cxx $s/i18n/csrucode.cpp
+build $o/csrutf8.o : cxx $s/i18n/csrutf8.cpp
+build $o/curramt.o : cxx $s/i18n/curramt.cpp
+build $o/currfmt.o : cxx $s/i18n/currfmt.cpp
+build $o/currpinf.o : cxx $s/i18n/currpinf.cpp
+build $o/currunit.o : cxx $s/i18n/currunit.cpp
+build $o/dangical.o : cxx $s/i18n/dangical.cpp
+build $o/datefmt.o : cxx $s/i18n/datefmt.cpp
+build $o/dayperiodrules.o : cxx $s/i18n/dayperiodrules.cpp
+build $o/dcfmtsym.o : cxx $s/i18n/dcfmtsym.cpp
+build $o/decContext.o : cxx $s/i18n/decContext.cpp
+build $o/decNumber.o : cxx $s/i18n/decNumber.cpp
+build $o/displayoptions.o : cxx $s/i18n/displayoptions.cpp
+build $o/decimfmt.o : cxx $s/i18n/decimfmt.cpp
+build $o/double-conversion-bignum-dtoa.o : cxx $s/i18n/double-conversion-bignum-dtoa.cpp
+build $o/double-conversion-bignum.o : cxx $s/i18n/double-conversion-bignum.cpp
+build $o/double-conversion-cached-powers.o : cxx $s/i18n/double-conversion-cached-powers.cpp
+build $o/double-conversion-double-to-string.o : cxx $s/i18n/double-conversion-double-to-string.cpp
+build $o/double-conversion-fast-dtoa.o : cxx $s/i18n/double-conversion-fast-dtoa.cpp
+build $o/double-conversion-string-to-double.o : cxx $s/i18n/double-conversion-string-to-double.cpp
+build $o/double-conversion-strtod.o : cxx $s/i18n/double-conversion-strtod.cpp
+build $o/dtfmtsym.o : cxx $s/i18n/dtfmtsym.cpp
+build $o/dtitvfmt.o : cxx $s/i18n/dtitvfmt.cpp
+build $o/dtitvinf.o : cxx $s/i18n/dtitvinf.cpp
+build $o/dtptngen.o : cxx $s/i18n/dtptngen.cpp
+build $o/dtrule.o : cxx $s/i18n/dtrule.cpp
+build $o/erarules.o : cxx $s/i18n/erarules.cpp
+build $o/esctrn.o : cxx $s/i18n/esctrn.cpp
+build $o/ethpccal.o : cxx $s/i18n/ethpccal.cpp
+build $o/fmtable.o : cxx $s/i18n/fmtable.cpp
+build $o/fmtable_cnv.o : cxx $s/i18n/fmtable_cnv.cpp
+build $o/format.o : cxx $s/i18n/format.cpp
+build $o/formatted_string_builder.o : cxx $s/i18n/formatted_string_builder.cpp
+build $o/formattedval_iterimpl.o : cxx $s/i18n/formattedval_iterimpl.cpp
+build $o/formattedval_sbimpl.o : cxx $s/i18n/formattedval_sbimpl.cpp
+build $o/formattedvalue.o : cxx $s/i18n/formattedvalue.cpp
+build $o/fphdlimp.o : cxx $s/i18n/fphdlimp.cpp
+build $o/fpositer.o : cxx $s/i18n/fpositer.cpp
+build $o/funcrepl.o : cxx $s/i18n/funcrepl.cpp
+build $o/gender.o : cxx $s/i18n/gender.cpp
+build $o/gregocal.o : cxx $s/i18n/gregocal.cpp
+build $o/gregoimp.o : cxx $s/i18n/gregoimp.cpp
+build $o/hebrwcal.o : cxx $s/i18n/hebrwcal.cpp
+build $o/indiancal.o : cxx $s/i18n/indiancal.cpp
+build $o/inputext.o : cxx $s/i18n/inputext.cpp
+build $o/islamcal.o : cxx $s/i18n/islamcal.cpp
+build $o/iso8601cal.o : cxx $s/i18n/iso8601cal.cpp
+build $o/japancal.o : cxx $s/i18n/japancal.cpp
+build $o/listformatter.o : cxx $s/i18n/listformatter.cpp
+build $o/measfmt.o : cxx $s/i18n/measfmt.cpp
+build $o/measunit.o : cxx $s/i18n/measunit.cpp
+build $o/measunit_extra.o : cxx $s/i18n/measunit_extra.cpp
+build $o/measure.o : cxx $s/i18n/measure.cpp
+build $o/msgfmt.o : cxx $s/i18n/msgfmt.cpp
+build $o/name2uni.o : cxx $s/i18n/name2uni.cpp
+build $o/nfrs.o : cxx $s/i18n/nfrs.cpp
+build $o/nfrule.o : cxx $s/i18n/nfrule.cpp
+build $o/nfsubs.o : cxx $s/i18n/nfsubs.cpp
+build $o/nortrans.o : cxx $s/i18n/nortrans.cpp
+build $o/nultrans.o : cxx $s/i18n/nultrans.cpp
+build $o/number_affixutils.o : cxx $s/i18n/number_affixutils.cpp
+build $o/number_asformat.o : cxx $s/i18n/number_asformat.cpp
+build $o/number_capi.o : cxx $s/i18n/number_capi.cpp
+build $o/number_compact.o : cxx $s/i18n/number_compact.cpp
+build $o/number_currencysymbols.o : cxx $s/i18n/number_currencysymbols.cpp
+build $o/number_decimalquantity.o : cxx $s/i18n/number_decimalquantity.cpp
+build $o/number_decimfmtprops.o : cxx $s/i18n/number_decimfmtprops.cpp
+build $o/number_fluent.o : cxx $s/i18n/number_fluent.cpp
+build $o/number_formatimpl.o : cxx $s/i18n/number_formatimpl.cpp
+build $o/number_grouping.o : cxx $s/i18n/number_grouping.cpp
+build $o/number_integerwidth.o : cxx $s/i18n/number_integerwidth.cpp
+build $o/number_longnames.o : cxx $s/i18n/number_longnames.cpp
+build $o/number_mapper.o : cxx $s/i18n/number_mapper.cpp
+build $o/number_modifiers.o : cxx $s/i18n/number_modifiers.cpp
+build $o/number_multiplier.o : cxx $s/i18n/number_multiplier.cpp
+build $o/number_notation.o : cxx $s/i18n/number_notation.cpp
+build $o/number_output.o : cxx $s/i18n/number_output.cpp
+build $o/number_padding.o : cxx $s/i18n/number_padding.cpp
+build $o/number_patternmodifier.o : cxx $s/i18n/number_patternmodifier.cpp
+build $o/number_patternstring.o : cxx $s/i18n/number_patternstring.cpp
+build $o/number_rounding.o : cxx $s/i18n/number_rounding.cpp
+build $o/number_scientific.o : cxx $s/i18n/number_scientific.cpp
+build $o/number_simple.o : cxx $s/i18n/number_simple.cpp
+build $o/number_skeletons.o : cxx $s/i18n/number_skeletons.cpp
+build $o/number_symbolswrapper.o : cxx $s/i18n/number_symbolswrapper.cpp
+build $o/number_usageprefs.o : cxx $s/i18n/number_usageprefs.cpp
+build $o/number_utils.o : cxx $s/i18n/number_utils.cpp
+build $o/numfmt.o : cxx $s/i18n/numfmt.cpp
+build $o/numparse_affixes.o : cxx $s/i18n/numparse_affixes.cpp
+build $o/numparse_compositions.o : cxx $s/i18n/numparse_compositions.cpp
+build $o/numparse_currency.o : cxx $s/i18n/numparse_currency.cpp
+build $o/numparse_decimal.o : cxx $s/i18n/numparse_decimal.cpp
+build $o/numparse_impl.o : cxx $s/i18n/numparse_impl.cpp
+build $o/numparse_parsednumber.o : cxx $s/i18n/numparse_parsednumber.cpp
+build $o/numparse_scientific.o : cxx $s/i18n/numparse_scientific.cpp
+build $o/numparse_symbols.o : cxx $s/i18n/numparse_symbols.cpp
+build $o/numparse_validators.o : cxx $s/i18n/numparse_validators.cpp
+build $o/numrange_capi.o : cxx $s/i18n/numrange_capi.cpp
+build $o/numrange_fluent.o : cxx $s/i18n/numrange_fluent.cpp
+build $o/numrange_impl.o : cxx $s/i18n/numrange_impl.cpp
+build $o/numsys.o : cxx $s/i18n/numsys.cpp
+build $o/olsontz.o : cxx $s/i18n/olsontz.cpp
+build $o/persncal.o : cxx $s/i18n/persncal.cpp
+build $o/pluralranges.o : cxx $s/i18n/pluralranges.cpp
+build $o/plurfmt.o : cxx $s/i18n/plurfmt.cpp
+build $o/plurrule.o : cxx $s/i18n/plurrule.cpp
+build $o/quant.o : cxx $s/i18n/quant.cpp
+build $o/quantityformatter.o : cxx $s/i18n/quantityformatter.cpp
+build $o/rbnf.o : cxx $s/i18n/rbnf.cpp
+build $o/rbt.o : cxx $s/i18n/rbt.cpp
+build $o/rbt_data.o : cxx $s/i18n/rbt_data.cpp
+build $o/rbt_pars.o : cxx $s/i18n/rbt_pars.cpp
+build $o/rbt_rule.o : cxx $s/i18n/rbt_rule.cpp
+build $o/rbt_set.o : cxx $s/i18n/rbt_set.cpp
+build $o/rbtz.o : cxx $s/i18n/rbtz.cpp
+build $o/regexcmp.o : cxx $s/i18n/regexcmp.cpp
+build $o/regeximp.o : cxx $s/i18n/regeximp.cpp
+build $o/regexst.o : cxx $s/i18n/regexst.cpp
+build $o/regextxt.o : cxx $s/i18n/regextxt.cpp
+build $o/region.o : cxx $s/i18n/region.cpp
+build $o/reldatefmt.o : cxx $s/i18n/reldatefmt.cpp
+build $o/reldtfmt.o : cxx $s/i18n/reldtfmt.cpp
+build $o/rematch.o : cxx $s/i18n/rematch.cpp
+build $o/remtrans.o : cxx $s/i18n/remtrans.cpp
+build $o/repattrn.o : cxx $s/i18n/repattrn.cpp
+build $o/rulebasedcollator.o : cxx $s/i18n/rulebasedcollator.cpp
+build $o/scientificnumberformatter.o : cxx $s/i18n/scientificnumberformatter.cpp
+build $o/scriptset.o : cxx $s/i18n/scriptset.cpp
+build $o/search.o : cxx $s/i18n/search.cpp
+build $o/selfmt.o : cxx $s/i18n/selfmt.cpp
+build $o/sharedbreakiterator.o : cxx $s/i18n/sharedbreakiterator.cpp
+build $o/simpletz.o : cxx $s/i18n/simpletz.cpp
+build $o/smpdtfmt.o : cxx $s/i18n/smpdtfmt.cpp
+build $o/smpdtfst.o : cxx $s/i18n/smpdtfst.cpp
+build $o/sortkey.o : cxx $s/i18n/sortkey.cpp
+build $o/standardplural.o : cxx $s/i18n/standardplural.cpp
+build $o/string_segment.o : cxx $s/i18n/string_segment.cpp
+build $o/strmatch.o : cxx $s/i18n/strmatch.cpp
+build $o/strrepl.o : cxx $s/i18n/strrepl.cpp
+build $o/stsearch.o : cxx $s/i18n/stsearch.cpp
+build $o/taiwncal.o : cxx $s/i18n/taiwncal.cpp
+build $o/timezone.o : cxx $s/i18n/timezone.cpp
+build $o/titletrn.o : cxx $s/i18n/titletrn.cpp
+build $o/tmunit.o : cxx $s/i18n/tmunit.cpp
+build $o/tmutamt.o : cxx $s/i18n/tmutamt.cpp
+build $o/tmutfmt.o : cxx $s/i18n/tmutfmt.cpp
+build $o/tolowtrn.o : cxx $s/i18n/tolowtrn.cpp
+build $o/toupptrn.o : cxx $s/i18n/toupptrn.cpp
+build $o/translit.o : cxx $s/i18n/translit.cpp
+build $o/transreg.o : cxx $s/i18n/transreg.cpp
+build $o/tridpars.o : cxx $s/i18n/tridpars.cpp
+build $o/tzfmt.o : cxx $s/i18n/tzfmt.cpp
+build $o/tzgnames.o : cxx $s/i18n/tzgnames.cpp
+build $o/tznames.o : cxx $s/i18n/tznames.cpp
+build $o/tznames_impl.o : cxx $s/i18n/tznames_impl.cpp
+build $o/tzrule.o : cxx $s/i18n/tzrule.cpp
+build $o/tztrans.o : cxx $s/i18n/tztrans.cpp
+build $o/ucal.o : cxx $s/i18n/ucal.cpp
+build $o/ucln_in.o : cxx $s/i18n/ucln_in.cpp
+build $o/ucol.o : cxx $s/i18n/ucol.cpp
+build $o/ucol_res.o : cxx $s/i18n/ucol_res.cpp
+build $o/ucol_sit.o : cxx $s/i18n/ucol_sit.cpp
+build $o/ucoleitr.o : cxx $s/i18n/ucoleitr.cpp
+build $o/ucsdet.o : cxx $s/i18n/ucsdet.cpp
+build $o/udat.o : cxx $s/i18n/udat.cpp
+build $o/udateintervalformat.o : cxx $s/i18n/udateintervalformat.cpp
+build $o/udatpg.o : cxx $s/i18n/udatpg.cpp
+build $o/ufieldpositer.o : cxx $s/i18n/ufieldpositer.cpp
+build $o/uitercollationiterator.o : cxx $s/i18n/uitercollationiterator.cpp
+build $o/ulistformatter.o : cxx $s/i18n/ulistformatter.cpp
+build $o/ulocdata.o : cxx $s/i18n/ulocdata.cpp
+build $o/umsg.o : cxx $s/i18n/umsg.cpp
+build $o/unesctrn.o : cxx $s/i18n/unesctrn.cpp
+build $o/uni2name.o : cxx $s/i18n/uni2name.cpp
+build $o/units_complexconverter.o : cxx $s/i18n/units_complexconverter.cpp
+build $o/units_converter.o : cxx $s/i18n/units_converter.cpp
+build $o/units_data.o : cxx $s/i18n/units_data.cpp
+build $o/units_router.o : cxx $s/i18n/units_router.cpp
+build $o/unum.o : cxx $s/i18n/unum.cpp
+build $o/unumsys.o : cxx $s/i18n/unumsys.cpp
+build $o/upluralrules.o : cxx $s/i18n/upluralrules.cpp
+build $o/uregex.o : cxx $s/i18n/uregex.cpp
+build $o/uregexc.o : cxx $s/i18n/uregexc.cpp
+build $o/uregion.o : cxx $s/i18n/uregion.cpp
+build $o/usearch.o : cxx $s/i18n/usearch.cpp
+build $o/uspoof.o : cxx $s/i18n/uspoof.cpp
+build $o/uspoof_build.o : cxx $s/i18n/uspoof_build.cpp
+build $o/uspoof_conf.o : cxx $s/i18n/uspoof_conf.cpp
+build $o/uspoof_impl.o : cxx $s/i18n/uspoof_impl.cpp
+build $o/utf16collationiterator.o : cxx $s/i18n/utf16collationiterator.cpp
+build $o/utf8collationiterator.o : cxx $s/i18n/utf8collationiterator.cpp
+build $o/utmscale.o : cxx $s/i18n/utmscale.cpp
+build $o/utrans.o : cxx $s/i18n/utrans.cpp
+build $o/vtzone.o : cxx $s/i18n/vtzone.cpp
+build $o/vzone.o : cxx $s/i18n/vzone.cpp
+build $o/windtfmt.o : cxx $s/i18n/windtfmt.cpp
+build $o/winnmfmt.o : cxx $s/i18n/winnmfmt.cpp
+build $o/wintzimpl.o : cxx $s/i18n/wintzimpl.cpp
+build $o/zonemeta.o : cxx $s/i18n/zonemeta.cpp
+build $o/zrule.o : cxx $s/i18n/zrule.cpp
+build $o/ztrans.o : cxx $s/i18n/ztrans.cpp
+build $o/stubdata/stubdata.o : cxx $s/stubdata/stubdata.cpp
+
+build ${LIBPFX}icu$LIB : ar $
+  $o/appendable.o $
+  $o/bmpset.o $
+  $o/brkeng.o $
+  $o/brkiter.o $
+  $o/bytesinkutil.o $
+  $o/bytestream.o $
+  $o/bytestrie.o $
+  $o/bytestriebuilder.o $
+  $o/bytestrieiterator.o $
+  $o/caniter.o $
+  $o/characterproperties.o $
+  $o/chariter.o $
+  $o/charstr.o $
+  $o/cmemory.o $
+  $o/cstr.o $
+  $o/cstring.o $
+  $o/cwchar.o $
+  $o/dictbe.o $
+  $o/dictionarydata.o $
+  $o/dtintrv.o $
+  $o/edits.o $
+  $o/emojiprops.o $
+  $o/errorcode.o $
+  $o/filteredbrk.o $
+  $o/filterednormalizer2.o $
+  $o/icudataver.o $
+  $o/icuplug.o $
+  $o/loadednormalizer2impl.o $
+  $o/localebuilder.o $
+  $o/localematcher.o $
+  $o/localeprioritylist.o $
+  $o/locavailable.o $
+  $o/locbased.o $
+  $o/locdispnames.o $
+  $o/locdistance.o $
+  $o/locdspnm.o $
+  $o/locid.o $
+  $o/loclikely.o $
+  $o/loclikelysubtags.o $
+  $o/locmap.o $
+  $o/locresdata.o $
+  $o/locutil.o $
+  $o/lsr.o $
+  $o/lstmbe.o $
+  $o/messagepattern.o $
+  $o/mlbe.o $
+  $o/normalizer2.o $
+  $o/normalizer2impl.o $
+  $o/normlzr.o $
+  $o/parsepos.o $
+  $o/patternprops.o $
+  $o/pluralmap.o $
+  $o/propname.o $
+  $o/propsvec.o $
+  $o/punycode.o $
+  $o/putil.o $
+  $o/rbbi.o $
+  $o/rbbi_cache.o $
+  $o/rbbidata.o $
+  $o/rbbinode.o $
+  $o/rbbirb.o $
+  $o/rbbiscan.o $
+  $o/rbbisetb.o $
+  $o/rbbistbl.o $
+  $o/rbbitblb.o $
+  $o/resbund.o $
+  $o/resbund_cnv.o $
+  $o/resource.o $
+  $o/restrace.o $
+  $o/ruleiter.o $
+  $o/schriter.o $
+  $o/serv.o $
+  $o/servlk.o $
+  $o/servlkf.o $
+  $o/servls.o $
+  $o/servnotf.o $
+  $o/servrbf.o $
+  $o/servslkf.o $
+  $o/sharedobject.o $
+  $o/simpleformatter.o $
+  $o/static_unicode_sets.o $
+  $o/stringpiece.o $
+  $o/stringtriebuilder.o $
+  $o/uarrsort.o $
+  $o/ubidi.o $
+  $o/ubidi_props.o $
+  $o/ubidiln.o $
+  $o/ubiditransform.o $
+  $o/ubidiwrt.o $
+  $o/ubrk.o $
+  $o/ucase.o $
+  $o/ucasemap.o $
+  $o/ucasemap_titlecase_brkiter.o $
+  $o/ucat.o $
+  $o/uchar.o $
+  $o/ucharstrie.o $
+  $o/ucharstriebuilder.o $
+  $o/ucharstrieiterator.o $
+  $o/uchriter.o $
+  $o/ucln_cmn.o $
+  $o/ucmndata.o $
+  $o/ucnv.o $
+  $o/ucnv2022.o $
+  $o/ucnv_bld.o $
+  $o/ucnv_cb.o $
+  $o/ucnv_cnv.o $
+  $o/ucnv_ct.o $
+  $o/ucnv_err.o $
+  $o/ucnv_ext.o $
+  $o/ucnv_io.o $
+  $o/ucnv_lmb.o $
+  $o/ucnv_set.o $
+  $o/ucnv_u16.o $
+  $o/ucnv_u32.o $
+  $o/ucnv_u7.o $
+  $o/ucnv_u8.o $
+  $o/ucnvbocu.o $
+  $o/ucnvdisp.o $
+  $o/ucnvhz.o $
+  $o/ucnvisci.o $
+  $o/ucnvlat1.o $
+  $o/ucnvmbcs.o $
+  $o/ucnvscsu.o $
+  $o/ucnvsel.o $
+  $o/ucol_swp.o $
+  $o/ucptrie.o $
+  $o/ucurr.o $
+  $o/udata.o $
+  $o/udatamem.o $
+  $o/udataswp.o $
+  $o/uenum.o $
+  $o/uhash.o $
+  $o/uhash_us.o $
+  $o/uidna.o $
+  $o/uinit.o $
+  $o/uinvchar.o $
+  $o/uiter.o $
+  $o/ulist.o $
+  $o/uloc.o $
+  $o/uloc_keytype.o $
+  $o/uloc_tag.o $
+  $o/umapfile.o $
+  $o/umath.o $
+  $o/umutablecptrie.o $
+  $o/umutex.o $
+  $o/unames.o $
+  $o/unifiedcache.o $
+  $o/unifilt.o $
+  $o/unifunct.o $
+  $o/uniset.o $
+  $o/uniset_closure.o $
+  $o/uniset_props.o $
+  $o/unisetspan.o $
+  $o/unistr.o $
+  $o/unistr_case.o $
+  $o/unistr_case_locale.o $
+  $o/unistr_cnv.o $
+  $o/unistr_props.o $
+  $o/unistr_titlecase_brkiter.o $
+  $o/unorm.o $
+  $o/unormcmp.o $
+  $o/uobject.o $
+  $o/uprops.o $
+  $o/ures_cnv.o $
+  $o/uresbund.o $
+  $o/uresdata.o $
+  $o/usc_impl.o $
+  $o/uscript.o $
+  $o/uscript_props.o $
+  $o/uset.o $
+  $o/uset_props.o $
+  $o/usetiter.o $
+  $o/ushape.o $
+  $o/usprep.o $
+  $o/ustack.o $
+  $o/ustr_cnv.o $
+  $o/ustr_titlecase_brkiter.o $
+  $o/ustr_wcs.o $
+  $o/ustrcase.o $
+  $o/ustrcase_locale.o $
+  $o/ustrenum.o $
+  $o/ustrfmt.o $
+  $o/ustring.o $
+  $o/ustrtrns.o $
+  $o/utext.o $
+  $o/utf_impl.o $
+  $o/util.o $
+  $o/util_props.o $
+  $o/utrace.o $
+  $o/utrie.o $
+  $o/utrie2.o $
+  $o/utrie2_builder.o $
+  $o/utrie_swap.o $
+  $o/uts46.o $
+  $o/utypes.o $
+  $o/uvector.o $
+  $o/uvectr32.o $
+  $o/uvectr64.o $
+  $o/wintz.o $
+  $o/alphaindex.o $
+  $o/anytrans.o $
+  $o/astro.o $
+  $o/basictz.o $
+  $o/bocsu.o $
+  $o/brktrans.o $
+  $o/buddhcal.o $
+  $o/calendar.o $
+  $o/casetrn.o $
+  $o/cecal.o $
+  $o/chnsecal.o $
+  $o/choicfmt.o $
+  $o/coleitr.o $
+  $o/coll.o $
+  $o/collation.o $
+  $o/collationbuilder.o $
+  $o/collationcompare.o $
+  $o/collationdata.o $
+  $o/collationdatabuilder.o $
+  $o/collationdatareader.o $
+  $o/collationdatawriter.o $
+  $o/collationfastlatin.o $
+  $o/collationfastlatinbuilder.o $
+  $o/collationfcd.o $
+  $o/collationiterator.o $
+  $o/collationkeys.o $
+  $o/collationroot.o $
+  $o/collationrootelements.o $
+  $o/collationruleparser.o $
+  $o/collationsets.o $
+  $o/collationsettings.o $
+  $o/collationtailoring.o $
+  $o/collationweights.o $
+  $o/compactdecimalformat.o $
+  $o/coptccal.o $
+  $o/cpdtrans.o $
+  $o/csdetect.o $
+  $o/csmatch.o $
+  $o/csr2022.o $
+  $o/csrecog.o $
+  $o/csrmbcs.o $
+  $o/csrsbcs.o $
+  $o/csrucode.o $
+  $o/csrutf8.o $
+  $o/curramt.o $
+  $o/currfmt.o $
+  $o/currpinf.o $
+  $o/currunit.o $
+  $o/dangical.o $
+  $o/datefmt.o $
+  $o/dayperiodrules.o $
+  $o/dcfmtsym.o $
+  $o/decContext.o $
+  $o/decNumber.o $
+  $o/displayoptions.o $
+  $o/decimfmt.o $
+  $o/double-conversion-bignum-dtoa.o $
+  $o/double-conversion-bignum.o $
+  $o/double-conversion-cached-powers.o $
+  $o/double-conversion-double-to-string.o $
+  $o/double-conversion-fast-dtoa.o $
+  $o/double-conversion-string-to-double.o $
+  $o/double-conversion-strtod.o $
+  $o/dtfmtsym.o $
+  $o/dtitvfmt.o $
+  $o/dtitvinf.o $
+  $o/dtptngen.o $
+  $o/dtrule.o $
+  $o/erarules.o $
+  $o/esctrn.o $
+  $o/ethpccal.o $
+  $o/fmtable.o $
+  $o/fmtable_cnv.o $
+  $o/format.o $
+  $o/formatted_string_builder.o $
+  $o/formattedval_iterimpl.o $
+  $o/formattedval_sbimpl.o $
+  $o/formattedvalue.o $
+  $o/fphdlimp.o $
+  $o/fpositer.o $
+  $o/funcrepl.o $
+  $o/gender.o $
+  $o/gregocal.o $
+  $o/gregoimp.o $
+  $o/hebrwcal.o $
+  $o/indiancal.o $
+  $o/inputext.o $
+  $o/islamcal.o $
+  $o/iso8601cal.o $
+  $o/japancal.o $
+  $o/listformatter.o $
+  $o/measfmt.o $
+  $o/measunit.o $
+  $o/measunit_extra.o $
+  $o/measure.o $
+  $o/msgfmt.o $
+  $o/name2uni.o $
+  $o/nfrs.o $
+  $o/nfrule.o $
+  $o/nfsubs.o $
+  $o/nortrans.o $
+  $o/nultrans.o $
+  $o/number_affixutils.o $
+  $o/number_asformat.o $
+  $o/number_capi.o $
+  $o/number_compact.o $
+  $o/number_currencysymbols.o $
+  $o/number_decimalquantity.o $
+  $o/number_decimfmtprops.o $
+  $o/number_fluent.o $
+  $o/number_formatimpl.o $
+  $o/number_grouping.o $
+  $o/number_integerwidth.o $
+  $o/number_longnames.o $
+  $o/number_mapper.o $
+  $o/number_modifiers.o $
+  $o/number_multiplier.o $
+  $o/number_notation.o $
+  $o/number_output.o $
+  $o/number_padding.o $
+  $o/number_patternmodifier.o $
+  $o/number_patternstring.o $
+  $o/number_rounding.o $
+  $o/number_scientific.o $
+  $o/number_simple.o $
+  $o/number_skeletons.o $
+  $o/number_symbolswrapper.o $
+  $o/number_usageprefs.o $
+  $o/number_utils.o $
+  $o/numfmt.o $
+  $o/numparse_affixes.o $
+  $o/numparse_compositions.o $
+  $o/numparse_currency.o $
+  $o/numparse_decimal.o $
+  $o/numparse_impl.o $
+  $o/numparse_parsednumber.o $
+  $o/numparse_scientific.o $
+  $o/numparse_symbols.o $
+  $o/numparse_validators.o $
+  $o/numrange_capi.o $
+  $o/numrange_fluent.o $
+  $o/numrange_impl.o $
+  $o/numsys.o $
+  $o/olsontz.o $
+  $o/persncal.o $
+  $o/pluralranges.o $
+  $o/plurfmt.o $
+  $o/plurrule.o $
+  $o/quant.o $
+  $o/quantityformatter.o $
+  $o/rbnf.o $
+  $o/rbt.o $
+  $o/rbt_data.o $
+  $o/rbt_pars.o $
+  $o/rbt_rule.o $
+  $o/rbt_set.o $
+  $o/rbtz.o $
+  $o/regexcmp.o $
+  $o/regeximp.o $
+  $o/regexst.o $
+  $o/regextxt.o $
+  $o/region.o $
+  $o/reldatefmt.o $
+  $o/reldtfmt.o $
+  $o/rematch.o $
+  $o/remtrans.o $
+  $o/repattrn.o $
+  $o/rulebasedcollator.o $
+  $o/scientificnumberformatter.o $
+  $o/scriptset.o $
+  $o/search.o $
+  $o/selfmt.o $
+  $o/sharedbreakiterator.o $
+  $o/simpletz.o $
+  $o/smpdtfmt.o $
+  $o/smpdtfst.o $
+  $o/sortkey.o $
+  $o/standardplural.o $
+  $o/string_segment.o $
+  $o/strmatch.o $
+  $o/strrepl.o $
+  $o/stsearch.o $
+  $o/taiwncal.o $
+  $o/timezone.o $
+  $o/titletrn.o $
+  $o/tmunit.o $
+  $o/tmutamt.o $
+  $o/tmutfmt.o $
+  $o/tolowtrn.o $
+  $o/toupptrn.o $
+  $o/translit.o $
+  $o/transreg.o $
+  $o/tridpars.o $
+  $o/tzfmt.o $
+  $o/tzgnames.o $
+  $o/tznames.o $
+  $o/tznames_impl.o $
+  $o/tzrule.o $
+  $o/tztrans.o $
+  $o/ucal.o $
+  $o/ucln_in.o $
+  $o/ucol.o $
+  $o/ucol_res.o $
+  $o/ucol_sit.o $
+  $o/ucoleitr.o $
+  $o/ucsdet.o $
+  $o/udat.o $
+  $o/udateintervalformat.o $
+  $o/udatpg.o $
+  $o/ufieldpositer.o $
+  $o/uitercollationiterator.o $
+  $o/ulistformatter.o $
+  $o/ulocdata.o $
+  $o/umsg.o $
+  $o/unesctrn.o $
+  $o/uni2name.o $
+  $o/units_complexconverter.o $
+  $o/units_converter.o $
+  $o/units_data.o $
+  $o/units_router.o $
+  $o/unum.o $
+  $o/unumsys.o $
+  $o/upluralrules.o $
+  $o/uregex.o $
+  $o/uregexc.o $
+  $o/uregion.o $
+  $o/usearch.o $
+  $o/uspoof.o $
+  $o/uspoof_build.o $
+  $o/uspoof_conf.o $
+  $o/uspoof_impl.o $
+  $o/utf16collationiterator.o $
+  $o/utf8collationiterator.o $
+  $o/utmscale.o $
+  $o/utrans.o $
+  $o/vtzone.o $
+  $o/vzone.o $
+  $o/windtfmt.o $
+  $o/winnmfmt.o $
+  $o/wintzimpl.o $
+  $o/zonemeta.o $
+  $o/zrule.o $
+  $o/ztrans.o $
+  $o/stubdata/stubdata.o

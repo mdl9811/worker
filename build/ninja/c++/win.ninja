@@ -1,0 +1,72 @@
+# Copyright (c) 2023 mdl. All rights reserved.
+
+ucrt = third_party/windows/sdk/ucrt
+ucrt_o = build/config/windows/ucrt
+
+FORCE_INCLUDE = /FI
+
+CFLAGS_EX = --driver-mode=cl  /nologo /showIncludes:user $
+  $ARCH_CFLAGS $TARGET_CFLAGS $LTO -MT -O1 -I. $
+  -fmsc-version=1938 $
+  -Ibuild/config/windows/um $
+  -Ibuild/config/windows/winrt $
+  -Ithird_party/windows/sdk/include/ucrt $
+  -Ibuild/config/windows/ucrt/inc $
+  -Ithird_party/windows/sdk/include/um $
+  -Ithird_party/windows/sdk/include/shared $
+  -Ithird_party/windows/sdk/include/km $
+  -Ithird_party/windows/msvc/include $
+  -Ithird_party/windows/msvc/crt/src/vcruntime $
+  -Wno-multichar -Wno-void-ptr-dereference -Wno-unused-value $
+  -Wno-invalid-noreturn /EHsc -Wno-ignored-attributes -Wno-microsoft-cast $
+  -Wno-pragma-pack -Wno-varargs -Wno-writable-strings -Wno-comment
+
+rule ncxx
+  deps = msvc
+  command = $CLANGXX --driver-mode=cl /nologo /showIncludes:user $ARCH_CFLAGS $
+    $LTO -MT -DNDEBUG -O1 -I. $
+    -Ibuild/config/windows/ucrt/inc $
+    -Ithird_party/windows/sdk/include/ucrt $
+    -Ithird_party/windows/sdk/include/um $
+    -Ithird_party/windows/sdk/include/shared $
+    -Ithird_party/windows/sdk/include/km $
+    -Ithird_party/windows/msvc/include $
+    -Ithird_party/windows/msvc/crt/src/vcruntime $STUB_FLAGS $
+    -Wno-multichar -Wno-void-ptr-dereference -Wno-unused-value $
+    -Wno-invalid-noreturn /EHsc -Wno-ignored-attributes -Wno-microsoft-cast $
+    -Wno-pragma-pack -Wno-varargs -Wno-writable-strings -Wno-comment $
+    -Wno-ignored-pragma-intrinsic /std:c++20 -c $in -o $out $cflags 
+  description = CXX $out
+
+build $o/excptptr.o : ncxx build/amalgamation/excptptr.cc
+
+rt = third_party/compiler-rt
+
+build $o/lib/builtins/divti3.o : cc $rt/lib/builtins/divti3.c
+build $o/lib/builtins/udivti3.o : cc $rt/lib/builtins/udivti3.c
+build $o/lib/builtins/udivmodti4.o : cc $rt/lib/builtins/udivmodti4.c
+
+#libc++
+build $o/support/win32/locale_win32.o : cxx $s/support/win32/locale_win32.cpp
+build $o/support/win32/support.o : cxx $s/support/win32/support.cpp
+build $o/support/win32/thread_win32.o : cxx $s/support/win32/thread_win32.cpp
+
+
+
+build $o/d : phony $
+  $o/lib/builtins/divti3.o $
+  $o/lib/builtins/udivti3.o $
+  $o/lib/builtins/udivmodti4.o $
+  $o/excptptr.o $
+  $o/support/win32/locale_win32.o $
+  $o/support/win32/support.o $
+  $o/support/win32/thread_win32.o
+
+ar_file = $
+  $o/lib/builtins/divti3.o $
+  $o/lib/builtins/udivti3.o $
+  $o/lib/builtins/udivmodti4.o $
+  $o/excptptr.o $
+  $o/support/win32/locale_win32.o $
+  $o/support/win32/support.o $
+  $o/support/win32/thread_win32.o

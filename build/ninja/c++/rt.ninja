@@ -1,0 +1,17 @@
+# Copyright (c) 2023 mdl. All rights reserved.
+
+rt = third_party/compiler-rt
+
+build $o/lib/builtins/divti3.o : cc $rt/lib/builtins/divti3.c
+build $o/lib/builtins/udivti3.o : cc $rt/lib/builtins/udivti3.c
+build $o/lib/builtins/udivmodti4.o : cc $rt/lib/builtins/udivmodti4.c
+
+build $o/d : phony $
+  $o/lib/builtins/divti3.o $
+  $o/lib/builtins/udivti3.o $
+  $o/lib/builtins/udivmodti4.o
+
+obj_files = $
+  $o/lib/builtins/divti3.o $
+  $o/lib/builtins/udivti3.o $
+  $o/lib/builtins/udivmodti4.o

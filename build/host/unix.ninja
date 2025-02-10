@@ -1,0 +1,75 @@
+
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+SYSROOT = third_party/linux/sysroot
+API = 10
+GCC_ROOT = $SYSROOT/usr/lib/gcc/x86_64-linux-gnu/$API
+
+ARCH_CFLAGS = -target i586-pc-linux-gnu -DLIBCXX_BUILDING_LIBCXXABI -m64 -mavx $
+  -mavx2 -msse3 -mssse3 $
+  --sysroot=$SYSROOT -isystem$SYSROOT/usr/include/x86_64-linux-gnu -isystem$SYSROOT/usr/include $
+  -DBASE_IMPLEMENTATION -DIS_RAW_PTR_IMPL $
+  -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -DGLOG_EXPORT= -DDUSE_GLIB
+
+ARCH_LDFLAGS = -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 $
+  -dynamic-linker /lib64/ld-linux-x86-64.so.2 $
+  --sysroot=$SYSROOT -L$SYSROOT -L$SYSROOT/usr/lib/x86_64-linux-gnu $
+  -L$SYSROOT/usr/lib/gcc/x86_64-linux-gnu/10 -L$SYSROOT/lib/x86_64-linux-gnu $
+  $SYSROOT/usr/lib/x86_64-linux-gnu/crti.o $SYSROOT/usr/lib/x86_64-linux-gnu/crtn.o $
+  $GCC_ROOT/crtendS.o $GCC_ROOT/crtbeginS.o $SYSROOT/usr/lib/x86_64-linux-gnu/Scrt1.o $
+  -lpthread -lm -ldl -lc -lgcc_s -lgcc
+
+CR_LDFLAGS = -wrap malloc -wrap free -wrap realloc -wrap calloc -wrap memalign $
+  -wrap aligned_alloc -wrap valloc
+  
+ARCH_LINEVENT = linux
+
+CXXEX = abi
+
+ARCH_FILE = linux-x86_64
+
+rule exec
+  command = $COMMAND
+  description = $DESC
+
+rule cc
+  deps = msvc
+  command = $CLANG -std=c11 -Xclang --show-includes $OPT_CFLAGS $CFLAGS $cflags $
+    -c $in -o $out
+  description = CC $out
+
+rule cxx
+  deps = msvc
+  command = $CLANG -std=c++20 -Xclang --show-includes $OPT_CFLAGS $CFLAGS $
+    $cflags -c $in -o $out
+  description = CC $out
+
+rule ar
+  command = $AR crs $out @$out.rsp
+  description = AR $out
+  rspfile = $out.rsp
+  rspfile_content = $in $ar_files
+
+rule link
+  command = $CLANGXX -fuse-ld=lld $OPT_LDFLAGS -o $out $in $LDFLAGS $ldflags
+  description = LINK $out
+
+rule strip
+  command = $STRIP $in -o $out
+  description = STRIP $out
+
+host_out = out/$TARGET/host/x86_64
+bin = $host_out/bin
+lib = $host_out/lib
+obj = $host_out/obj
+gen = $host_out/gen
+
+LIBPFX = $host_out/lib/lib
+
+subninja build/ninja/nasm.ninja
+subninja build/ninja/protobuf.ninja
+subninja build/ninja/libabsl.ninja
+subninja build/ninja/libc++.ninja
+

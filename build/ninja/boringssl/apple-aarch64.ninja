@@ -1,0 +1,53 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/d asm_objs
+
+sa = $s/apple-aarch64/crypto
+
+build $o/cipher_extra/chacha20_poly1305_armv8-apple.o : cc $sa/cipher_extra/chacha20_poly1305_armv8-apple.S
+build $o/chacha/chacha-armv8-apple.o : cc $sa/chacha/chacha-armv8-apple.S
+build $o/fipsmodule/sha1-armv8-apple.o : cc $sa/fipsmodule/sha1-armv8-apple.S
+build $o/fipsmodule/aesv8-armv8-apple.o : cc $sa/fipsmodule/aesv8-armv8-apple.S
+build $o/fipsmodule/ghashv8-armv8-apple.o : cc $sa/fipsmodule/ghashv8-armv8-apple.S
+build $o/fipsmodule/sha256-armv8-apple.o : cc $sa/fipsmodule/sha256-armv8-apple.S
+build $o/fipsmodule/sha512-armv8-apple.o : cc $sa/fipsmodule/sha512-armv8-apple.S
+build $o/fipsmodule/aesv8-gcm-armv8-apple.o : cc $sa/fipsmodule/aesv8-gcm-armv8-apple.S
+build $o/fipsmodule/ghash-neon-armv8-apple.o : cc $sa/fipsmodule/ghash-neon-armv8-apple.S
+build $o/fipsmodule/p256_beeu-armv8-asm-apple.o : cc $sa/fipsmodule/p256_beeu-armv8-asm-apple.S
+build $o/fipsmodule/vpaes-armv8-apple.o : cc $sa/fipsmodule/vpaes-armv8-apple.S
+build $o/fipsmodule/bn-armv8-apple.o : cc $sa/fipsmodule/bn-armv8-apple.S
+build $o/fipsmodule/armv8-mont-apple.o : cc $sa/fipsmodule/armv8-mont-apple.S
+build $o/fipsmodule/p256-armv8-asm-apple.o : cc $sa/fipsmodule/p256-armv8-asm-apple.S
+
+build $o/d : phony $
+  $o/cipher_extra/chacha20_poly1305_armv8-apple.o $
+  $o/chacha/chacha-armv8-apple.o $
+  $o/fipsmodule/sha1-armv8-apple.o $
+  $o/fipsmodule/aesv8-armv8-apple.o $
+  $o/fipsmodule/ghashv8-armv8-apple.o $
+  $o/fipsmodule/sha256-armv8-apple.o $
+  $o/fipsmodule/sha512-armv8-apple.o $
+  $o/fipsmodule/aesv8-gcm-armv8-apple.o $
+  $o/fipsmodule/ghash-neon-armv8-apple.o $
+  $o/fipsmodule/p256_beeu-armv8-asm-apple.o $
+  $o/fipsmodule/vpaes-armv8-apple.o $
+  $o/fipsmodule/bn-armv8-apple.o $
+  $o/fipsmodule/armv8-mont-apple.o $
+  $o/fipsmodule/p256-armv8-asm-apple.o
+
+asm_objs = $
+  $o/cipher_extra/chacha20_poly1305_armv8-apple.o $
+  $o/chacha/chacha-armv8-apple.o $
+  $o/fipsmodule/sha1-armv8-apple.o $
+  $o/fipsmodule/aesv8-armv8-apple.o $
+  $o/fipsmodule/ghashv8-armv8-apple.o $
+  $o/fipsmodule/sha256-armv8-apple.o $
+  $o/fipsmodule/sha512-armv8-apple.o $
+  $o/fipsmodule/aesv8-gcm-armv8-apple.o $
+  $o/fipsmodule/ghash-neon-armv8-apple.o $
+  $o/fipsmodule/p256_beeu-armv8-asm-apple.o $
+  $o/fipsmodule/vpaes-armv8-apple.o $
+  $o/fipsmodule/bn-armv8-apple.o $
+  $o/fipsmodule/armv8-mont-apple.o $
+  $o/fipsmodule/p256-armv8-asm-apple.o

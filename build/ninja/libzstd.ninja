@@ -1,0 +1,98 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+s = third_party/zstd/src
+o = $obj/zstd
+
+CFLAGS = -I$s -Wno-macro-redefined -DBACKTRACE_ENABLE=0 -DXXH_NAMESPACE=ZSTD_ $
+  -DDEBUGLEVEL=0 -DZSTD_LEGACY_SUPPORT=0 -DZSTD_MULTITHREAD -DZSTD_HEAPMODE $
+  -DZSTD_COMPRESS_HEAPMODE=1 -Wno-implicit-function-declaration $
+  -Wno-microsoft-anon-tag
+
+
+build $o/debug.o : cc $s/lib/common/debug.c
+build $o/entropy_common.o : cc $s/lib/common/entropy_common.c
+build $o/error_private.o : cc $s/lib/common/error_private.c
+build $o/fse_decompress.o : cc $s/lib/common/fse_decompress.c
+build $o/pool.o : cc $s/lib/common/pool.c
+build $o/threading.o : cc $s/lib/common/threading.c
+build $o/xxhash.o : cc $s/lib/common/xxhash.c
+build $o/zstd_common.o : cc $s/lib/common/zstd_common.c
+build $o/fse_compress.o : cc $s/lib/compress/fse_compress.c
+build $o/hist.o : cc $s/lib/compress/hist.c
+build $o/huf_compress.o : cc $s/lib/compress/huf_compress.c
+build $o/zstd_compress.o : cc $s/lib/compress/zstd_compress.c
+build $o/zstd_compress_literals.o : cc $s/lib/compress/zstd_compress_literals.c
+build $o/zstd_compress_sequences.o : cc $s/lib/compress/zstd_compress_sequences.c
+build $o/zstd_compress_superblock.o : cc $s/lib/compress/zstd_compress_superblock.c
+build $o/zstd_double_fast.o : cc $s/lib/compress/zstd_double_fast.c
+build $o/zstd_fast.o : cc $s/lib/compress/zstd_fast.c
+build $o/zstd_lazy.o : cc $s/lib/compress/zstd_lazy.c
+build $o/zstd_ldm.o : cc $s/lib/compress/zstd_ldm.c
+build $o/zstd_opt.o : cc $s/lib/compress/zstd_opt.c
+build $o/zstdmt_compress.o : cc $s/lib/compress/zstdmt_compress.c
+build $o/huf_decompress.o : cc $s/lib/decompress/huf_decompress.c
+build $o/huf_decompress_amd64.o : as $s/lib/decompress/huf_decompress_amd64.S
+build $o/zstd_ddict.o : cc $s/lib/decompress/zstd_ddict.c
+build $o/zstd_decompress.o : cc $s/lib/decompress/zstd_decompress.c
+build $o/zstd_decompress_block.o : cc $s/lib/decompress/zstd_decompress_block.c
+build $o/cover.o : cc $s/lib/dictBuilder/cover.c
+build $o/divsufsort.o : cc $s/lib/dictBuilder/divsufsort.c
+build $o/fastcover.o : cc $s/lib/dictBuilder/fastcover.c
+build $o/zdict.o : cc $s/lib/dictBuilder/zdict.c
+
+build $o/programs/dibio.o : cc $s/programs/dibio.c
+build $o/programs/util.o : cc $s/programs/util.c
+build $o/programs/zstdcli_trace.o : cc $s/programs/zstdcli_trace.c
+build $o/programs/zstdcli.o : cc $s/programs/zstdcli.c
+build $o/programs/datagen.o : cc $s/programs/datagen.c
+build $o/programs/benchfn.o : cc $s/programs/benchfn.c
+build $o/programs/fileio.o : cc $s/programs/fileio.c
+build $o/programs/benchzstd.o : cc $s/programs/benchzstd.c
+build $o/programs/timefn.o : cc $s/programs/timefn.c
+
+build ${LIBPFX}zstd${LIB} : ar $
+  $o/debug.o $
+  $o/entropy_common.o $
+  $o/error_private.o $
+  $o/fse_decompress.o $
+  $o/pool.o $
+  $o/threading.o $
+  $o/xxhash.o $
+  $o/zstd_common.o $
+  $o/fse_compress.o $
+  $o/hist.o $
+  $o/huf_compress.o $
+  $o/zstd_compress.o $
+  $o/zstd_compress_literals.o $
+  $o/zstd_compress_sequences.o $
+  $o/zstd_compress_superblock.o $
+  $o/zstd_double_fast.o $
+  $o/zstd_fast.o $
+  $o/zstd_lazy.o $
+  $o/zstd_ldm.o $
+  $o/zstd_opt.o $
+  $o/zstdmt_compress.o $
+  $o/huf_decompress.o $
+  $o/huf_decompress_amd64.o $
+  $o/zstd_ddict.o $
+  $o/zstd_decompress.o $
+  $o/zstd_decompress_block.o $
+  $o/cover.o $
+  $o/divsufsort.o $
+  $o/fastcover.o $
+  $o/zdict.o
+
+build $o/zstd$EXE : link $
+  $o/programs/dibio.o $
+  $o/programs/util.o $
+  $o/programs/zstdcli_trace.o $
+  $o/programs/zstdcli.o $
+  $o/programs/datagen.o $
+  $o/programs/benchfn.o $
+  $o/programs/fileio.o $
+  $o/programs/benchzstd.o $
+  $o/programs/timefn.o $
+  ${LIBPFX}zstd${LIB}
+

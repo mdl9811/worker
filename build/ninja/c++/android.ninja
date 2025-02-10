@@ -1,0 +1,38 @@
+# Copyright (c) 2023 mdl. All rights reserved.
+
+su = third_party/libunwind
+
+CXX_EX_CFLAGS = -Ithird_party/libunwind/src/include
+
+build $o/src/src/Unwind-EHABI.o : cxx $su/src/src/Unwind-EHABI.cpp
+build $o/src/src/Unwind-sjlj.o : cc $su/src/src/Unwind-sjlj.c
+build $o/src/src/Unwind-seh.o : cxx $su/src/src/Unwind-seh.cpp
+build $o/src/src/UnwindRegistersSave.o : cc $su/src/src/UnwindRegistersSave.S
+build $o/src/src/UnwindLevel1-gcc-ext.o : cc $su/src/src/UnwindLevel1-gcc-ext.c
+build $o/src/src/UnwindRegistersRestore.o : cc $su/src/src/UnwindRegistersRestore.S
+build $o/src/src/UnwindLevel1.o : cc $su/src/src/UnwindLevel1.c
+build $o/src/src/libunwind.o : cxx $su/src/src/libunwind.cpp
+
+build $o/cpu-features.o : cc third_party/android/ndk/sources/android/cpufeatures/cpu-features.c
+
+build $o/d : phony $
+  $o/src/src/Unwind-EHABI.o $
+  $o/src/src/Unwind-sjlj.o $
+  $o/src/src/Unwind-seh.o $
+  $o/src/src/UnwindRegistersSave.o $
+  $o/src/src/UnwindLevel1-gcc-ext.o $
+  $o/src/src/UnwindRegistersRestore.o $
+  $o/src/src/UnwindLevel1.o $
+  $o/src/src/libunwind.o $
+  $o/cpu-features.o
+
+obj_files = $
+  $o/src/src/Unwind-EHABI.o $
+  $o/src/src/Unwind-sjlj.o $
+  $o/src/src/Unwind-seh.o $
+  $o/src/src/UnwindRegistersSave.o $
+  $o/src/src/UnwindLevel1-gcc-ext.o $
+  $o/src/src/UnwindRegistersRestore.o $
+  $o/src/src/UnwindLevel1.o $
+  $o/src/src/libunwind.o $
+  $o/cpu-features.o

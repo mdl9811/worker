@@ -1,0 +1,47 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+include build/host/build.ninja
+
+EXE=
+LIB=.a
+
+rule exec
+  command = $COMMAND
+  description = $DESC
+
+rule cc
+  deps = msvc
+  command = $CLANG -std=c11 -Xclang --show-includes $OPT_CFLAGS $CFLAGS $cflags $
+    -c $in -o $out
+  description = CC $out
+
+rule cxx
+  deps = msvc
+  command = $CLANG -std=c++20 -Xclang --show-includes $OPT_CFLAGS $CFLAGS $
+    $cflags -c $in -o $out
+  description = CC $out
+
+rule as
+  deps = msvc
+  command = $CLANG -Xclang --show-includes $
+    -c $in -o $out $OPT_CFLAGS $CFLAGS $cflags
+  description = CC $out
+
+rule ar
+  command = $AR crs $out @$out.rsp
+  description = AR $out
+  rspfile = $out.rsp
+  rspfile_content = $in $ar_files
+
+rule link
+  command = $LLD $OPT_LDFLAGS -o $out $in $LDFLAGS $ldflags
+  description = LINK $out
+
+rule strip
+  command = $STRIP $in -o $out
+  description = STRIP $out
+  
+FORCE_INCLUDE = -include
+subninja build/target/unix/$ARCH.ninja

@@ -1,0 +1,75 @@
+# Copyright (c) 2024 mdl. All rights reserved.
+
+# BoringSSL ASM crypto
+# Export: $o/BCRYPTO_ASM_D asm_objs
+
+CFLAGS = $CFLAGS -DOPENSSL_X86_64
+
+sa = $s/linux-x86_64/crypto
+
+build $o/chacha/chacha-x86_64-linux.o : cc $gcrypto/chacha-x86_64-linux.S
+build $o/cipher_extra/aes128gcmsiv-x86_64-linux.o : cc $gcrypto/aes128gcmsiv-x86_64-linux.S
+build $o/cipher_extra/chacha20_poly1305_x86_64-linux.o : cc $gcrypto/chacha20_poly1305_x86_64-linux.S
+build $o/fipsmodule/md5-x86_64-linux.o : cc $gcrypto/md5-x86_64-linux.S
+build $o/fiat/asm/fiat_p256_adx_mul.o : cc $s/src/third_party/fiat/asm/fiat_p256_adx_mul.S
+build $o/fiat/asm/fiat_p256_adx_sqr.o : cc $s/src/third_party/fiat/asm/fiat_p256_adx_sqr.S
+
+
+build $o/fipsmodule/aesni-gcm-x86_64-linux.o : cc $gbcm/aesni-gcm-x86_64-linux.S
+build $o/fipsmodule/aesni-x86_64-linux.o : cc $gbcm/aesni-x86_64-linux.S
+build $o/fipsmodule/ghash-ssse3-x86_64-linux.o : cc $gbcm/ghash-ssse3-x86_64-linux.S
+build $o/fipsmodule/ghash-x86_64-linux.o : cc $gbcm/ghash-x86_64-linux.S
+build $o/fipsmodule/p256-x86_64-asm-linux.o : cc $gbcm/p256-x86_64-asm-linux.S
+build $o/fipsmodule/p256_beeu-x86_64-asm-linux.o : cc $gbcm/p256_beeu-x86_64-asm-linux.S
+build $o/fipsmodule/rdrand-x86_64-linux.o : cc $gbcm/rdrand-x86_64-linux.S
+build $o/fipsmodule/rsaz-avx2-linux.o : cc $gbcm/rsaz-avx2-linux.S
+build $o/fipsmodule/sha1-x86_64-linux.o : cc $gbcm/sha1-x86_64-linux.S
+build $o/fipsmodule/sha256-x86_64-linux.o : cc $gbcm/sha256-x86_64-linux.S
+build $o/fipsmodule/sha512-x86_64-linux.o : cc $gbcm/sha512-x86_64-linux.S
+build $o/fipsmodule/vpaes-x86_64-linux.o : cc $gbcm/vpaes-x86_64-linux.S
+build $o/fipsmodule/x86_64-mont-linux.o : cc $gbcm/x86_64-mont-linux.S
+build $o/fipsmodule/x86_64-mont5-linux.o : cc $gbcm/x86_64-mont5-linux.S
+
+build $o/d : phony $
+  $o/chacha/chacha-x86_64-linux.o $
+  $o/cipher_extra/aes128gcmsiv-x86_64-linux.o $
+  $o/cipher_extra/chacha20_poly1305_x86_64-linux.o $
+  $o/fipsmodule/aesni-gcm-x86_64-linux.o $
+  $o/fipsmodule/aesni-x86_64-linux.o $
+  $o/fipsmodule/ghash-ssse3-x86_64-linux.o $
+  $o/fipsmodule/ghash-x86_64-linux.o $
+  $o/fipsmodule/md5-x86_64-linux.o $
+  $o/fipsmodule/p256-x86_64-asm-linux.o $
+  $o/fipsmodule/p256_beeu-x86_64-asm-linux.o $
+  $o/fipsmodule/rdrand-x86_64-linux.o $
+  $o/fipsmodule/rsaz-avx2-linux.o $
+  $o/fipsmodule/sha1-x86_64-linux.o $
+  $o/fipsmodule/sha256-x86_64-linux.o $
+  $o/fipsmodule/sha512-x86_64-linux.o $
+  $o/fipsmodule/vpaes-x86_64-linux.o $
+  $o/fipsmodule/x86_64-mont-linux.o $
+  $o/fipsmodule/x86_64-mont5-linux.o $
+  $o/fiat/asm/fiat_p256_adx_mul.o $
+  $o/fiat/asm/fiat_p256_adx_sqr.o
+
+asm_objs = $
+  $o/chacha/chacha-x86_64-linux.o $
+  $o/cipher_extra/aes128gcmsiv-x86_64-linux.o $
+  $o/cipher_extra/chacha20_poly1305_x86_64-linux.o $
+  $o/fipsmodule/aesni-gcm-x86_64-linux.o $
+  $o/fipsmodule/aesni-x86_64-linux.o $
+  $o/fipsmodule/ghash-ssse3-x86_64-linux.o $
+  $o/fipsmodule/ghash-x86_64-linux.o $
+  $o/fipsmodule/md5-x86_64-linux.o $
+  $o/fipsmodule/p256-x86_64-asm-linux.o $
+  $o/fipsmodule/p256_beeu-x86_64-asm-linux.o $
+  $o/fipsmodule/rdrand-x86_64-linux.o $
+  $o/fipsmodule/rsaz-avx2-linux.o $
+  $o/fipsmodule/sha1-x86_64-linux.o $
+  $o/fipsmodule/sha256-x86_64-linux.o $
+  $o/fipsmodule/sha512-x86_64-linux.o $
+  $o/fipsmodule/vpaes-x86_64-linux.o $
+  $o/fipsmodule/x86_64-mont-linux.o $
+  $o/fipsmodule/x86_64-mont5-linux.o $
+  $o/fiat/asm/fiat_p256_adx_mul.o $
+  $o/fiat/asm/fiat_p256_adx_sqr.o

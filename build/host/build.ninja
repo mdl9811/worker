@@ -1,0 +1,11 @@
+#
+# Copyright (c) 2024 mdl. All rights reserved.
+#
+
+hb = out/$TARGET/host/x86_64/bin
+ho = out/$TARGET/host/x86_64/obj
+
+nasm = $ho/nasm/nasm$HOST_EXE
+protoc = $ho/protobuf/protoc$HOST_EXE
+
+subninja build/host/$HOST.ninja

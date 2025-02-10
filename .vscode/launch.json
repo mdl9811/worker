@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "worker - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+        "exec",
+        "-i",
+        "s"
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/worker",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "workerd - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/workerd",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker process - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/api_work_process_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker deamon test - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+        "-g"
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/deamon_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker tcp server test - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+        "-g"
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/api_tcp_server_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker test - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api url request test - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/api_url_requeset_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker container - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+      ],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/api_work_container_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "api worker config parser - debug (Linux)",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "program": "${workspaceFolder}/out/unix/x86_64/debug/bin/api_work_config_parser_test",
+      "cwd": "${workspaceFolder}/out/unix/x86_64/debug/bin"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/opt/mdl/code/worker/src/example",
+      "program": "/opt/mdl/code/worker/src/example/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
